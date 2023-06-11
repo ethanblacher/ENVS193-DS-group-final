@@ -1,0 +1,1844 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml packageId="knb-lter-nwt.297.1"
+  system="https://pasta.edirepository.org"
+  xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0"
+  xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://ecoinformatics.org/eml-2.2.0  https://nis.lternet.edu/schemas/EML/eml-2.2.0/xsd/eml.xsd">
+  <access
+    authSystem="https://pasta.edirepository.org/authentication"
+    order="allowFirst" scope="document"
+      system="https://pasta.edirepository.org">
+    <allow>
+      <principal>uid=nwt,o=EDI,dc=ecoinformatics,dc=org</principal>
+      <permission>read</permission>
+      <permission>write</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset>
+    <alternateIdentifier
+      system="https://doi.org">doi:10.6073/pasta/edc4ab2faf7dd96cd1deac1544d5f2b9</alternateIdentifier><shortName>Shrub_comm_repro_success</shortName>
+    <title>Individual and community flowering phenology, seed counts and pollinator visitation rates in shrub and open plots across Niwot Ridge, 2019 - 2021.</title>
+    <creator>
+      <individualName>
+        <givenName>Micaela M</givenName>
+        <surName>Seaver</surName>
+      </individualName>
+      <electronicMailAddress>micaela.seaver@colorado.edu</electronicMailAddress>
+    </creator>
+    <pubDate>2022-04-18</pubDate>
+    <language>English</language>
+    <abstract>
+      <para>
+  Climate-change induced alterations in environmental conditions in the
+  alpine tundra has led to the expansion of woody shrubs, known as
+  “shrubification.” Shrubification is thought to change microclimatic
+  conditions, potentially leading to changes in plant community
+  composition. Shrubification has been taking place at Niwot Ridge, a
+  Long Term Ecological Research site nestled in the mountains of
+  Colorado, for the past 40 years. Thus far, Niwot Ridge has seen some
+  change in alpine plant communities due to shrubification, and changes
+  in plant reproductive capacity and success could lead to future
+  alterations of community composition.
+</para>
+      <para>
+  One important aspect in plant reproductive success is the timing of
+  flowering, known as flowering phenology. Flowering phenology is
+  controlled partially by environmental conditions, and thus is somewhat
+  plastic for many species. In the first part of my thesis, I explore
+  how shrubification may be causing changes in flowering phenology for
+  21 different plant species in the alpine tundra community at Niwot
+  Ridge. I conducted an observational study over three years, monitoring
+  the number of flowers present in 54 pairs of shrub-influenced and open
+  plots, totaling 108 plots. I found that there is no difference in the
+  flowering phenology between open and shrub-influenced plots. There is
+  a measurable difference in the number of flowers produced between
+  shrub and open plots, with open plots having more flowers on average,
+  This difference is likely due to there being fewer plants in
+  shrub-influenced plots.
+</para>
+      <para>
+  A second aspect explores shrub effects on the reproductive success of
+  five different alpine species. In the field season of 2021, I took
+  seeds from these five species from 12 pairs of shrub and open plots,
+  totaling 24 plots. I counted and weighed the seeds to determine
+  reproductive success; there was no difference in reproductive success
+  between shrub and open plots.
+</para>
+    </abstract>
+    <keywordSet>
+      <keyword>phenology</keyword>
+      <keyword>flowers</keyword>
+      <keyword>plant communities</keyword>
+      <keyword>alpine</keyword>
+      <keyword>seeds</keyword>
+      <keyword>diversity</keyword>
+      <keywordThesaurus>LTER controlled vocabulary</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>populations</keyword>
+      <keywordThesaurus>LTER core area</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Niwot Ridge LTER</keyword>
+    </keywordSet>
+    <intellectualRights>
+      <para>
+  This information is released under the Creative Commons license -
+  Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/).
+  The consumer of these data (“Data User” herein) is required to cite it
+  appropriately in any publication that results from its use. The Data
+  User should realize that these data may be actively used by others for
+  ongoing research and that coordination may be necessary to prevent
+  duplicate publication. The Data User is urged to contact the authors
+  of these data if any questions about methodology or results occur.
+  Where appropriate, the Data User is encouraged to consider
+  collaboration or co-authorship with the authors. The Data User should
+  realize that misinterpretation of data may occur if used out of
+  context of the original study. While substantial efforts are made to
+  ensure the accuracy of data and associated documentation, complete
+  accuracy of data sets cannot be guaranteed. All data are made
+  available "as is." The Data User should be aware, however,
+  that data are updated periodically and it is the responsibility of the
+  Data User to check for new versions of the data. The data authors and
+  the repository where these data were obtained shall not be liable for
+  damages resulting from any use or misinterpretation of the data. Thank
+  you.
+</para>
+    </intellectualRights>
+    <distribution
+      id="10.6073/pasta/edc4ab2faf7dd96cd1deac1544d5f2b9" scope="system"
+          system="https://pasta.edirepository.org"><online><url
+        function="information">https://doi.org/10.6073/pasta/edc4ab2faf7dd96cd1deac1544d5f2b9</url></online></distribution><coverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 1</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5868203</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5868203</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05740086</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05740086</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 2</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5865954</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5865954</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05843387</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05843387</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 3</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5863272</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5863272</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05760877</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05760877</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 4</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5864934</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5864934</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05787912</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05787912</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 5</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5869764</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5869764</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05815607</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05815607</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 6</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.587741</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.587741</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05765062</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05765062</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 7</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5878614</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5878614</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05758415</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05758415</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 8</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5868708</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5868708</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05893521</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05893521</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 9</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5885084</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5885084</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05826974</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05826974</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 10</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5871291</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5871291</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05822358</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05822358</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 11</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5860166</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5860166</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.06088291</northBoundingCoordinate>
+          <southBoundingCoordinate>40.06088291</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 12</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5855963</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5855963</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.06075116</northBoundingCoordinate>
+          <southBoundingCoordinate>40.06075116</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 13</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5875117</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5875117</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05899053</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05899053</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 14</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5885782</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5885782</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05817199</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05817199</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 15</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5889415</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5889415</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05745767</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05745767</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 16</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5887843</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5887843</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.0569605</northBoundingCoordinate>
+          <southBoundingCoordinate>40.0569605</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 17</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5884908</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5884908</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05838849</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05838849</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 18</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5876809</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5876809</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.06038445</northBoundingCoordinate>
+          <southBoundingCoordinate>40.06038445</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 19</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5861893</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5861893</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.06009541</northBoundingCoordinate>
+          <southBoundingCoordinate>40.06009541</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 20</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5865366</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5865366</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05890825</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05890825</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 21</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5876388</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5876388</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05815406</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05815406</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 22</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5862109</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5862109</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.06018116</northBoundingCoordinate>
+          <southBoundingCoordinate>40.06018116</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 23</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5886856</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5886856</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05852832</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05852832</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 24</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5861375</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5861375</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05801724</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05801724</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 25</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5873928</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5873928</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05892284</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05892284</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 26</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5875937</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5875937</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05843232</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05843232</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 27</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5869715</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5869715</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05355829</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05355829</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 28</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5847386</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5847386</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05619643</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05619643</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 29</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5848642</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5848642</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05565657</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05565657</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 30</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5852487</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5852487</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05502846</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05502846</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 31</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5858386</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5858386</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05414335</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05414335</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 32</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5858017</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5858017</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05410894</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05410894</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 33</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5868667</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5868667</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05356333</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05356333</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 34</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5826598</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5826598</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05657928</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05657928</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 35</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5854567</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5854567</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05428682</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05428682</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 36</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5817091</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5817091</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05270432</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05270432</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 37</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5777234</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5777234</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05356541</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05356541</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 38</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5775383</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5775383</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.0529471</northBoundingCoordinate>
+          <southBoundingCoordinate>40.0529471</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 39</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5773992</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5773992</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05307681</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05307681</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 40</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5811082</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5811082</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05272202</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05272202</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 41</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5827984</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5827984</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.052682</northBoundingCoordinate>
+          <southBoundingCoordinate>40.052682</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 42</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5836579</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5836579</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05273714</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05273714</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 43</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5831535</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5831535</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05266976</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05266976</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 44</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5812047</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5812047</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.0553692</northBoundingCoordinate>
+          <southBoundingCoordinate>40.0553692</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 45</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5777507</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5777507</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05343274</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05343274</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 46</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.58209</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.58209</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05595381</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05595381</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 47</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5821933</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5821933</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05623475</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05623475</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 48</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5854987</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5854987</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05476358</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05476358</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 49</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5819428</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5819428</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05565795</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05565795</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 50</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5846159</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5846159</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05651608</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05651608</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 51</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5820731</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5820731</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.0528617</northBoundingCoordinate>
+          <southBoundingCoordinate>40.0528617</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 52</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.582668</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.582668</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.0565568</northBoundingCoordinate>
+          <southBoundingCoordinate>40.0565568</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Shrub plot 53</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-105.5815142</westBoundingCoordinate>
+          <eastBoundingCoordinate>-105.5815142</eastBoundingCoordinate>
+          <northBoundingCoordinate>40.05300685</northBoundingCoordinate>
+          <southBoundingCoordinate>40.05300685</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2019-07-09</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2021-09-08</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>Variety</taxonRankName>
+          <taxonRankValue>Arenaria fendleri var. tweedyi</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Artemisia scopulorum</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Campanula rotundifolia</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Castilleja occidentalis</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Erigeron pinnatisectus</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Erigeron simplex</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Geum rossii</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Kobresia myosuroides</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>Variety</taxonRankName>
+          <taxonRankValue>Lewisia pygmaea var. pygmaea</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Lloydia serotina</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Minuartia obtusiloba</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Phlox pulvinata</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Polygonum bistortoides</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Polygonum viviparum</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Sedum lanceolatum</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Solidago multiradiata</taxonRankValue>
+        </taxonomicClassification>
+        <taxonomicClassification>
+          <taxonRankName>species</taxonRankName>
+          <taxonRankValue>Trifolium dasyphyllum</taxonRankValue>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <maintenance>
+      <description>complete</description>
+    </maintenance>
+    <contact>
+      <organizationName>Niwot Ridge LTER</organizationName>
+      <positionName>Information Manager</positionName>
+      <address>
+        <deliveryPoint>4001 Discovery Drive, UCB 450</deliveryPoint>
+        <deliveryPoint>University of Colorado</deliveryPoint>
+        <city>Boulder</city>
+        <administrativeArea>CO</administrativeArea>
+        <postalCode>80303</postalCode>
+        <country>United States</country>
+      </address>
+      <electronicMailAddress>lternwt@colorado.edu</electronicMailAddress>
+      <onlineUrl>https://nwt.lternet.edu/</onlineUrl>
+    </contact>
+    <publisher><organizationName>Environmental Data Initiative</organizationName><electronicMailAddress>info@environmentaldatainitiative.org</electronicMailAddress><onlineUrl>https://environmentaldatainitiative.org</onlineUrl><userId
+      directory="https://ror.org">0330j0z60</userId></publisher><pubPlace>Environmental Data Initiative</pubPlace><methods>
+      <methodStep>
+        <description>
+          <para>
+  Community-level flowering phenology.
+</para>
+          <para>
+  Community-level flowering phenology was taken in the summers of 2019,
+  2020, and 2021 on 21 common alpine species. Common alpine species were
+  selected in 2019 by determining which species had greater than 3
+  individuals in more than 10 plots (this was done through species
+  composition assessments relatively early in the season). 
+</para>
+          <para>
+  Once per week, I visited all plots and recorded how many flowers were
+  open (i.e. had reproductive parts showing, with petals still intact
+  and on the flower) for each “common” species that was present in the
+  plot. This continued throughout the flowering season.
+</para>
+          <para>
+  Individual-level flowering phenology.
+</para>
+          <para>
+  Individual-level flowering phenology was taken in the summer of 2021.
+  I selected 12 pairs of plots at random (equaling to 24 plots total),
+  split evenly between north-facing and south-facing aspects and with
+  and without shrubs, for a total 12 north (6 open and 6 shrub) and 12
+  south (6 open and 6 shrub)).
+</para>
+          <para>
+  I marked up to 5 individuals of all of the “common” alpine species in
+  each plot with a plastic toothpick that was distinguishable by both
+  color and what shape was on top. Individuals were marked when they
+  first started flowering, the toothpick color and top shape was
+  recorded, and then that individual was tracked throughout the duration
+  of the flowering season. 
+</para>
+          <para>
+  When a flower was first noticed, if it had all of its reproductive
+  parts showing and was looking fresh (no petals falling off, anthers
+  still had pollen on them, etc), it was entered as “new.” If a flower
+  was beginning to show signs of senescence, but still had potential to
+  attract pollinators or be pollinated itself (i.e. reproductive parts
+  still showing, no obvious seeds being formed), it was entered as
+  “old.” For plants that produce just one flower throughout the season
+  (Tetraneuris acaulis, etc), the first time I noticed a flower was the
+  time that I marked it as new. Plants that produced multiple individual
+  flowers at once had their old and new flowers counted simultaneously.
+  A flower was counted as ONE flower if it was on its own stem - this
+  means that plants that produce spike or cluster flowers had each spike
+  or cluster counting as one flower.
+</para>
+          <para>
+  At the end of the flowering season, the total number of seed pods
+  produced were counted as a proxy for how many flowers the plant
+  produced over the duration of the season.
+</para>
+          <para>
+  Pollinator Observations.
+</para>
+          <para>
+  Pollinator observations were done in the summer of 2021. The same 12
+  pairs of plots that were used for individual flowering phenology were
+  also used for pollinator observations. 
+</para>
+          <para>
+  Rough estimates of cloud cover and wind speed were recorded, along
+  with what shrub number the observation took place at and the aspect of
+  the shrub. The time that the observations were taken was recorded. All
+  observations lasted 10 minutes. An observation was deemed applicable
+  whenever a pollinator landed on an open flower (reproductive parts
+  showing) within the plot for more than 1 second (i.e. looked like it
+  meant to be there). Pollinator functional group (i.e. fly, bee,
+  bombus, etc.) was recorded, No pollinators were collected. The plant
+  the pollinator landed on (species specific) was recorded. If a
+  pollinator landed on a plant, flew away for a minute, and then landed
+  back on the plant, that was recorded as 2 separate observation. The
+  time that a pollinator landed on a plant was recorded. Pollinator
+  observations did not take place if it was raining or gusting over 40
+  MPH winds. Pollinator observations took place as long as there was one
+  open flower in the plot. 
+</para>
+          <para>
+  Seed Collection.
+</para>
+          <para>
+  Seeds were collected from 5 main species - GEUROS, KOBMYO, CARRUP,
+  AREFEN, and MINOBT. Seeds were collected from the same plants that
+  individual-level flowering phenology was done on. AREFEN stalks were
+  bagged with organza bags before showing signs of senescence to ensure
+  that early-flowered seeds would not be lost. Seed pods were collected
+  in late August to late September. Seed pods were only collected when
+  they were deemed “mature” - meaning they were brown and the seeds were
+  ready to pop out. I visited each plot once per week throughout late
+  August and late September to collect all seeds that were set. Seeds
+  were put in a coin envelope that was taped at the corners to ensure
+  that no seeds were lost. Envelopes were marked with the species,
+  toothpick color, shrub number, plot number, number of inflorescences
+  collected, and date of collection. Seeds were kept in the refrigerator
+  in their respective envelopes until they were ready to be counted.
+</para>
+          <para>
+  Seed Counts, Weights
+</para>
+          <para>
+  To count the seeds, I broke up the dried bud with my fingers. I then
+  counted all viable seeds. Seeds were considered “viable” if they
+  looked and felt plump compared to obviously aborted seeds (shriveled
+  and small in appearance). I separated the seeds from the dried bud and
+  counted each seed individually. The counts were recorded and the seeds
+  placed back into their respective envelopes, corresponding to which
+  specific plant the seeds came from. The seeds were then weighed as a
+  group with a microbalance.
+</para>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>LTER: Long-term research on the dynamics of high-elevation ecosystems -- a framework for understanding ecological responsiveness to climate change</title>
+      <personnel>
+        <organizationName>University of Colorado</organizationName>
+        <role>pointOfContact</role>
+      </personnel>
+      <award>
+        <funderName>National Science Foundation</funderName>
+        <awardNumber>1637686</awardNumber>
+        <title>LTER: Long-term research on the dynamics of high-elevation ecosystems -- a framework for understanding ecological responsiveness to climate change</title>
+      </award>
+    </project>
+    <dataTable
+      id="20850e60bd18b8c4ca67da1b2f219752" scope="document"
+          system="https://pasta.edirepository.org">
+      <entityName>Community-level flowering phenology</entityName>
+      <entityDescription>Community-level flowering phenology for all 108 shrub and open plots at NWT, 2019-2021</entityDescription>
+      <physical>
+        <objectName>shrubstudy_community_flower_counts.ms.data.csv</objectName>
+        <size
+          unit="byte">1117051</size>
+        <authentication
+              method="MD5">8cf020bc98af39d5b87d4fe53a18d193</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url
+      function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-nwt/297/1/20850e60bd18b8c4ca67da1b2f219752</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>date</attributeName>
+          <attributeLabel>Date</attributeLabel>
+          <attributeDefinition>What day the data was taken</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>shrub_num</attributeName>
+          <attributeLabel>Shrub number</attributeLabel>
+          <attributeDefinition>Which shrub number the data corresponded to</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>aspect</attributeName>
+          <attributeLabel>Aspect</attributeLabel>
+          <attributeDefinition>Which aspect the plot was on</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>tag_num</attributeName>
+          <attributeLabel>Tag Number</attributeLabel>
+          <attributeDefinition>What the tag number was</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>treatment</attributeName>
+          <attributeLabel>Environment</attributeLabel>
+          <attributeDefinition>Either shrub or open plot</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>species</attributeName>
+          <attributeLabel>Species ID</attributeLabel>
+          <attributeDefinition>Six-letter code for species</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>GEUROS</code>
+                    <definition>Geum rossii</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>ARTSCO</code>
+                    <definition>Artemisia scopulorum</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>POLBIS</code>
+                    <definition>Polygonum bistortoides</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>KOBMYO</code>
+                    <definition>Kobresia myosuroides</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>ERIPIN</code>
+                    <definition>Erigeron pinnatisectus</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>LLOSER</code>
+                    <definition>Lloydia serotina</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>ERISIM</code>
+                    <definition>Erigeron simplex</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>POLVIV</code>
+                    <definition>Polygonum viviparum</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>CARRUP</code>
+                    <definition>Carex rupestris ssp. drummondiana</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>TRIPAR</code>
+                    <definition>Trifolium parryi ssp. parryi</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>MINOBT</code>
+                    <definition>Minuartia obtusiloba</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>AREFEN</code>
+                    <definition>Arenaria fendleri var. tweedyi</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>TRIDAS</code>
+                    <definition>Trifolium dasyphyllum</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>LEWPYG</code>
+                    <definition>Lewisia pygmaea var. pygmaea</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>SEDLAN</code>
+                    <definition>Sedum lanceolatum</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>CASOCC</code>
+                    <definition>Castilleja occidentalis</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>OREALP</code>
+                    <definition>Oreoxis alpina ssp. alpina</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>SOLMUL</code>
+                    <definition>Solidago multiradiata</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>TETACA</code>
+                    <definition>Tetraneuris acaulis var. caespitosa</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>CAMROT</code>
+                    <definition>Campanula rotundifolia</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>PHLPUL</code>
+                    <definition>Phlox pulvinata</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>counts</attributeName>
+          <attributeLabel>Counts</attributeLabel>
+          <attributeDefinition>How many flowers were counted</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>22996</numberOfRecords>
+    </dataTable>
+    <dataTable
+      id="7e33082aa3d2d6727cae8b7cd7b01928" scope="document"
+          system="https://pasta.edirepository.org">
+      <entityName>Individual-level flowering phenology</entityName>
+      <entityDescription>Individual-level flowering phenology for about 280 plants in 24 different shrub and open plots across NWT for 2021</entityDescription>
+      <physical>
+        <objectName>shrubstudy_individual_flower_counts.ms.data.csv</objectName>
+        <size
+          unit="byte">439500</size>
+        <authentication
+              method="MD5">4ccc0b0ae7d058383ed3625a3ab36817</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url
+      function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-nwt/297/1/7e33082aa3d2d6727cae8b7cd7b01928</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>date</attributeName>
+          <attributeLabel>Date</attributeLabel>
+          <attributeDefinition>What day the data was taken</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>shrub_num</attributeName>
+          <attributeLabel>Shrub number</attributeLabel>
+          <attributeDefinition>Which shrub number the data corresponded to</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>aspect</attributeName>
+          <attributeLabel>Aspect</attributeLabel>
+          <attributeDefinition>Which aspect the plot was on</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>tag_num</attributeName>
+          <attributeLabel>Tag Number</attributeLabel>
+          <attributeDefinition>What the tag number was</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>treatment</attributeName>
+          <attributeLabel>Environment</attributeLabel>
+          <attributeDefinition>Either shrub or open plot</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>species</attributeName>
+          <attributeLabel>Species ID</attributeLabel>
+          <attributeDefinition>Six-letter code for species</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>CARRUP</code>
+                    <definition>Carex rupestris ssp. drummondiana</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>GEUROS</code>
+                    <definition>Geum rossii</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>POLVIV</code>
+                    <definition>Polygonum viviparum</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>KOBMYO</code>
+                    <definition>Kobresia myosuroides</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>LLOSER</code>
+                    <definition>Lloydia serotina</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>TRIDAS</code>
+                    <definition>Trifolium dasyphyllum</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>SEDLAN</code>
+                    <definition>Sedum lanceolatum</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>MINOBT</code>
+                    <definition>Minuartia obtusiloba</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>AREFEN</code>
+                    <definition>Arenaria fendleri var. tweedyi</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>CASOCC</code>
+                    <definition>Castilleja occidentalis</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>ERISIM</code>
+                    <definition>Erigeron simplex</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>PHLPUL</code>
+                    <definition>Phlox pulvinata</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>ERIPIN</code>
+                    <definition>Erigeron pinnatisectus</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>OREALP</code>
+                    <definition>Oreoxis alpina ssp. alpina</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>TETACA</code>
+                    <definition>Tetraneuris acaulis var. caespitosa</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>CAMROT</code>
+                    <definition>Campanula rotundifolia</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>SOLMUL</code>
+                    <definition>Solidago multiradiata</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>LEWPYG</code>
+                    <definition>Lewisia pygmaea var. pygmaea</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>POLBIS</code>
+                    <definition>Polygonum bistortoides</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_nr</attributeName>
+          <attributeLabel>Plant Number</attributeLabel>
+          <attributeDefinition>Which plant number was assigned (1-5) to this plant</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dist_fr_shr</attributeName>
+          <attributeLabel>Distance from Shrub</attributeLabel>
+          <attributeDefinition>Distance the plant was from the edge of the shrub (negative distances indicate plants under shrub)</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>no data</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>tp_color</attributeName>
+          <attributeLabel>Toothpick Color</attributeLabel>
+          <attributeDefinition>Which toothpick color was assigned to this plant</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>flower_type</attributeName>
+          <attributeLabel>Type of flower</attributeLabel>
+          <attributeDefinition>New versus old flowers</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>flower_count</attributeName>
+          <attributeLabel>Count of flowers</attributeLabel>
+          <attributeDefinition>How many flowers were counted of each type</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>no data</codeExplanation>
+          </missingValueCode>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>6888</numberOfRecords>
+    </dataTable>
+    <dataTable
+      id="70c525333aadaeb1f48f9fbce3305b59" scope="document"
+          system="https://pasta.edirepository.org">
+      <entityName>Seed counts and weights</entityName>
+      <entityDescription>Seed counts and weights for KOBMYO, CARRUP, GEUROS, MINOBT, and AREFEN individuals from 24 different shrub and open plots in 2021</entityDescription>
+      <physical>
+        <objectName>shrubstudy_seed_ctwt.ms.data.csv</objectName>
+        <size
+          unit="byte">18690</size>
+        <authentication
+              method="MD5">c4f8ac94e0a261ef3ef7425456b4f1c0</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url
+      function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-nwt/297/1/70c525333aadaeb1f48f9fbce3305b59</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>date_collected</attributeName>
+          <attributeLabel>Date Collected</attributeLabel>
+          <attributeDefinition>The date seeds were collected</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>not collected</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>shrub_num</attributeName>
+          <attributeLabel>Shrub number</attributeLabel>
+          <attributeDefinition>Which shrub number the data corresponded to</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>aspect</attributeName>
+          <attributeLabel>Aspect</attributeLabel>
+          <attributeDefinition>Which aspect the plot was on</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>tag_num</attributeName>
+          <attributeLabel>Tag Number</attributeLabel>
+          <attributeDefinition>What the tag number was</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>treatment</attributeName>
+          <attributeLabel>Environment</attributeLabel>
+          <attributeDefinition>Either shrub or open plot</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>species</attributeName>
+          <attributeLabel>Species ID</attributeLabel>
+          <attributeDefinition>Six-letter code for species</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_nr</attributeName>
+          <attributeLabel>Plant Number</attributeLabel>
+          <attributeDefinition>Which plant number was assigned (1-5) to this plant</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>dist_fr_shr</attributeName>
+          <attributeLabel>Distance from Shrub</attributeLabel>
+          <attributeDefinition>Distance the plant was from the edge of the shrub (negative distances indicate plants under shrub)</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>centimeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>no data</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>total_nr_infl</attributeName>
+          <attributeLabel>Total Number of Inflorescenses</attributeLabel>
+          <attributeDefinition>How many inflorescenses the plant made</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>no data</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>nr_infl_coll</attributeName>
+          <attributeLabel>Number of Inforesecense Collected</attributeLabel>
+          <attributeDefinition>how many inflorescenses were collected</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>no data</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>nr_seeds</attributeName>
+          <attributeLabel>Number of Seeds</attributeLabel>
+          <attributeDefinition>seed numbers</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>no data</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>wt_seeds_mg</attributeName>
+          <attributeLabel>Weight of Seeds</attributeLabel>
+          <attributeDefinition>Seed weights</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>milligram</standardUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>no data</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>notes</attributeName>
+          <attributeLabel>Notes</attributeLabel>
+          <attributeDefinition>Notes</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>no data</codeExplanation>
+          </missingValueCode>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>287</numberOfRecords>
+    </dataTable>
+    <dataTable
+      id="4d5d349518bde59a0f34b9265f707b44" scope="document"
+          system="https://pasta.edirepository.org">
+      <entityName>Pollinator observations</entityName>
+      <entityDescription>Pollinator observations from 24 different shrub and open plots across NWT in 2021</entityDescription>
+      <physical>
+        <objectName>shrubstudy_pollinator.ms.data.csv</objectName>
+        <size
+          unit="byte">5950</size>
+        <authentication
+              method="MD5">a10e1597dd85636be265163ed8e412dd</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url
+          function="download">https://pasta.lternet.edu/package/data/eml/knb-lter-nwt/297/1/4d5d349518bde59a0f34b9265f707b44</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>date</attributeName>
+          <attributeLabel>Date Collected</attributeLabel>
+          <attributeDefinition>Date observation is collected</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>no data</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>shrub_num</attributeName>
+          <attributeLabel>Shrub number</attributeLabel>
+          <attributeDefinition>Which shrub number the data corresponded to</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>no data</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>aspect</attributeName>
+          <attributeLabel>Aspect</attributeLabel>
+          <attributeDefinition>Which aspect the plot was on</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>tag_num</attributeName>
+          <attributeLabel>Tag Number</attributeLabel>
+          <attributeDefinition>What the tag number was</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NaN</code>
+            <codeExplanation>no data</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>treatment</attributeName>
+          <attributeLabel>Environment</attributeLabel>
+          <attributeDefinition>Either shrub or open plot</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>time_visited</attributeName>
+          <attributeLabel>Time visited</attributeLabel>
+          <attributeDefinition>Time pollinator visited</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pollinator_ID</attributeName>
+          <attributeLabel>Pollinator ID</attributeLabel>
+          <attributeDefinition>Loose pollinator ID (fly, bee, etc.)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>plant_visited</attributeName>
+          <attributeLabel>Plant Visited</attributeLabel>
+          <attributeDefinition>Plant the pollinator landed on</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cloud_cover</attributeName>
+          <attributeLabel>Cloud Cover</attributeLabel>
+          <attributeDefinition>Rough % cloud cover</attributeDefinition>
+          <storageType>integer</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>wind</attributeName>
+          <attributeLabel>Wind Speed</attributeLabel>
+          <attributeDefinition>Approximate wind speed (miles per hour)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>&lt;10</code>
+                    <definition>less than 10 mph</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>`10-20</code>
+                    <definition>10-20 miles per hour</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>start_time</attributeName>
+          <attributeLabel>Observation Start Time</attributeLabel>
+          <attributeDefinition>Observation Start Time</attributeDefinition>
+          <storageType>time</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>hh:mm:ss</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>end_time</attributeName>
+          <attributeLabel>Observation End Time</attributeLabel>
+          <attributeDefinition>Observation End Time</attributeDefinition>
+          <storageType>time</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>hh:mm:ss</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>notes</attributeName>
+          <attributeLabel>Notes</attributeLabel>
+          <attributeDefinition>Notes</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>63</numberOfRecords>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit
+          id="number" name="number"
+          unitType="dimensionless">
+          <description>a number</description>
+        </unit>
+        <unit
+          abbreviation="cm" id="centimeter" multiplierToSI="0.01"
+          name="centimeter"
+          parentSI="meter">
+          <description>.01 meters</description>
+        </unit>
+        <unit
+          abbreviation="mg" id="milligram" multiplierToSI="1e-06"
+          name="milligram" parentSI="kilogram" unitType="mass">
+          <description>0.000001 kg</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

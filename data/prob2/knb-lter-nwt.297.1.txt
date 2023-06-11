@@ -1,0 +1,1794 @@
+
+  
+    
+      uid=nwt,o=EDI,dc=ecoinformatics,dc=org
+      read
+      write
+    
+    
+      public
+      read
+    
+  
+  
+    doi:10.6073/pasta/edc4ab2faf7dd96cd1deac1544d5f2b9Shrub_comm_repro_success
+    Individual and community flowering phenology, seed counts and pollinator visitation rates in shrub and open plots across Niwot Ridge, 2019 - 2021.
+    
+      Micaela M Seaver
+      micaela.seaver@colorado.edu
+    
+    2022-04-18
+    English
+    
+      
+  Climate-change induced alterations in environmental conditions in the
+  alpine tundra has led to the expansion of woody shrubs, known as
+  “shrubification.” Shrubification is thought to change microclimatic
+  conditions, potentially leading to changes in plant community
+  composition. Shrubification has been taking place at Niwot Ridge, a
+  Long Term Ecological Research site nestled in the mountains of
+  Colorado, for the past 40 years. Thus far, Niwot Ridge has seen some
+  change in alpine plant communities due to shrubification, and changes
+  in plant reproductive capacity and success could lead to future
+  alterations of community composition.
+
+      
+  One important aspect in plant reproductive success is the timing of
+  flowering, known as flowering phenology. Flowering phenology is
+  controlled partially by environmental conditions, and thus is somewhat
+  plastic for many species. In the first part of my thesis, I explore
+  how shrubification may be causing changes in flowering phenology for
+  21 different plant species in the alpine tundra community at Niwot
+  Ridge. I conducted an observational study over three years, monitoring
+  the number of flowers present in 54 pairs of shrub-influenced and open
+  plots, totaling 108 plots. I found that there is no difference in the
+  flowering phenology between open and shrub-influenced plots. There is
+  a measurable difference in the number of flowers produced between
+  shrub and open plots, with open plots having more flowers on average,
+  This difference is likely due to there being fewer plants in
+  shrub-influenced plots.
+
+      
+  A second aspect explores shrub effects on the reproductive success of
+  five different alpine species. In the field season of 2021, I took
+  seeds from these five species from 12 pairs of shrub and open plots,
+  totaling 24 plots. I counted and weighed the seeds to determine
+  reproductive success; there was no difference in reproductive success
+  between shrub and open plots.
+
+    
+    
+      phenology
+      flowers
+      plant communities
+      alpine
+      seeds
+      diversity
+      LTER controlled vocabulary
+    
+    
+      populations
+      LTER core area
+    
+    
+      Niwot Ridge LTER
+    
+    
+      
+  This information is released under the Creative Commons license -
+  Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/).
+  The consumer of these data (“Data User” herein) is required to cite it
+  appropriately in any publication that results from its use. The Data
+  User should realize that these data may be actively used by others for
+  ongoing research and that coordination may be necessary to prevent
+  duplicate publication. The Data User is urged to contact the authors
+  of these data if any questions about methodology or results occur.
+  Where appropriate, the Data User is encouraged to consider
+  collaboration or co-authorship with the authors. The Data User should
+  realize that misinterpretation of data may occur if used out of
+  context of the original study. While substantial efforts are made to
+  ensure the accuracy of data and associated documentation, complete
+  accuracy of data sets cannot be guaranteed. All data are made
+  available "as is." The Data User should be aware, however,
+  that data are updated periodically and it is the responsibility of the
+  Data User to check for new versions of the data. The data authors and
+  the repository where these data were obtained shall not be liable for
+  damages resulting from any use or misinterpretation of the data. Thank
+  you.
+
+    
+    https://doi.org/10.6073/pasta/edc4ab2faf7dd96cd1deac1544d5f2b9
+      
+        Shrub plot 1
+        
+          -105.5868203
+          -105.5868203
+          40.05740086
+          40.05740086
+        
+      
+      
+        Shrub plot 2
+        
+          -105.5865954
+          -105.5865954
+          40.05843387
+          40.05843387
+        
+      
+      
+        Shrub plot 3
+        
+          -105.5863272
+          -105.5863272
+          40.05760877
+          40.05760877
+        
+      
+      
+        Shrub plot 4
+        
+          -105.5864934
+          -105.5864934
+          40.05787912
+          40.05787912
+        
+      
+      
+        Shrub plot 5
+        
+          -105.5869764
+          -105.5869764
+          40.05815607
+          40.05815607
+        
+      
+      
+        Shrub plot 6
+        
+          -105.587741
+          -105.587741
+          40.05765062
+          40.05765062
+        
+      
+      
+        Shrub plot 7
+        
+          -105.5878614
+          -105.5878614
+          40.05758415
+          40.05758415
+        
+      
+      
+        Shrub plot 8
+        
+          -105.5868708
+          -105.5868708
+          40.05893521
+          40.05893521
+        
+      
+      
+        Shrub plot 9
+        
+          -105.5885084
+          -105.5885084
+          40.05826974
+          40.05826974
+        
+      
+      
+        Shrub plot 10
+        
+          -105.5871291
+          -105.5871291
+          40.05822358
+          40.05822358
+        
+      
+      
+        Shrub plot 11
+        
+          -105.5860166
+          -105.5860166
+          40.06088291
+          40.06088291
+        
+      
+      
+        Shrub plot 12
+        
+          -105.5855963
+          -105.5855963
+          40.06075116
+          40.06075116
+        
+      
+      
+        Shrub plot 13
+        
+          -105.5875117
+          -105.5875117
+          40.05899053
+          40.05899053
+        
+      
+      
+        Shrub plot 14
+        
+          -105.5885782
+          -105.5885782
+          40.05817199
+          40.05817199
+        
+      
+      
+        Shrub plot 15
+        
+          -105.5889415
+          -105.5889415
+          40.05745767
+          40.05745767
+        
+      
+      
+        Shrub plot 16
+        
+          -105.5887843
+          -105.5887843
+          40.0569605
+          40.0569605
+        
+      
+      
+        Shrub plot 17
+        
+          -105.5884908
+          -105.5884908
+          40.05838849
+          40.05838849
+        
+      
+      
+        Shrub plot 18
+        
+          -105.5876809
+          -105.5876809
+          40.06038445
+          40.06038445
+        
+      
+      
+        Shrub plot 19
+        
+          -105.5861893
+          -105.5861893
+          40.06009541
+          40.06009541
+        
+      
+      
+        Shrub plot 20
+        
+          -105.5865366
+          -105.5865366
+          40.05890825
+          40.05890825
+        
+      
+      
+        Shrub plot 21
+        
+          -105.5876388
+          -105.5876388
+          40.05815406
+          40.05815406
+        
+      
+      
+        Shrub plot 22
+        
+          -105.5862109
+          -105.5862109
+          40.06018116
+          40.06018116
+        
+      
+      
+        Shrub plot 23
+        
+          -105.5886856
+          -105.5886856
+          40.05852832
+          40.05852832
+        
+      
+      
+        Shrub plot 24
+        
+          -105.5861375
+          -105.5861375
+          40.05801724
+          40.05801724
+        
+      
+      
+        Shrub plot 25
+        
+          -105.5873928
+          -105.5873928
+          40.05892284
+          40.05892284
+        
+      
+      
+        Shrub plot 26
+        
+          -105.5875937
+          -105.5875937
+          40.05843232
+          40.05843232
+        
+      
+      
+        Shrub plot 27
+        
+          -105.5869715
+          -105.5869715
+          40.05355829
+          40.05355829
+        
+      
+      
+        Shrub plot 28
+        
+          -105.5847386
+          -105.5847386
+          40.05619643
+          40.05619643
+        
+      
+      
+        Shrub plot 29
+        
+          -105.5848642
+          -105.5848642
+          40.05565657
+          40.05565657
+        
+      
+      
+        Shrub plot 30
+        
+          -105.5852487
+          -105.5852487
+          40.05502846
+          40.05502846
+        
+      
+      
+        Shrub plot 31
+        
+          -105.5858386
+          -105.5858386
+          40.05414335
+          40.05414335
+        
+      
+      
+        Shrub plot 32
+        
+          -105.5858017
+          -105.5858017
+          40.05410894
+          40.05410894
+        
+      
+      
+        Shrub plot 33
+        
+          -105.5868667
+          -105.5868667
+          40.05356333
+          40.05356333
+        
+      
+      
+        Shrub plot 34
+        
+          -105.5826598
+          -105.5826598
+          40.05657928
+          40.05657928
+        
+      
+      
+        Shrub plot 35
+        
+          -105.5854567
+          -105.5854567
+          40.05428682
+          40.05428682
+        
+      
+      
+        Shrub plot 36
+        
+          -105.5817091
+          -105.5817091
+          40.05270432
+          40.05270432
+        
+      
+      
+        Shrub plot 37
+        
+          -105.5777234
+          -105.5777234
+          40.05356541
+          40.05356541
+        
+      
+      
+        Shrub plot 38
+        
+          -105.5775383
+          -105.5775383
+          40.0529471
+          40.0529471
+        
+      
+      
+        Shrub plot 39
+        
+          -105.5773992
+          -105.5773992
+          40.05307681
+          40.05307681
+        
+      
+      
+        Shrub plot 40
+        
+          -105.5811082
+          -105.5811082
+          40.05272202
+          40.05272202
+        
+      
+      
+        Shrub plot 41
+        
+          -105.5827984
+          -105.5827984
+          40.052682
+          40.052682
+        
+      
+      
+        Shrub plot 42
+        
+          -105.5836579
+          -105.5836579
+          40.05273714
+          40.05273714
+        
+      
+      
+        Shrub plot 43
+        
+          -105.5831535
+          -105.5831535
+          40.05266976
+          40.05266976
+        
+      
+      
+        Shrub plot 44
+        
+          -105.5812047
+          -105.5812047
+          40.0553692
+          40.0553692
+        
+      
+      
+        Shrub plot 45
+        
+          -105.5777507
+          -105.5777507
+          40.05343274
+          40.05343274
+        
+      
+      
+        Shrub plot 46
+        
+          -105.58209
+          -105.58209
+          40.05595381
+          40.05595381
+        
+      
+      
+        Shrub plot 47
+        
+          -105.5821933
+          -105.5821933
+          40.05623475
+          40.05623475
+        
+      
+      
+        Shrub plot 48
+        
+          -105.5854987
+          -105.5854987
+          40.05476358
+          40.05476358
+        
+      
+      
+        Shrub plot 49
+        
+          -105.5819428
+          -105.5819428
+          40.05565795
+          40.05565795
+        
+      
+      
+        Shrub plot 50
+        
+          -105.5846159
+          -105.5846159
+          40.05651608
+          40.05651608
+        
+      
+      
+        Shrub plot 51
+        
+          -105.5820731
+          -105.5820731
+          40.0528617
+          40.0528617
+        
+      
+      
+        Shrub plot 52
+        
+          -105.582668
+          -105.582668
+          40.0565568
+          40.0565568
+        
+      
+      
+        Shrub plot 53
+        
+          -105.5815142
+          -105.5815142
+          40.05300685
+          40.05300685
+        
+      
+      
+        
+          
+            2019-07-09
+          
+          
+            2021-09-08
+          
+        
+      
+      
+        
+          Variety
+          Arenaria fendleri var. tweedyi
+        
+        
+          species
+          Artemisia scopulorum
+        
+        
+          species
+          Campanula rotundifolia
+        
+        
+          species
+          Castilleja occidentalis
+        
+        
+          species
+          Erigeron pinnatisectus
+        
+        
+          species
+          Erigeron simplex
+        
+        
+          species
+          Geum rossii
+        
+        
+          species
+          Kobresia myosuroides
+        
+        
+          Variety
+          Lewisia pygmaea var. pygmaea
+        
+        
+          species
+          Lloydia serotina
+        
+        
+          species
+          Minuartia obtusiloba
+        
+        
+          species
+          Phlox pulvinata
+        
+        
+          species
+          Polygonum bistortoides
+        
+        
+          species
+          Polygonum viviparum
+        
+        
+          species
+          Sedum lanceolatum
+        
+        
+          species
+          Solidago multiradiata
+        
+        
+          species
+          Trifolium dasyphyllum
+        
+      
+    
+    
+      complete
+    
+    
+      Niwot Ridge LTER
+      Information Manager
+      			4001 Discovery Drive, UCB 450
+			University of Colorado
+			Boulder, CO 80303  United States
+      lternwt@colorado.edu
+      https://nwt.lternet.edu/
+    
+    Environmental Data Initiativeinfo@environmentaldatainitiative.orghttps://environmentaldatainitiative.org0330j0z60Environmental Data Initiative
+      
+        
+          
+  Community-level flowering phenology.
+
+          
+  Community-level flowering phenology was taken in the summers of 2019,
+  2020, and 2021 on 21 common alpine species. Common alpine species were
+  selected in 2019 by determining which species had greater than 3
+  individuals in more than 10 plots (this was done through species
+  composition assessments relatively early in the season). 
+
+          
+  Once per week, I visited all plots and recorded how many flowers were
+  open (i.e. had reproductive parts showing, with petals still intact
+  and on the flower) for each “common” species that was present in the
+  plot. This continued throughout the flowering season.
+
+          
+  Individual-level flowering phenology.
+
+          
+  Individual-level flowering phenology was taken in the summer of 2021.
+  I selected 12 pairs of plots at random (equaling to 24 plots total),
+  split evenly between north-facing and south-facing aspects and with
+  and without shrubs, for a total 12 north (6 open and 6 shrub) and 12
+  south (6 open and 6 shrub)).
+
+          
+  I marked up to 5 individuals of all of the “common” alpine species in
+  each plot with a plastic toothpick that was distinguishable by both
+  color and what shape was on top. Individuals were marked when they
+  first started flowering, the toothpick color and top shape was
+  recorded, and then that individual was tracked throughout the duration
+  of the flowering season. 
+
+          
+  When a flower was first noticed, if it had all of its reproductive
+  parts showing and was looking fresh (no petals falling off, anthers
+  still had pollen on them, etc), it was entered as “new.” If a flower
+  was beginning to show signs of senescence, but still had potential to
+  attract pollinators or be pollinated itself (i.e. reproductive parts
+  still showing, no obvious seeds being formed), it was entered as
+  “old.” For plants that produce just one flower throughout the season
+  (Tetraneuris acaulis, etc), the first time I noticed a flower was the
+  time that I marked it as new. Plants that produced multiple individual
+  flowers at once had their old and new flowers counted simultaneously.
+  A flower was counted as ONE flower if it was on its own stem - this
+  means that plants that produce spike or cluster flowers had each spike
+  or cluster counting as one flower.
+
+          
+  At the end of the flowering season, the total number of seed pods
+  produced were counted as a proxy for how many flowers the plant
+  produced over the duration of the season.
+
+          
+  Pollinator Observations.
+
+          
+  Pollinator observations were done in the summer of 2021. The same 12
+  pairs of plots that were used for individual flowering phenology were
+  also used for pollinator observations. 
+
+          
+  Rough estimates of cloud cover and wind speed were recorded, along
+  with what shrub number the observation took place at and the aspect of
+  the shrub. The time that the observations were taken was recorded. All
+  observations lasted 10 minutes. An observation was deemed applicable
+  whenever a pollinator landed on an open flower (reproductive parts
+  showing) within the plot for more than 1 second (i.e. looked like it
+  meant to be there). Pollinator functional group (i.e. fly, bee,
+  bombus, etc.) was recorded, No pollinators were collected. The plant
+  the pollinator landed on (species specific) was recorded. If a
+  pollinator landed on a plant, flew away for a minute, and then landed
+  back on the plant, that was recorded as 2 separate observation. The
+  time that a pollinator landed on a plant was recorded. Pollinator
+  observations did not take place if it was raining or gusting over 40
+  MPH winds. Pollinator observations took place as long as there was one
+  open flower in the plot. 
+
+          
+  Seed Collection.
+
+          
+  Seeds were collected from 5 main species - GEUROS, KOBMYO, CARRUP,
+  AREFEN, and MINOBT. Seeds were collected from the same plants that
+  individual-level flowering phenology was done on. AREFEN stalks were
+  bagged with organza bags before showing signs of senescence to ensure
+  that early-flowered seeds would not be lost. Seed pods were collected
+  in late August to late September. Seed pods were only collected when
+  they were deemed “mature” - meaning they were brown and the seeds were
+  ready to pop out. I visited each plot once per week throughout late
+  August and late September to collect all seeds that were set. Seeds
+  were put in a coin envelope that was taped at the corners to ensure
+  that no seeds were lost. Envelopes were marked with the species,
+  toothpick color, shrub number, plot number, number of inflorescences
+  collected, and date of collection. Seeds were kept in the refrigerator
+  in their respective envelopes until they were ready to be counted.
+
+          
+  Seed Counts, Weights
+
+          
+  To count the seeds, I broke up the dried bud with my fingers. I then
+  counted all viable seeds. Seeds were considered “viable” if they
+  looked and felt plump compared to obviously aborted seeds (shriveled
+  and small in appearance). I separated the seeds from the dried bud and
+  counted each seed individually. The counts were recorded and the seeds
+  placed back into their respective envelopes, corresponding to which
+  specific plant the seeds came from. The seeds were then weighed as a
+  group with a microbalance.
+
+        
+      
+    
+    
+      LTER: Long-term research on the dynamics of high-elevation ecosystems -- a framework for understanding ecological responsiveness to climate change
+      
+        University of Colorado
+        pointOfContact
+      
+      
+        National Science Foundation
+        1637686
+        LTER: Long-term research on the dynamics of high-elevation ecosystems -- a framework for understanding ecological responsiveness to climate change
+      
+    
+    
+      Community-level flowering phenology
+      Community-level flowering phenology for all 108 shrub and open plots at NWT, 2019-2021
+      
+        shrubstudy_community_flower_counts.ms.data.csv
+        1117051
+        8cf020bc98af39d5b87d4fe53a18d193
+        
+          
+            1
+            \r\n
+            column
+            
+              ,
+              "
+            
+          
+        
+        
+          
+            https://pasta.lternet.edu/package/data/eml/knb-lter-nwt/297/1/20850e60bd18b8c4ca67da1b2f219752
+          
+        
+      
+      
+        
+          date
+          Date
+          What day the data was taken
+          date
+          
+            
+              YYYY-MM-DD
+              
+            
+          
+        
+        
+          shrub_num
+          Shrub number
+          Which shrub number the data corresponded to
+          integer
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          aspect
+          Aspect
+          Which aspect the plot was on
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          tag_num
+          Tag Number
+          What the tag number was
+          integer
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          treatment
+          Environment
+          Either shrub or open plot
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          species
+          Species ID
+          Six-letter code for species
+          string
+          
+            
+              
+                
+                  
+                    GEUROS
+                    Geum rossii
+                  
+                  
+                    ARTSCO
+                    Artemisia scopulorum
+                  
+                  
+                    POLBIS
+                    Polygonum bistortoides
+                  
+                  
+                    KOBMYO
+                    Kobresia myosuroides
+                  
+                  
+                    ERIPIN
+                    Erigeron pinnatisectus
+                  
+                  
+                    LLOSER
+                    Lloydia serotina
+                  
+                  
+                    ERISIM
+                    Erigeron simplex
+                  
+                  
+                    POLVIV
+                    Polygonum viviparum
+                  
+                  
+                    CARRUP
+                    Carex rupestris ssp. drummondiana
+                  
+                  
+                    TRIPAR
+                    Trifolium parryi ssp. parryi
+                  
+                  
+                    MINOBT
+                    Minuartia obtusiloba
+                  
+                  
+                    AREFEN
+                    Arenaria fendleri var. tweedyi
+                  
+                  
+                    TRIDAS
+                    Trifolium dasyphyllum
+                  
+                  
+                    LEWPYG
+                    Lewisia pygmaea var. pygmaea
+                  
+                  
+                    SEDLAN
+                    Sedum lanceolatum
+                  
+                  
+                    CASOCC
+                    Castilleja occidentalis
+                  
+                  
+                    OREALP
+                    Oreoxis alpina ssp. alpina
+                  
+                  
+                    SOLMUL
+                    Solidago multiradiata
+                  
+                  
+                    TETACA
+                    Tetraneuris acaulis var. caespitosa
+                  
+                  
+                    CAMROT
+                    Campanula rotundifolia
+                  
+                  
+                    PHLPUL
+                    Phlox pulvinata
+                  
+                
+              
+            
+          
+        
+        
+          counts
+          Counts
+          How many flowers were counted
+          integer
+          
+            
+              
+                number
+              
+              
+                integer
+              
+            
+          
+        
+      
+      22996
+    
+    
+      Individual-level flowering phenology
+      Individual-level flowering phenology for about 280 plants in 24 different shrub and open plots across NWT for 2021
+      
+        shrubstudy_individual_flower_counts.ms.data.csv
+        439500
+        4ccc0b0ae7d058383ed3625a3ab36817
+        
+          
+            1
+            \r\n
+            column
+            
+              ,
+              "
+            
+          
+        
+        
+          
+            https://pasta.lternet.edu/package/data/eml/knb-lter-nwt/297/1/7e33082aa3d2d6727cae8b7cd7b01928
+          
+        
+      
+      
+        
+          date
+          Date
+          What day the data was taken
+          date
+          
+            
+              YYYY-MM-DD
+              
+            
+          
+        
+        
+          shrub_num
+          Shrub number
+          Which shrub number the data corresponded to
+          integer
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          aspect
+          Aspect
+          Which aspect the plot was on
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          tag_num
+          Tag Number
+          What the tag number was
+          integer
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          treatment
+          Environment
+          Either shrub or open plot
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          species
+          Species ID
+          Six-letter code for species
+          string
+          
+            
+              
+                
+                  
+                    CARRUP
+                    Carex rupestris ssp. drummondiana
+                  
+                  
+                    GEUROS
+                    Geum rossii
+                  
+                  
+                    POLVIV
+                    Polygonum viviparum
+                  
+                  
+                    KOBMYO
+                    Kobresia myosuroides
+                  
+                  
+                    LLOSER
+                    Lloydia serotina
+                  
+                  
+                    TRIDAS
+                    Trifolium dasyphyllum
+                  
+                  
+                    SEDLAN
+                    Sedum lanceolatum
+                  
+                  
+                    MINOBT
+                    Minuartia obtusiloba
+                  
+                  
+                    AREFEN
+                    Arenaria fendleri var. tweedyi
+                  
+                  
+                    CASOCC
+                    Castilleja occidentalis
+                  
+                  
+                    ERISIM
+                    Erigeron simplex
+                  
+                  
+                    PHLPUL
+                    Phlox pulvinata
+                  
+                  
+                    ERIPIN
+                    Erigeron pinnatisectus
+                  
+                  
+                    OREALP
+                    Oreoxis alpina ssp. alpina
+                  
+                  
+                    TETACA
+                    Tetraneuris acaulis var. caespitosa
+                  
+                  
+                    CAMROT
+                    Campanula rotundifolia
+                  
+                  
+                    SOLMUL
+                    Solidago multiradiata
+                  
+                  
+                    LEWPYG
+                    Lewisia pygmaea var. pygmaea
+                  
+                  
+                    POLBIS
+                    Polygonum bistortoides
+                  
+                
+              
+            
+          
+        
+        
+          plant_nr
+          Plant Number
+          Which plant number was assigned (1-5) to this plant
+          integer
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          dist_fr_shr
+          Distance from Shrub
+          Distance the plant was from the edge of the shrub (negative distances indicate plants under shrub)
+          float
+          
+            
+              
+                centimeter
+              
+              
+                real
+              
+            
+          
+          
+            NaN
+            no data
+          
+        
+        
+          tp_color
+          Toothpick Color
+          Which toothpick color was assigned to this plant
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          flower_type
+          Type of flower
+          New versus old flowers
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          flower_count
+          Count of flowers
+          How many flowers were counted of each type
+          integer
+          
+            
+              
+                number
+              
+              
+                integer
+              
+            
+          
+          
+            NaN
+            no data
+          
+        
+      
+      6888
+    
+    
+      Seed counts and weights
+      Seed counts and weights for KOBMYO, CARRUP, GEUROS, MINOBT, and AREFEN individuals from 24 different shrub and open plots in 2021
+      
+        shrubstudy_seed_ctwt.ms.data.csv
+        18690
+        c4f8ac94e0a261ef3ef7425456b4f1c0
+        
+          
+            1
+            \r\n
+            column
+            
+              ,
+              "
+            
+          
+        
+        
+          
+            https://pasta.lternet.edu/package/data/eml/knb-lter-nwt/297/1/70c525333aadaeb1f48f9fbce3305b59
+          
+        
+      
+      
+        
+          date_collected
+          Date Collected
+          The date seeds were collected
+          date
+          
+            
+              YYYY-MM-DD
+              
+            
+          
+          
+            NaN
+            not collected
+          
+        
+        
+          shrub_num
+          Shrub number
+          Which shrub number the data corresponded to
+          integer
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          aspect
+          Aspect
+          Which aspect the plot was on
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          tag_num
+          Tag Number
+          What the tag number was
+          integer
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          treatment
+          Environment
+          Either shrub or open plot
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          species
+          Species ID
+          Six-letter code for species
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          plant_nr
+          Plant Number
+          Which plant number was assigned (1-5) to this plant
+          integer
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          dist_fr_shr
+          Distance from Shrub
+          Distance the plant was from the edge of the shrub (negative distances indicate plants under shrub)
+          float
+          
+            
+              
+                centimeter
+              
+              
+                real
+              
+            
+          
+          
+            NaN
+            no data
+          
+        
+        
+          total_nr_infl
+          Total Number of Inflorescenses
+          How many inflorescenses the plant made
+          integer
+          
+            
+              
+                number
+              
+              
+                integer
+              
+            
+          
+          
+            NaN
+            no data
+          
+        
+        
+          nr_infl_coll
+          Number of Inforesecense Collected
+          how many inflorescenses were collected
+          integer
+          
+            
+              
+                number
+              
+              
+                integer
+              
+            
+          
+          
+            NaN
+            no data
+          
+        
+        
+          nr_seeds
+          Number of Seeds
+          seed numbers
+          integer
+          
+            
+              
+                number
+              
+              
+                integer
+              
+            
+          
+          
+            NaN
+            no data
+          
+        
+        
+          wt_seeds_mg
+          Weight of Seeds
+          Seed weights
+          float
+          
+            
+              
+                milligram
+              
+              0.001
+              
+                real
+              
+            
+          
+          
+            NaN
+            no data
+          
+        
+        
+          notes
+          Notes
+          Notes
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+          
+            NaN
+            no data
+          
+        
+      
+      287
+    
+    
+      Pollinator observations
+      Pollinator observations from 24 different shrub and open plots across NWT in 2021
+      
+        shrubstudy_pollinator.ms.data.csv
+        5950
+        a10e1597dd85636be265163ed8e412dd
+        
+          
+            1
+            \r\n
+            column
+            
+              ,
+              "
+            
+          
+        
+        
+          
+            https://pasta.lternet.edu/package/data/eml/knb-lter-nwt/297/1/4d5d349518bde59a0f34b9265f707b44
+          
+        
+      
+      
+        
+          date
+          Date Collected
+          Date observation is collected
+          date
+          
+            
+              YYYY-MM-DD
+              
+            
+          
+          
+            NaN
+            no data
+          
+        
+        
+          shrub_num
+          Shrub number
+          Which shrub number the data corresponded to
+          integer
+          
+            
+              
+                number
+              
+              
+                integer
+              
+            
+          
+          
+            NaN
+            no data
+          
+        
+        
+          aspect
+          Aspect
+          Which aspect the plot was on
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          tag_num
+          Tag Number
+          What the tag number was
+          integer
+          
+            
+              
+                number
+              
+              
+                integer
+              
+            
+          
+          
+            NaN
+            no data
+          
+        
+        
+          treatment
+          Environment
+          Either shrub or open plot
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          time_visited
+          Time visited
+          Time pollinator visited
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          pollinator_ID
+          Pollinator ID
+          Loose pollinator ID (fly, bee, etc.)
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          plant_visited
+          Plant Visited
+          Plant the pollinator landed on
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+        
+          cloud_cover
+          Cloud Cover
+          Rough % cloud cover
+          integer
+          
+            
+              
+                number
+              
+              
+                integer
+              
+            
+          
+        
+        
+          wind
+          Wind Speed
+          Approximate wind speed (miles per hour)
+          string
+          
+            
+              
+                
+                  
+                    <10
+                    less than 10 mph
+                  
+                  
+                    `10-20
+                    10-20 miles per hour
+                  
+                
+              
+            
+          
+        
+        
+          start_time
+          Observation Start Time
+          Observation Start Time
+          time
+          
+            
+              hh:mm:ss
+              
+            
+          
+        
+        
+          end_time
+          Observation End Time
+          Observation End Time
+          time
+          
+            
+              hh:mm:ss
+              
+            
+          
+        
+        
+          notes
+          Notes
+          Notes
+          string
+          
+            
+              
+                
+                  any text
+                
+              
+            
+          
+        
+      
+      63
+    
+  
+  
+    
+      
+        
+          a number
+        
+        
+          .01 meters
+        
+        
+          0.000001 kg
+        
+      
+    
+  

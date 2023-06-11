@@ -1,0 +1,8 @@
+Manifest file for knb-lter-nwt.297.1.zip created on Sun Jun 11 23:07:11 UTC 2023
+shrubstudy_community_flower_counts.ms.data.csv (1117051 bytes)
+shrubstudy_individual_flower_counts.ms.data.csv (439500 bytes)
+shrubstudy_seed_ctwt.ms.data.csv (18690 bytes)
+shrubstudy_pollinator.ms.data.csv (5950 bytes)
+knb-lter-nwt.297.1.xml (81360 bytes)
+knb-lter-nwt.297.1.txt (38273 bytes)
+knb-lter-nwt.297.1.report.xml (93046 bytes)
