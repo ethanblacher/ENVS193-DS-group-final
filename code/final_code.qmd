@@ -1,0 +1,63 @@
+---
+title: "code_for_final"
+author: Ethan Blacher, Maddie Manzagol, Mary Cadogan
+format: 
+  html:
+    toc: true
+    toc-location: left
+    code-fold: true
+    theme: yeti 
+execute:
+  message: false
+  warning: false
+---
+
+Problem 1
+
+```{r Install_Packages}
+# should haves (from last week)
+library(tidyverse)
+library(here)
+library(janitor)
+library(ggeffects)
+library(performance)
+library(naniar) # or equivalent
+library(flextable) # or equivalent
+library(car)
+library(broom)
+# would be nice to have
+library(corrplot)
+library(AICcmodavg)
+library(GGally)
+library(MuMIn)
+```
+
+Introduction
+
+Methods
+
+Results
+
+```{r Read_Data}
+kangaroo <- read_csv(here("data", "prob1_data.csv"))%>% 
+  #make the column names clear
+  clean_names() %>%
+    select(loc, seeds)
+```
+
+```{r}
+gg_miss_var(kangaroo)
+```
+
+Null: Kangaroo mound locations has no impact on total seed numbers
+
+Alternate: Kangaroo mound locations has an impact on total seed numbers
+
+Problem 2.
+
+```{r Read_Data}
+flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))%>%
+    #make the column names clear
+  clean_names()%>%
+  select(treatment, species, total_nr_infl)
+```
