@@ -1,0 +1,15 @@
+---
+title: "Final"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(here)
+```
+
+```{r}
+kangaroo_data <- read_csv(here("data", "prob1_data.csv"))
+```
