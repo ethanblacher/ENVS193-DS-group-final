@@ -32,64 +32,35 @@ library(GGally)
 library(MuMIn)
 ```
 
-<<<<<<< HEAD
-Problem 1: How does total number differ between kangaroo rat mound locations?
+Introduction:\
+Write a 5-10 sentence introduction to the analysis you conduct. Some useful information could include (but is not limited to): a. What are Kangaroo rats? b. Why might people care about them? c. Why do you think it could be useful and/or important to predict individual biomass from morphological, physiological, or taxonomic characteristics? d. What questions are you addressing? e. What hypotheses are you testing? f. Include 3-5 in-text citations of peer-reviewed work.
 
-Introduction
-=======
-Introduction:  
-Write a 5-10 sentence introduction to the analysis you conduct. Some useful information
-could include (but is not limited to):
-a. What are Kangaroo rats?
-b. Why might people care about them?
-c. Why do you think it could be useful and/or important to predict individual biomass
-from morphological, physiological, or taxonomic characteristics?
-d. What questions are you addressing?
-e. What hypotheses are you testing?
-f. Include 3-5 in-text citations of peer-reviewed work.
+In order to ensure plant species diversity within a given environment, the persistence of a diverse seed bank is essential as oftentimes seed bank diveristy is a key indicator to population persistence (J.P. Bakker). With that said, seed survival, which is largely dictated by a diverse seed bank, is highly correlated with population growth rates for many plant species (Adams and Marsh). One way that seed survival and, consequently, seed bank diversity is encouraged is through disturbance, as small-scale disturbances to an ecosystem are known to increase heterogeneity and plant diversity within that ecosystem (Koontz and Simpson). In the Chihuahuan Desert grassland, kangaroo rat mounds are considered small-scale disturbances as these mounds provide micro-habitats that create "safe-spaces" for seed accumulation where plant populations can establish, increasing plant diversity and community structure (Koontz and Simpson). With that being said, this study aims to uncover how total seed count differs between different kangaroo rat mound locations to gain a better understanding of what specific properties of kangaroo rat mounds aid in diversifying seed plants and adult plant communities.
 
-In order to ensure plant species diversity within a given environment, the persistence of a diverse seed bank is essential as oftentimes seed bank diveristy is a key indicator to population persistence (J.P. Bakker). With that said, seed survival, which is largely dictated by a diverse seed bank, is highly correlated with population growth rates for many plant species (Adams and Marsh). One way that seed survival and, consequently, seed bank diversity is encouraged is through disturbance, as small-scale disturbances to an ecosystem are known to increase heterogeneity and plant diversity within that ecosystem (Koontz and Simpson). In the Chihuahuan Desert grassland, kangaroo rat mounds are considered small-scale disturbances as these mounds provide micro-habitats that create "safe-spaces" for seed accumulation where plant populations can establish, increasing plant diversity and community structure (Koontz and Simpson). With that being said, this study aims to uncover how total seed count differs between different kangaroo rat mound locations to gain a better understanding of what specific properties of kangaroo rat mounds aid in diversifying seed plants and adult plant communities. 
-
-this will likely need some work but just a start^
-
->>>>>>> 2d14c2fab891db0fffea6837b2d23e9d05966ab9
+this will likely need some work but just a start\^
 
 Methods
 
 Results
 
 ```{r Read_Data}
-kangaroo <- read_csv(here("data", "prob1_data.csv"))%>% 
-  #make the column names clear
-  clean_names() %>%
-    select(loc, seeds)
+kangaroo <- read_csv(here("data", "prob1_data.csv"))
+values_to_remove <- c("I", "E")
+kangaroo_filtered <- kangaroo[!(kangaroo$loc %in% values_to_remove), ]
+other_values_to_remove <- c("soil", "dist", "gravel", "litter", "plant")
+kangaroo_filtered <- kangaroo_filtered[!(kangaroo_filtered$species %in% other_values_to_remove), ]
+view(kangaroo_filtered)
 ```
 
 ```{r}
 gg_miss_var(kangaroo)
 ```
 
-```{r}
-ggplot(data = kangaroo) +
-  stat_qq(aes(sample = seeds)) +
-  stat_qq_line(aes(sample = seeds), color = "red") +
-  facet_wrap(~ loc)
-```
-
-
-
 Null: Kangaroo mound locations has no impact on total seed numbers
 
 Alternate: Kangaroo mound locations has an impact on total seed numbers
 
-
-
-Problem 2: How does seed count vary with plot type (shrub or open), plant species, and total number of inflorescences? Is there a simpler model that explains seed count, and if so, what is it?
-
-Introduction
-
-
-
+Problem 2.
 
 ```{r Read_Data}
 flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))#%>%
@@ -101,13 +72,3 @@ flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))#%>
 ```{r}
 gg_miss_var(flower)
 ```
-
-```{r}
-#check for missing variables
-gg_miss_var(flower)
-```
-
-```{r}
-
-```
-
