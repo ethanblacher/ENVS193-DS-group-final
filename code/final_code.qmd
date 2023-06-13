@@ -66,6 +66,11 @@ subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum)
 gg_miss_var(kangaroo)
 ```
 
+<<<<<<< HEAD
+Assumptions:
+
+We used the Kruskal-Wallis test because it is a non-parametric alternative to the one-way ANOVA that accounts for discrete data. The test tells us if there are significant differences among mounds, but does not reveal which the differences between individual mounds. The data meets the assumptions for the Kruskal-Wallis test, because it has the categorical predictor variables (mound locations), the samples were collected independently, and each mound has at least 5 observations.
+=======
 
 
 
@@ -100,6 +105,7 @@ table <- tidy(seed_model, conf.int = TRUE) %>%
 
 table
 ```
+>>>>>>> e321bcaca55d48582637574ae7ea4337960baaba
 
 
 Null: Kangaroo mound locations has no impact on total seed numbers
@@ -121,11 +127,88 @@ ggplot(data= flower, aes(x=nr_seeds))+
 gg_miss_var(flower)
 ```
 
-```{r Drop_NA}
-flower_subset <- flower %>% 
-  #create a new dataset of sarr, which drops the missing data
-  drop_na(nr_seeds)
+```{r skim-dataset}
+skim(flower)
 ```
 
-```{}
+```{r pairs-plot}
+#| fig.width: 12
+#| fig.height: 12
+#| out.width: 90%
+#| fig.align: center
+flower %>%
+  #take out site
+  select(!species)%>%
+ggpairs()
+```
+
+```{r models}
+# linear model, we know this is wrong
+flowermod1 <- lm(nr_seeds~treatment+species+total_nr_infl, data = flower)
+
+# generalized linear model with Poisson distribution
+flowermod2 <- glm(nr_seeds~treatment+species+total_nr_infl, data = flower, family="poisson")
+
+flowermod2.a <- glm(nr_seeds~treatment+species+total_nr_infl, data = flower, family="poisson")
+
+# generalized linear model with negative binomial distribution
+flowermod3 <- glm.nb(nr_seeds~treatment+species+total_nr_infl, data = flower)
+
+flowermod3.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl, data = flower, family = "nbinom2")
+
+# generalized linear model with Poisson distribution and random effect of site
+
+
+# generalized linear model with negative binomial distribution and random effect of site
+
+```
+
+```{r model-residuals}
+#| fig.height: 6
+#| fig.width: 8
+#| fig.align: center
+
+# check diagnostics
+simulateResiduals(flowermod1, plot=TRUE)
+simulateResiduals(flowermod2, plot =TRUE)
+simulateResiduals(flowermod3, plot =TRUE)
+```
+
+```{r choosing-model}
+model.sel(flowermod1,flowermod2, flowermod3)
+
+```
+
+```{r summaries}
+# model object
+flowermod3
+
+# summary 
+summary(flowermod3)
+
+# confidence intervals
+confint(flowermod3)
+
+# adjusted R2
+r.squaredGLMM(flowermod3)
+```
+
+```{r}
+# model object in table
+flowermod3%>%
+  as_flextable()
+#alternative to above ^
+tidy(flowermod3)%>%
+flextable()
+```
+
+```{r visualization}
+#| fig.width: 12
+#| fig.height: 10
+#| out.width: 90%
+#| fig.align: center
+
+plot(ggpredict(flowermod3, terms=c("treatment", "total_nr_infl")), add.data = TRUE)
+
+plot(ggpredict(flowermod3, terms = c("treatment", "total_nr_infl", "species")), add.data=TRUE)
 ```
