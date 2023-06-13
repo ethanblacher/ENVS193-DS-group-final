@@ -32,7 +32,21 @@ library(GGally)
 library(MuMIn)
 ```
 
-Introduction
+Introduction:  
+Write a 5-10 sentence introduction to the analysis you conduct. Some useful information
+could include (but is not limited to):
+a. What are Kangaroo rats?
+b. Why might people care about them?
+c. Why do you think it could be useful and/or important to predict individual biomass
+from morphological, physiological, or taxonomic characteristics?
+d. What questions are you addressing?
+e. What hypotheses are you testing?
+f. Include 3-5 in-text citations of peer-reviewed work.
+
+In order to ensure plant species diversity within a given environment, the persistence of a diverse seed bank is essential as oftentimes seed bank diveristy is a key indicator to population persistence (J.P. Bakker). With that said, seed survival, which is largely dictated by a diverse seed bank, is highly correlated with population growth rates for many plant species (Adams and Marsh). One way that seed survival and, consequently, seed bank diversity is encouraged is through disturbance, as small-scale disturbances to an ecosystem are known to increase heterogeneity and plant diversity within that ecosystem (Koontz and Simpson). In the Chihuahuan Desert grassland, kangaroo rat mounds are considered small-scale disturbances as these mounds provide micro-habitats that create "safe-spaces" for seed accumulation where plant populations can establish, increasing plant diversity and community structure (Koontz and Simpson). With that being said, this study aims to uncover how total seed count differs between different kangaroo rat mound locations to gain a better understanding of what specific properties of kangaroo rat mounds aid in diversifying seed plants and adult plant communities. 
+
+this will likely need some work but just a start^
+
 
 Methods
 
