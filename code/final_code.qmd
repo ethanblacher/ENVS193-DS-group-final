@@ -32,6 +32,8 @@ library(GGally)
 library(MuMIn)
 ```
 
+Problem 1: How does total number differ between kangaroo rat mound locations?
+
 Introduction
 
 Methods
@@ -53,7 +55,14 @@ Null: Kangaroo mound locations has no impact on total seed numbers
 
 Alternate: Kangaroo mound locations has an impact on total seed numbers
 
-Problem 2.
+
+
+Problem 2: How does seed count vary with plot type (shrub or open), plant species, and total number of inflorescences? Is there a simpler model that explains seed count, and if so, what is it?
+
+Introduction
+
+
+
 
 ```{r Read_Data}
 flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))%>%
@@ -61,3 +70,13 @@ flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))%>%
   clean_names()%>%
   select(treatment, species, total_nr_infl)
 ```
+
+```{r}
+#check for missing variables
+gg_miss_var(flower)
+```
+
+```{r}
+
+```
+
