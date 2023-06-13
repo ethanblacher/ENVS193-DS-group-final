@@ -59,8 +59,17 @@ subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum)
 ```
 
 ```{r}
+#check for missing data
 gg_miss_var(kangaroo)
 ```
+
+Assumptions: 
+
+We used the Kruskal-Wallis test because it is a non-parametric alternative to the one-way ANOVA that accounts for discrete data. The test tells us if there are significant differences among mounds, but does not reveal which the differences between individual mounds. 
+The data meets the assumptions for the Kruskal-Wallis test, because it has the categorical predictor variables (mound locations), the samples were collected independently, and each mound has at least 5 observations.
+
+
+
 
 Null: Kangaroo mound locations has no impact on total seed numbers
 
