@@ -1,3 +1,5 @@
+Readme
+
 # ENVS193-DS-group-final
 
 # Problem 1.
@@ -17,7 +19,7 @@ To access the the data used for the project as well as ancillary data, use the w
 
 4. Methodological information
 
-In this experiment, 25 active kangaroo rat mounds were found in a grassland. Out of these, 10 mounds were randomly chosen and marked for further study. Soil samples were collected from these selected mounds. Ten active mounds were randomly chosen again, and sub-samples were taken from different locations: the base of the mound, one meter away from the base (surrounding), at the edge of black grama grass clumps (edge), and in the inter-space between black grama grass clumps (inter-space). Soil samples were collected using an auger and analyzed for seed accumulation. The percent cover of different physical variables such as bare soil, vegetation, litter, gravel, and animal disturbance was recorded in a 900cm2 area at each sample location. The soil samples were dried, sifted, and then floated in a salt solution to separate seeds from the soil. The viability and count of seeds were determined, and eight target taxa were identified based on their occurrence. The identified taxa included spring annuals, perennial forbs, and fall-flowering perennials. Species-level identification was not possible for some seeds, so they were analyzed at the genus level. Viability testing was done using the pressure method.
+In this experiment, 25 kangaroo rat mounds were found in a grassland at the Sevilleta National Wildlife Refuge in New Mexico. Out of these, 10 mounds were randomly chosen and marked for further study, with soil samples collected via a soil auger (10 cm diameter and 2 cm depth) from these specific mounds. Soil samples were grouped into four sub-categories: the base of the mound (base), one meter away from the base (surrounding), at the edge of black grama grass clumps (edge), and in the inter-space between black grama grass clumps (inter-space). Additionally, while base and surrounding samples were considered on the mound, edge and  inter-space samples were considered off the mound in this experiment. Furthermore, the surrounding areas (within a 900cm2 area from each sample) were recorded to observe the percent cover of undisturbed bare soil, vegetation, litter, gravel and animal disturbance to examine their impacts on seed accumulation. The soil samples were dried in an over for two days at 50 degrees celsius, finely sifted to ensure the smallest seeds were recorded, and then floated in a salt solution and dried again. Eight target taxa were identified due to their ample amount at a nearby site. The identified taxa included four spring annuals, three perennial forbs that flower in spring, and one perennial forbs that flowers in fall. Species-level identification was not possible for certain seeds, so they were analyzed at the genus level. Viability testing was done using the pressure method, with identification performed by a reference collection along with the seeds already collected.
 
 5. Data-specific information
 
@@ -26,6 +28,7 @@ The data included species-level identification ("species" column) along with a f
 
 
 # Problem 2.
+
 
 1. General Information
 
@@ -41,7 +44,7 @@ To access the the data used for the project as well as ancillary data, use the w
 
 4. Methodological information
 
-There were multiple different data sets, but since we are just focused on the data entity invoving seed counts, that is the methods which I will elaborate on. Seeds were collected from five main species: GEUROS, KOBMYO, CARRUP, AREFEN, and MINOBT. Collection was done from plants that underwent individual-level flowering phenology assessment. To prevent loss of early-flowered seeds, AREFEN stalks were bagged with organza bags before senescence. Seed pods were collected between late August and late September when they were mature, indicated by a brown color and readiness to release seeds. Weekly visits were made to each plot during this period to collect all set seeds. The seeds were placed in taped coin envelopes labeled with species, toothpick color, shrub and plot numbers, inflorescence count, and collection date. The envelopes were stored in the refrigerator until seed counting. Viable seeds, distinguished by plumpness and avoidance of obviously aborted seeds, were counted after breaking up the dried bud. Individual seed counts were recorded, and the seeds were returned to their respective envelopes. Group weighing was performed using a microbalance.
+There were multiple different data sets, but since we are just focused on the data entity involving seed counts, that is the methods which I will elaborate on. Seeds were collected from five main species: GEUROS, KOBMYO, CARRUP, AREFEN, and MINOBT, the same plants of the individual-level flowering phenology experiment. To prevent loss of early-flowered seeds, AREFEN stalks were bagged with organza bags before showing signs of deteriorating. When seed pods were deemed mature (brown with seeds ready to come out), which was anytime between late August to late September, they were collected and placed in taped coin envelope. The envelopes were labeled with species, toothpick color, shrub and plot numbers, inflorescence count, and collection date. The envelopes were then stored in the refrigerator until seed counting. Viable seeds, distinguished by plumpness and avoidance of obviously aborted seeds, were counted after breaking up the dried bud with their hands. Individual seed counts were recorded, and the seeds were returned to their respective envelopes. Finally, the seeds were underwent a group weighing by a microbalance.
 
 5. Data-specific information
 
