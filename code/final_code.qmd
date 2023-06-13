@@ -55,7 +55,7 @@ other_values_to_remove <- c("soil", "dist", "gravel", "litter", "plant")
 # Remove rows with specific values in the 'species' column
 kangaroo_filtered <- kangaroo_filtered[!(kangaroo_filtered$species %in% other_values_to_remove), ]
 # Calculate the sum of 'seeds' column based on different values in the 'mnd' column
-subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum)
+subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum) 
 
 ```
 
@@ -64,9 +64,41 @@ subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum)
 gg_miss_var(kangaroo)
 ```
 
+<<<<<<< HEAD
 Assumptions:
 
 We used the Kruskal-Wallis test because it is a non-parametric alternative to the one-way ANOVA that accounts for discrete data. The test tells us if there are significant differences among mounds, but does not reveal which the differences between individual mounds. The data meets the assumptions for the Kruskal-Wallis test, because it has the categorical predictor variables (mound locations), the samples were collected independently, and each mound has at least 5 observations.
+=======
+
+Poisson regression model
+
+
+
+```{r}
+seed_model <- glm(seeds ~ mnd, data = kangaroo_filtered, family = "poisson")
+
+summary(seed_model)
+```
+
+```{r}
+table <- tidy(seed_model, conf.int = TRUE) %>% 
+  #change p value numbers if they are really small 
+  mutate(p.value = case_when(p.value < 0.001 ~ "< 0.001")) %>% 
+  #change the estimates, standard error, and t-statistics to round to __ digits 
+  mutate(statistic = round(statistic, digits = 3)) %>%
+  mutate(estimate = round(estimate, digits = 3)) %>%
+  mutate(std.error = round(std.error, digits = 3)) %>%
+  mutate(conf.low= round(conf.low, digits = 3)) %>%
+  mutate(conf.high = round(conf.high, digits = 3)) %>%
+  #using mutate
+  #make it into a flextable 
+  flextable() %>% 
+  #fit it to the viewer
+  autofit()
+
+table
+```
+>>>>>>> e321bcaca55d48582637574ae7ea4337960baaba
 
 Null: Kangaroo mound locations has no impact on total seed numbers
 
