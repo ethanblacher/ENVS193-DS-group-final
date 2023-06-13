@@ -83,10 +83,14 @@ Introduction
 
 
 ```{r Read_Data}
-flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))%>%
+flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))#%>%
     #make the column names clear
-  clean_names()%>%
-  select(treatment, species, total_nr_infl)
+#  clean_names()%>%
+#  select(treatment, species, total_nr_infl) mabye add some other columns
+```
+
+```{r}
+gg_miss_var(flower)
 ```
 
 ```{r}
