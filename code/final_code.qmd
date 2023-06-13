@@ -30,6 +30,13 @@ library(corrplot)
 library(AICcmodavg)
 library(GGally)
 library(MuMIn)
+library(MASS) # have to read this in before tidyverse 
+library(lme4)
+library(glmmTMB) # ok if you don't have this - just comment it out
+
+# diagnostics and model info
+library(DHARMa)
+library(lmtest)
 ```
 
 Introduction:\
@@ -115,7 +122,7 @@ ggplot(data= flower, aes(x=nr_seeds))+
   geom_histogram(bins=13)
 ```
 
-```{r}
+```{r missing_data_viz}
 gg_miss_var(flower)
 ```
 
@@ -130,7 +137,7 @@ skim(flower)
 #| fig.align: center
 flower %>%
   #take out site
-  select(!species)%>%
+ select(!species)%>%
 ggpairs()
 ```
 
@@ -149,10 +156,14 @@ flowermod3 <- glm.nb(nr_seeds~treatment+species+total_nr_infl, data = flower)
 flowermod3.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl, data = flower, family = "nbinom2")
 
 # generalized linear model with Poisson distribution and random effect of site
+flowermod4 <- glmer(nr_seeds~treatment+species+total_nr_infl + (1|site), data = flower, family = "poisson")
 
+flowermod4.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|site), data = flower, family = "poisson")
 
 # generalized linear model with negative binomial distribution and random effect of site
+flowermod5 <- glmer.nb(nr_seeds~treatment+species+total_nr_infl + (1|site), data = flowermod)
 
+flowermod5.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|site), data = flower, family = "nbinom2")
 ```
 
 ```{r model-residuals}
@@ -162,8 +173,14 @@ flowermod3.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl, data = flower,
 
 # check diagnostics
 simulateResiduals(flowermod1, plot=TRUE)
-simulateResiduals(flowermod2, plot =TRUE)
-simulateResiduals(flowermod3, plot =TRUE)
+simulateResiduals(flowermod2, plot=TRUE)
+simulateResiduals(flowermod2.a, plot =TRUE)
+simulateResiduals(flowermod3, plot=TRUE)
+simulateResiduals(flowermod3.a, plot =TRUE)
+#simulateResiduals(flowermod4, plot=TRUE)
+#simulateResiduals(flowermod4.a, plot=TRUE)
+#simulateResiduals(flowermod5, plot=TRUE)
+#simulateResiduals(flowermod5.a, plot=TRUE)
 ```
 
 ```{r choosing-model}
