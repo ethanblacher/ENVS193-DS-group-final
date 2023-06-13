@@ -55,7 +55,7 @@ other_values_to_remove <- c("soil", "dist", "gravel", "litter", "plant")
 # Remove rows with specific values in the 'species' column
 kangaroo_filtered <- kangaroo_filtered[!(kangaroo_filtered$species %in% other_values_to_remove), ]
 # Calculate the sum of 'seeds' column based on different values in the 'mnd' column
-subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum)
+subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum) 
 
 ```
 
@@ -64,13 +64,10 @@ subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum)
 gg_miss_var(kangaroo)
 ```
 
-Assumptions: 
-
-We used the Kruskal-Wallis test because it is a non-parametric alternative to the one-way ANOVA that accounts for discrete data. The test tells us if there are significant differences among mounds, but does not reveal which the differences between individual mounds. 
-The data meets the assumptions for the Kruskal-Wallis test, because it has the categorical predictor variables (mound locations), the samples were collected independently, and each mound has at least 5 observations.
-
 
 Poisson regression model
+
+
 
 ```{r}
 seed_model <- glm(seeds ~ mnd, data = kangaroo_filtered, family = "poisson")
