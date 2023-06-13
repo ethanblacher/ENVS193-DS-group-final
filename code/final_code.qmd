@@ -69,6 +69,15 @@ kangaroo <- read_csv(here("data", "prob1_data.csv"))%>%
 gg_miss_var(kangaroo)
 ```
 
+```{r}
+ggplot(data = kangaroo) +
+  stat_qq(aes(sample = seeds)) +
+  stat_qq_line(aes(sample = seeds), color = "red") +
+  facet_wrap(~ loc)
+```
+
+
+
 Null: Kangaroo mound locations has no impact on total seed numbers
 
 Alternate: Kangaroo mound locations has an impact on total seed numbers
