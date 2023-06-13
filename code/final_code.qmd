@@ -56,6 +56,7 @@ other_values_to_remove <- c("soil", "dist", "gravel", "litter", "plant")
 kangaroo_filtered <- kangaroo_filtered[!(kangaroo_filtered$species %in% other_values_to_remove), ]
 # Calculate the sum of 'seeds' column based on different values in the 'mnd' column
 subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum)
+
 ```
 
 ```{r}
@@ -69,12 +70,23 @@ Alternate: Kangaroo mound locations has an impact on total seed numbers
 Problem 2.
 
 ```{r Read_Data}
-flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))#%>%
-    #make the column names clear
-#  clean_names()%>%
-#  select(treatment, species, total_nr_infl) mabye add some other columns
+flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))
+```
+
+```{r histogram}
+ggplot(data= flower, aes(x=nr_seeds))+
+  geom_histogram(bins=13)
 ```
 
 ```{r}
 gg_miss_var(flower)
+```
+
+```{r Drop_NA}
+flower_subset <- flower %>% 
+  #create a new dataset of sarr, which drops the missing data
+  drop_na(nr_seeds)
+```
+
+```{}
 ```
