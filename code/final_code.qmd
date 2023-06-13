@@ -43,6 +43,8 @@ Methods
 
 Results
 
+(Add in a blurb about cleaning and wrangling data)
+
 ```{r Read_Data}
 # Read the CSV file into a data frame
 kangaroo <- read_csv(here("data", "prob1_data.csv"))
@@ -65,14 +67,19 @@ gg_miss_var(kangaroo)
 ```
 
 
+
+
 Poisson regression model
-
-
 
 ```{r}
 seed_model <- glm(seeds ~ mnd, data = kangaroo_filtered, family = "poisson")
 
 summary(seed_model)
+```
+
+```{r}
+par(mfrow = c(2, 2))
+plot(seed_model)
 ```
 
 ```{r}
@@ -93,6 +100,7 @@ table <- tidy(seed_model, conf.int = TRUE) %>%
 
 table
 ```
+
 
 Null: Kangaroo mound locations has no impact on total seed numbers
 
