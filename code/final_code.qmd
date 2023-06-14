@@ -115,6 +115,7 @@ Problem 2.
 
 ```{r Read_Data}
 flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))
+clean_names(flower)
 ```
 
 ```{r histogram}
@@ -126,8 +127,20 @@ ggplot(data= flower, aes(x=nr_seeds))+
 gg_miss_var(flower)
 ```
 
+
+```{r}
+flower_subset <- flower %>% 
+  #create a new dataset of flower, which drops the missing data from nr_seeds because its pertinent to our study
+  drop_na(nr_seeds)%>%
+  #removed a few columns that were not relevant to the experiment for our purposes, mainly just ids
+  mutate(notes = NULL, shrub_num = NULL, tag_num= NULL, plant_nr = NULL)
+```
+
+
+
+
 ```{r skim-dataset}
-skim(flower)
+skim(flower_subset)
 ```
 
 ```{r pairs-plot}
@@ -135,35 +148,35 @@ skim(flower)
 #| fig.height: 12
 #| out.width: 90%
 #| fig.align: center
-flower %>%
+#flower_subset %>%
   #take out site
- select(!species)%>%
-ggpairs()
+# select(!species)%>%
+ggpairs(flower_subset)
 ```
 
 ```{r models}
 # linear model, we know this is wrong
-flowermod1 <- lm(nr_seeds~treatment+species+total_nr_infl, data = flower)
+flowermod1 <- lm(nr_seeds~treatment+species+total_nr_infl, data = flower_subset)
 
 # generalized linear model with Poisson distribution
-flowermod2 <- glm(nr_seeds~treatment+species+total_nr_infl, data = flower, family="poisson")
+flowermod2 <- glm(nr_seeds~treatment+species+total_nr_infl, data = flower_subset, family="poisson")
 
-flowermod2.a <- glm(nr_seeds~treatment+species+total_nr_infl, data = flower, family="poisson")
+flowermod2.a <- glm(nr_seeds~treatment+species+total_nr_infl, data = flower_subset, family="poisson")
 
 # generalized linear model with negative binomial distribution
-flowermod3 <- glm.nb(nr_seeds~treatment+species+total_nr_infl, data = flower)
+flowermod3 <- glm.nb(nr_seeds~treatment+species+total_nr_infl, data = flower_subset)
 
-flowermod3.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl, data = flower, family = "nbinom2")
+flowermod3.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl, data = flower_subset, family = "nbinom2")
 
 # generalized linear model with Poisson distribution and random effect of site
-flowermod4 <- glmer(nr_seeds~treatment+species+total_nr_infl + (1|site), data = flower, family = "poisson")
+flowermod4 <- glmer(nr_seeds~treatment+species+total_nr_infl + (1|aspect), data = flower_subset, family = "poisson")
 
-flowermod4.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|site), data = flower, family = "poisson")
+flowermod4.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|aspect), data = flower_subset, family = "poisson")
 
 # generalized linear model with negative binomial distribution and random effect of site
-flowermod5 <- glmer.nb(nr_seeds~treatment+species+total_nr_infl + (1|site), data = flowermod)
+flowermod5 <- glmer.nb(nr_seeds~treatment+species+total_nr_infl + (1|aspect), data = flower_subset)
 
-flowermod5.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|site), data = flower, family = "nbinom2")
+flowermod5.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|aspect), data = flower_subset, family = "nbinom2")
 ```
 
 ```{r model-residuals}
@@ -177,10 +190,10 @@ simulateResiduals(flowermod2, plot=TRUE)
 simulateResiduals(flowermod2.a, plot =TRUE)
 simulateResiduals(flowermod3, plot=TRUE)
 simulateResiduals(flowermod3.a, plot =TRUE)
-#simulateResiduals(flowermod4, plot=TRUE)
-#simulateResiduals(flowermod4.a, plot=TRUE)
-#simulateResiduals(flowermod5, plot=TRUE)
-#simulateResiduals(flowermod5.a, plot=TRUE)
+simulateResiduals(flowermod4, plot=TRUE)
+simulateResiduals(flowermod4.a, plot=TRUE)
+simulateResiduals(flowermod5, plot=TRUE)
+simulateResiduals(flowermod5.a, plot=TRUE)
 ```
 
 ```{r choosing-model}
