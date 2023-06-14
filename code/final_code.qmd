@@ -189,6 +189,8 @@ flowermod5 <- glmer.nb(nr_seeds~treatment+species+total_nr_infl + (1|aspect), da
 flowermod5.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|aspect), data = flower_subset, family = "nbinom2")
 ```
 
+
+
 ```{r model-residuals}
 #| fig.height: 6
 #| fig.width: 8
@@ -244,3 +246,23 @@ plot(ggpredict(flowermod3, terms=c("treatment", "total_nr_infl")), add.data = TR
 
 plot(ggpredict(flowermod3, terms = c("treatment", "total_nr_infl", "species")), add.data=TRUE)
 ```
+
+
+```{r}
+predictions <- ggpredict(flowermod3, terms = c("treatment", "total_nr_infl", "species")) %>% 
+  rename(treatment = group,
+         species = facet)
+
+ggplot(flower_subset, aes(x = total_nr_infl, y = nr_seeds, fill = treatment)) +
+  geom_point(aes(color = treatment), alpha = 0.5) +
+  facet_wrap(~species, scales = "free_y") +
+  geom_line(data = predictions, aes(x = x, y = predicted, color = treatment)) +
+  geom_ribbon(data = predictions, aes(x = x, y = predicted, ymin = conf.low, ymax = conf.high, fill = treatment), alpha = 0.2) +
+  scale_fill_manual(values = c("yes" = "blue", "no" = "orange")) +
+  scale_color_manual(values = c("yes" = "blue", "no" = "orange")) +
+  theme_bw() +
+  facet_wrap(~species, scales = "free_y") +
+  labs(fill = "Mined", color = "Mined")
+
+```
+
