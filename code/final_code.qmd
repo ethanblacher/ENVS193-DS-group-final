@@ -50,6 +50,8 @@ Methods
 
 Results
 
+(Add in a blurb about cleaning and wrangling data)
+
 ```{r Read_Data}
 # Read the CSV file into a data frame
 kangaroo <- read_csv(here("data", "prob1_data.csv"))
@@ -71,20 +73,28 @@ subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum)
 gg_miss_var(kangaroo)
 ```
 
-<<<<<<< HEAD
+```{r}
+kruskal_test <- kruskal.test(seeds ~ mnd, data = kangaroo_filtered)
+
+kruskal_test
+```
+
 Assumptions:
 
 We used the Kruskal-Wallis test because it is a non-parametric alternative to the one-way ANOVA that accounts for discrete data. The test tells us if there are significant differences among mounds, but does not reveal which the differences between individual mounds. The data meets the assumptions for the Kruskal-Wallis test, because it has the categorical predictor variables (mound locations), the samples were collected independently, and each mound has at least 5 observations.
-=======
+
 
 Poisson regression model
-
-
 
 ```{r}
 seed_model <- glm(seeds ~ mnd, data = kangaroo_filtered, family = "poisson")
 
 summary(seed_model)
+```
+
+```{r}
+par(mfrow = c(2, 2))
+plot(seed_model)
 ```
 
 ```{r}
@@ -105,7 +115,7 @@ table <- tidy(seed_model, conf.int = TRUE) %>%
 
 table
 ```
->>>>>>> e321bcaca55d48582637574ae7ea4337960baaba
+
 
 Null: Kangaroo mound locations has no impact on total seed numbers
 
