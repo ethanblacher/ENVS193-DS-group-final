@@ -33,24 +33,72 @@ library(lmtest)
 
 ```{r}
 # Read the CSV file into a data frame
-kangaroo <- read_csv(here("data", "prob1_data.csv"))
-# Define values to remove from the 'loc' column
-values_to_remove <- c("I", "E")
-# Remove rows with specific values in the 'loc' column
-kangaroo_filtered <- kangaroo[!(kangaroo$loc %in% values_to_remove), ]
-# Define values to remove from the 'species' column
-other_values_to_remove <- c("soil", "dist", "gravel", "litter", "plant")
-# Remove rows with specific values in the 'species' column
-kangaroo_filtered <- kangaroo_filtered[!(kangaroo_filtered$species %in% other_values_to_remove), ]
-# Calculate the sum of 'seeds' column based on different values in the 'mnd' column
-subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum) 
+kangaroo_summary <- kangaroo %>% 
+  mutate(dir = NULL) 
+  other_values_to_remove <- c("soil", "dist", "gravel", "litter", "plant")
+
+kangaroo_summary2 <- kangaroo_summary2[!kangaroo_summary2$species %in% other_values_to_remove]
+
+subtotal <- aggregate(seeds ~ loc, data = kangaroo_summary2, FUN = sum)
+  
 ```
 
 ```{r}
 #check for missing data
-gg_miss_var(kangaroo)
+gg_miss_var(kangaroo_summary2)
 ```
 
 ```{r}
+#create qq plot 
+ggplot(data= kangaroo_summary2, aes(sample = seeds)) +
+  stat_qq()+
+  stat_qq_line(aes(sample = seeds), color = "red")+
+  facet_wrap(~loc)
+```
 
+```{r}
+levene_test <- leveneTest(seeds ~ loc, data = kangaroo_summary2)
+
+levene_table <- tidy(levene_test) %>% 
+  mutate(statistic = round(statistic, digits = 3)) %>% 
+  mutate(p.value = case_when(p.value < 0.001 ~ "< 0.001")) %>% 
+  flextable() %>% 
+  autofit()
+
+levene_table
+```
+
+```{r}
+kruskal_test <- kruskal.test(seeds ~ loc, data = kangaroo_summary2)
+
+kruskal_table <- tidy(kruskal_test) %>% 
+  mutate(p.value = case_when(p.value < 0.001 ~ "< 0.001")) %>% 
+  flextable() %>% 
+  autofit()
+
+kruskal_table
+```
+
+```{r}
+wilcox_test <- pairwise.wilcox.test(kangaroo_summary2$seeds, kangaroo_summary2$loc, p.adjust.method = "bonferroni")
+
+wilcox_table <- tidy(wilcox_test) %>% 
+  flextable() %>% 
+  autofit()
+
+wilcox_table
+```
+
+```{r}
+negbinomial_model <- glm.nb(seeds ~ loc, data = kangaroo_summary2)
+
+negbinomial_table <- tidy(negbinomial_model) %>% 
+  flextable() %>% 
+  autofit()
+
+negbinomial_table 
+```
+
+```{r}
+ggplot
 ```
