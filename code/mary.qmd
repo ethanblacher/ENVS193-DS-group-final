@@ -4,29 +4,32 @@ format: html
 editor: visual
 ---
 
-## 
+# Problem 1
+
+## Introduction 
+
+In order to ensure plant species diversity within a given environment, the persistence of a diverse seed bank is essential as oftentimes seed bank diveristy is a key indicator to population persistence (Bakker et al., 1996). With that said, seed survival, which is largely dictated by a diverse seed bank, is highly correlated with population growth rates for many plant species (Adams and Marsh, 2005). One way that seed survival and, consequently, seed bank diversity is encouraged is through disturbance, as small-scale disturbances to an ecosystem are known to increase heterogeneity and plant diversity within that ecosystem (Koontz and Simpson, 2010). In the Chihuahuan Desert grassland, kangaroo rat mounds are considered small-scale disturbances as these mounds provide micro-habitats that create "safe-spaces" for seed accumulation where plant populations can establish, increasing plant diversity and community structure (Koontz and Simpson, 2010). With that being said, this study aims to uncover how total seed count differs between different kangaroo rat mound locations to gain a better understanding of what specific properties of kangaroo rat mounds aid in diversifying seed plants and adult plant communities.
+
+## Methods
 
 ```{r}
-# should haves (from last week)
+# load in packages
 library(tidyverse)
 library(here)
 library(janitor)
 library(ggeffects)
 library(performance)
-library(naniar) # or equivalent
-library(flextable) # or equivalent
+library(naniar) 
+library(flextable)
 library(car)
 library(broom)
-# would be nice to have
 library(corrplot)
 library(AICcmodavg)
 library(GGally)
 library(MuMIn)
-library(MASS) # have to read this in before tidyverse 
+library(MASS) 
 library(lme4)
-library(glmmTMB) # ok if you don't have this - just comment it out
-
-# diagnostics and model info
+library(glmmTMB) 
 library(DHARMa)
 library(lmtest)
 ```
@@ -34,12 +37,23 @@ library(lmtest)
 ```{r}
 # Read the CSV file into a data frame
 kangaroo_summary <- kangaroo %>% 
+  #get rid of dir column
   mutate(dir = NULL) 
-  other_values_to_remove <- c("soil", "dist", "gravel", "litter", "plant")
+#create object of all rows containing these values from the species column, their results were presented as percentages and messed up data
+other_values_to_remove <- c("soil", "dist", "gravel", "litter", "plant")
 
-kangaroo_summary2 <- kangaroo_summary2[!kangaroo_summary2$species %in% other_values_to_remove]
+#remove the values listed above to create final object 
+kangaroo_summary2 <- kangaroo_summary[!kangaroo_summary$species %in% other_values_to_remove, ] %>% 
+#rename items that will be used later in graphs
+  rename(Location = loc, Mounds = mnd) %>% 
+  mutate(Location = case_when(
+    Location == "B" ~ "Base", 
+    Location == "D" ~ "Surrounding",
+    Location == "E" ~ "Edge", 
+    Location == "I" ~ "Interspace"))
 
-subtotal <- aggregate(seeds ~ loc, data = kangaroo_summary2, FUN = sum)
+#create an object that has a total seed count per location 
+subtotal <- aggregate(seeds ~ Location, data = kangaroo_summary2, FUN = sum)
   
 ```
 
@@ -49,17 +63,20 @@ gg_miss_var(kangaroo_summary2)
 ```
 
 ```{r}
-#create qq plot 
+#create qq plot to get the distribution of data for each location
 ggplot(data= kangaroo_summary2, aes(sample = seeds)) +
   stat_qq()+
   stat_qq_line(aes(sample = seeds), color = "red")+
-  facet_wrap(~loc)
+  facet_wrap(~Location)
 ```
 
 ```{r}
-levene_test <- leveneTest(seeds ~ loc, data = kangaroo_summary2)
+#run a levene test using leveneTest to check variances
+levene_test <- leveneTest(seeds ~ Location, data = kangaroo_summary2)
 
+#turn results into readable flextable 
 levene_table <- tidy(levene_test) %>% 
+#clean up table
   mutate(statistic = round(statistic, digits = 3)) %>% 
   mutate(p.value = case_when(p.value < 0.001 ~ "< 0.001")) %>% 
   flextable() %>% 
@@ -69,30 +86,46 @@ levene_table
 ```
 
 ```{r}
-kruskal_test <- kruskal.test(seeds ~ loc, data = kangaroo_summary2)
+#run kruskal.test to determine if there is a signficant difference among the 4 locations
+kruskal_test <- kruskal.test(seeds ~ Location, data = kangaroo_summary2)
 
+#create readable flextable
 kruskal_table <- tidy(kruskal_test) %>% 
-  mutate(p.value = case_when(p.value < 0.001 ~ "< 0.001")) %>% 
+  mutate(statistic = round(statistic, digits = 3)) %>% 
+  mutate(p.value = round(p.value, digits = 4)) %>% 
   flextable() %>% 
   autofit()
 
 kruskal_table
+summary(kruskal_test)
 ```
 
 ```{r}
-wilcox_test <- pairwise.wilcox.test(kangaroo_summary2$seeds, kangaroo_summary2$loc, p.adjust.method = "bonferroni")
+#run post hoc test using pairwise.wilcox.test to compare between all combinations of locations, add bonferroni corrections
+wilcox_test <- pairwise.wilcox.test(kangaroo_summary2$seeds, kangaroo_summary2$Location, p.adjust.method = "bonferroni")
 
+#create readable flextable
 wilcox_table <- tidy(wilcox_test) %>% 
+#clean up table
+  mutate(p.value = round(p.value, digits = 4)) %>% 
   flextable() %>% 
   autofit()
 
 wilcox_table
+summary(wilcox_test)
 ```
 
 ```{r}
-negbinomial_model <- glm.nb(seeds ~ loc, data = kangaroo_summary2)
+#create negative binomial model using glm.nb 
+negbinomial_model <- glm.nb(seeds ~ Location, data = kangaroo_summary2)
 
+#create flextable for negative bonimial results 
 negbinomial_table <- tidy(negbinomial_model) %>% 
+#clean up table
+  mutate(p.value = round(p.value, digits = 5)) %>% 
+  mutate(estimate = round(estimate, digits = 3)) %>% 
+  mutate(std.error = round(std.error, digits = 3)) %>% 
+  mutate(statistic = round(statistic, digits = 3)) %>% 
   flextable() %>% 
   autofit()
 
@@ -100,5 +133,81 @@ negbinomial_table
 ```
 
 ```{r}
-ggplot
+#look at details of negative binomial model
+summary(negbinomial_model)
+
+#getting IRR values using the exp(coef()) test
+exp_coef <- exp(coef(negbinomial_model))
+
+exp_coef
 ```
+
+```{r}
+#create column plot to compare across the different mounds 
+ggplot(kangaroo_summary2, aes(x = Location, y = seeds, fill = Location)) +
+  geom_col() +
+#change fill colors of locations
+  scale_fill_manual(values = c("lightblue", "pink", "lavender", "grey")) + 
+  #add labels
+  labs(y = "Seeed Counts ", title = "Seed Abundance Per Location Separated by the Different Mounds", caption = "Data source: Koontz and Simpson (2010), The composition of seed banks on kangaroo rat (Dipodomys spectabilis) mounds in a Chihuahuan Desert grassland") + 
+  #separate by the different mounds
+  facet_wrap(~Mounds) +
+  theme_classic() +
+  theme(#add and edit legend 
+        legend.position = c(0.85, 0.13),
+        legend.text = element_text(size = 10),
+        legend.title = element_text(size = 12),
+        #get rid of grid marks
+        panel.grid = element_blank(), 
+        #get rid of axis ticks and text
+        axis.ticks.x = element_blank(),  
+        axis.text.x = element_blank(),
+        #change font, position, and sizes of axises, caption, and title
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 14, hjust = 0.5),
+        plot.caption = element_text(size = 8, hjust = 0.5, face = "italic"), 
+        plot.title.position = "plot",
+        text = element_text(family = "Times New Roman"))
+  
+```
+
+```{r}
+#create column plot of subtotal data
+ggplot(subtotal, aes(x = Location, y = seeds, fill = Location)) +
+  geom_col() +
+  #add labels
+  labs(x = "Mound Locations", y = "Seed Count", caption = "Data source: Koontz and Simpson (2010), The composition of seed banks on kangaroo rat (Dipodomys spectabilis) mounds in a Chihuahuan Desert grassland", title = "Seed Abundance By Varying Mound Locations", color = "Location") +
+  theme_classic() +
+  #change fill colors of locations
+  scale_fill_manual(values = c("lightblue", "pink", "lavender", "grey")) +
+  theme(#create and edit legend
+        legend.position = c(0.85, 0.7),
+        legend.text = element_text(size = 14),
+        legend.title = element_text(size = 14),
+        #get rid of grids 
+        panel.grid = element_blank(), 
+        #change font, position, and sizes of axises, caption, and title
+        axis.text = element_text(size = 14), 
+        axis.title = element_text(size = 16),
+        plot.title = element_text(size = 18, hjust = 0.5),
+        plot.caption = element_text(size = 12, hjust = 0.5, face = "italic"), 
+        plot.title.position = "plot",
+        text = element_text(family = "Times New Roman"))
+```
+
+## Results 
+
+## Bibliography
+
+Adams, V.M., Marsh, D.M., & Knox, J.S. (2005). Importance of the seed bank for population viability and population monitoring in a threatened wetland herb, *Biological Conservation*, Volume 124(3), 2005, 425-436. <https://doi.org/10.1016/j.biocon.2005.02.001>
+
+Bakker, J.P., et al. (1996). "Seed Banks and Seed Dispersal: Important Topics in Restoration Ecology." *Acta Botanica Neerlandica*, 45(4), 461-490. <https://doi.org/10.1111/j.1438-8677.1996.tb00806.x>
+
+Koontz, T.L., Simpson, H.L. (2010). The composition of seed banks on kangaroo rat (Dipodomys spectabilis) mounds in a Chihuahuan Desert grassland, *Journal of Arid Environments*, 74(10), 2010, 1156-1161. <https://doi.org/10.1016/j.jaridenv.2010.03.008>
+
+# Problem 2
+
+How does seed count vary with plot type (shrub or open), plant species, and total\
+number of inflorescences? Is there a simpler model that explains seed count, and if so, what is it?
+
+## Introduction
