@@ -45,3 +45,12 @@ kangaroo_filtered <- kangaroo_filtered[!(kangaroo_filtered$species %in% other_va
 # Calculate the sum of 'seeds' column based on different values in the 'mnd' column
 subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum) 
 ```
+
+```{r}
+#check for missing data
+gg_miss_var(kangaroo)
+```
+
+```{r}
+
+```
