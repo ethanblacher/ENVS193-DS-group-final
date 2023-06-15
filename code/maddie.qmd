@@ -50,4 +50,9 @@ Caption: Figure 2 displays the difference in the sum total seed count at each mo
 
 # methods: 
 
-cleaning?wrangling: 
+cleaning/wrangling: 
+
+
+missing data: 
+
+Before cleaning the data, there was missing data for the columns "dist_fr_shr", "wt_seeds_mg", "nr_seeds", and "nr_infil_coll". However, after the data was fully cleaned and wrangled, there was no longer missing data because we dropped the "na" values and removed the observations that weren't neccessary to our statistical analysis. It is important to note that there was missing data from "nr_seeds" and "nr_infil_coll" because these observations are included in our statistical analysis, meaning that these missing values have the potential to skew our results. 
