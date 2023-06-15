@@ -5,9 +5,12 @@ format:
     theme: default
 ---
 
- Problem 1:
+# Problem 1:
  
 # Methods:  
+
+cleaning/wrangling: 
+
  
  We used the Kruskal-Wallis test because it is a non-parametric alternative to the one-way ANOVA that accounts for discrete data. This test tells us if there are significant differences between total seed count across different mound locations; however, it does not reveal what the differences in total seed count are between different mound location. Our data meets the assumptions for the Kruskal-Wallis test, because the predictor variables (mound locations) is categorical, the samples were collected independently, and each mound location has over 5 observations. Since the Kruskal test only tells us whether there is a significant difference in total seed count between different mound locations, we also performed a post hoc test a multiple comparison that highlights which groups, mound locations,  differ from each other. **need more here 
 
@@ -43,3 +46,8 @@ Caption: Figure 2 displays the difference in the sum total seed count at each mo
 
 
 
+# Problem 2: 
+
+# methods: 
+
+cleaning?wrangling: 
