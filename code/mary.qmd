@@ -207,7 +207,6 @@ Koontz, T.L., Simpson, H.L. (2010). The composition of seed banks on kangaroo ra
 
 # Problem 2
 
-How does seed count vary with plot type (shrub or open), plant species, and total\
-number of inflorescences? Is there a simpler model that explains seed count, and if so, what is it?
+How does seed count vary with plot type (shrub or open), plant species, and total number of inflorescences? Is there a simpler model that explains seed count, and if so, what is it?
 
 ## Introduction
