@@ -1,0 +1,47 @@
+---
+title: "mary"
+format: html
+editor: visual
+---
+
+## 
+
+```{r}
+# should haves (from last week)
+library(tidyverse)
+library(here)
+library(janitor)
+library(ggeffects)
+library(performance)
+library(naniar) # or equivalent
+library(flextable) # or equivalent
+library(car)
+library(broom)
+# would be nice to have
+library(corrplot)
+library(AICcmodavg)
+library(GGally)
+library(MuMIn)
+library(MASS) # have to read this in before tidyverse 
+library(lme4)
+library(glmmTMB) # ok if you don't have this - just comment it out
+
+# diagnostics and model info
+library(DHARMa)
+library(lmtest)
+```
+
+```{r}
+# Read the CSV file into a data frame
+kangaroo <- read_csv(here("data", "prob1_data.csv"))
+# Define values to remove from the 'loc' column
+values_to_remove <- c("I", "E")
+# Remove rows with specific values in the 'loc' column
+kangaroo_filtered <- kangaroo[!(kangaroo$loc %in% values_to_remove), ]
+# Define values to remove from the 'species' column
+other_values_to_remove <- c("soil", "dist", "gravel", "litter", "plant")
+# Remove rows with specific values in the 'species' column
+kangaroo_filtered <- kangaroo_filtered[!(kangaroo_filtered$species %in% other_values_to_remove), ]
+# Calculate the sum of 'seeds' column based on different values in the 'mnd' column
+subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum) 
+```
