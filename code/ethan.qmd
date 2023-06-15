@@ -1,18 +1,8 @@
 ---
-title: "code_for_final"
-author: Ethan Blacher, Maddie Manzagol, Mary Cadogan
-format: 
-  html:
-    toc: true
-    toc-location: left
-    code-fold: true
-    theme: yeti 
-execute:
-  message: false
-  warning: false
+title: "ethan"
+format: html
+editor: visual
 ---
-
-Problem 1
 
 ```{r Install_Packages}
 # should haves (from last week)
@@ -39,104 +29,21 @@ library(DHARMa)
 library(lmtest)
 ```
 
-Introduction:\
-Write a 5-10 sentence introduction to the analysis you conduct. Some useful information could include (but is not limited to): a. What are Kangaroo rats? b. Why might people care about them? c. Why do you think it could be useful and/or important to predict individual biomass from morphological, physiological, or taxonomic characteristics? d. What questions are you addressing? e. What hypotheses are you testing? f. Include 3-5 in-text citations of peer-reviewed work.
-
-In order to ensure plant species diversity within a given environment, the persistence of a diverse seed bank is essential as oftentimes seed bank diveristy is a key indicator to population persistence (J.P. Bakker). With that said, seed survival, which is largely dictated by a diverse seed bank, is highly correlated with population growth rates for many plant species (Adams and Marsh). One way that seed survival and, consequently, seed bank diversity is encouraged is through disturbance, as small-scale disturbances to an ecosystem are known to increase heterogeneity and plant diversity within that ecosystem (Koontz and Simpson). In the Chihuahuan Desert grassland, kangaroo rat mounds are considered small-scale disturbances as these mounds provide micro-habitats that create "safe-spaces" for seed accumulation where plant populations can establish, increasing plant diversity and community structure (Koontz and Simpson). With that being said, this study aims to uncover how total seed count differs between different kangaroo rat mound locations to gain a better understanding of what specific properties of kangaroo rat mounds aid in diversifying seed plants and adult plant communities.
-
-this will likely need some work but just a start\^
-
-Methods
-
-Results
-
-(Add in a blurb about cleaning and wrangling data)
-
-```{r Read_Data}
-# Read the CSV file into a data frame
-kangaroo <- read_csv(here("data", "prob1_data.csv"))
-# Define values to remove from the 'loc' column
-values_to_remove <- c("I", "E")
-# Remove rows with specific values in the 'loc' column
-kangaroo_filtered <- kangaroo[!(kangaroo$loc %in% values_to_remove), ]
-# Define values to remove from the 'species' column
-other_values_to_remove <- c("soil", "dist", "gravel", "litter", "plant")
-# Remove rows with specific values in the 'species' column
-kangaroo_filtered <- kangaroo_filtered[!(kangaroo_filtered$species %in% other_values_to_remove), ]
-# Calculate the sum of 'seeds' column based on different values in the 'mnd' column
-subtotal <- aggregate(seeds ~ mnd, data = kangaroo_filtered, FUN = sum) 
-
-```
-
-```{r}
-#check for missing data
-gg_miss_var(kangaroo)
-```
-
-```{r}
-kruskal_test <- kruskal.test(seeds ~ mnd, data = kangaroo_filtered)
-
-kruskal_test
-```
-
-Assumptions:
-
-We used the Kruskal-Wallis test because it is a non-parametric alternative to the one-way ANOVA that accounts for discrete data. The test tells us if there are significant differences among mounds, but does not reveal which the differences between individual mounds. The data meets the assumptions for the Kruskal-Wallis test, because it has the categorical predictor variables (mound locations), the samples were collected independently, and each mound has at least 5 observations.
-
-
-Poisson regression model
-
-```{r}
-seed_model <- glm(seeds ~ mnd, data = kangaroo_filtered, family = "poisson")
-
-summary(seed_model)
-```
-
-```{r}
-par(mfrow = c(2, 2))
-plot(seed_model)
-```
-
-```{r}
-table <- tidy(seed_model, conf.int = TRUE) %>% 
-  #change p value numbers if they are really small 
-  mutate(p.value = case_when(p.value < 0.001 ~ "< 0.001")) %>% 
-  #change the estimates, standard error, and t-statistics to round to __ digits 
-  mutate(statistic = round(statistic, digits = 3)) %>%
-  mutate(estimate = round(estimate, digits = 3)) %>%
-  mutate(std.error = round(std.error, digits = 3)) %>%
-  mutate(conf.low= round(conf.low, digits = 3)) %>%
-  mutate(conf.high = round(conf.high, digits = 3)) %>%
-  #using mutate
-  #make it into a flextable 
-  flextable() %>% 
-  #fit it to the viewer
-  autofit()
-
-table
-```
-
-
-Null: Kangaroo mound locations has no impact on total seed numbers
-
-Alternate: Kangaroo mound locations has an impact on total seed numbers
-
-Problem 2.
-
 ```{r Read_Data}
 flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))
 clean_names(flower)
+
 ```
 
 ```{r histogram}
 ggplot(data= flower, aes(x=nr_seeds))+
   geom_histogram(bins=13)
+``
 ```
 
 ```{r missing_data_viz}
 gg_miss_var(flower)
 ```
-
 
 ```{r}
 flower_subset <- flower %>% 
@@ -145,9 +52,6 @@ flower_subset <- flower %>%
   #removed a few columns that were not relevant to the experiment for our purposes, mainly just ids
   mutate(notes = NULL, shrub_num = NULL, tag_num= NULL, plant_nr = NULL)
 ```
-
-
-
 
 ```{r skim-dataset}
 skim(flower_subset)
@@ -188,8 +92,6 @@ flowermod5 <- glmer.nb(nr_seeds~treatment+species+total_nr_infl + (1|aspect), da
 
 flowermod5.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|aspect), data = flower_subset, family = "nbinom2")
 ```
-
-
 
 ```{r model-residuals}
 #| fig.height: 6
@@ -247,7 +149,6 @@ plot(ggpredict(flowermod3, terms=c("treatment", "total_nr_infl")), add.data = TR
 plot(ggpredict(flowermod3, terms = c("treatment", "total_nr_infl", "species")), add.data=TRUE)
 ```
 
-
 ```{r}
 predictions <- ggpredict(flowermod3, terms = c("treatment", "total_nr_infl", "species")) %>% 
   rename(treatment = group,
@@ -265,4 +166,3 @@ ggplot(flower_subset, aes(x = total_nr_infl, y = nr_seeds, fill = treatment)) +
   labs(fill = "Mined", color = "Mined")
 
 ```
-
