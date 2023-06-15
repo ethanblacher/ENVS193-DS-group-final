@@ -209,7 +209,7 @@ simulateResiduals(flowermod5.a, plot=TRUE)
 ```
 
 ```{r choosing-model}
-model.sel(flowermod1,flowermod2, flowermod3)
+model.sel(flowermod1,flowermod2, flowermod3, flowermod4, flowermod5)
 
 ```
 
