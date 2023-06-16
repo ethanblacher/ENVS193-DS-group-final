@@ -1,6 +1,7 @@
 ---
 title: "FINAL"
 author: Ethan Blacher, Maddie Manzagol, Mary Cadogan
+date: June 16, 2023
 format: 
   html:
     toc: true
