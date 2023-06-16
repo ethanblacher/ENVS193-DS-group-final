@@ -27,6 +27,7 @@ library(glmmTMB) # ok if you don't have this - just comment it out
 # diagnostics and model info
 library(DHARMa)
 library(lmtest)
+library(skimr)
 ```
 
 ```{r Read_Data}
@@ -35,9 +36,10 @@ clean_names(flower)
 
 ```
 
-```{r histogram}
+```{r exploring_data}
 ggplot(data= flower, aes(x=nr_seeds))+
   geom_histogram(bins=13)
+#not normal
 ``
 ```
 
@@ -50,7 +52,9 @@ flower_subset <- flower %>%
   #create a new dataset of flower, which drops the missing data from nr_seeds because its pertinent to our study
   drop_na(nr_seeds)%>%
   #removed a few columns that were not relevant to the experiment for our purposes, mainly just ids
-  mutate(notes = NULL, shrub_num = NULL, tag_num= NULL, plant_nr = NULL)
+  clean_names()%>%
+  mutate(date_collected = NULL, shrub_num = NULL, aspect= NULL, tag_num= NULL, plant_nr = NULL, dist_fr_shr = NULL, nr_infl_coll = NULL, wt_seeds_mg = NULL, notes = NULL)
+
 ```
 
 ```{r skim-dataset}
@@ -70,27 +74,23 @@ ggpairs(flower_subset)
 
 ```{r models}
 # linear model, we know this is wrong
-flowermod1 <- lm(nr_seeds~treatment+species+total_nr_infl, data = flower_subset)
+flowermod1 <- lm(nr_seeds~treatment+species+total_nr_infl, data = flower)
 
 # generalized linear model with Poisson distribution
-flowermod2 <- glm(nr_seeds~treatment+species+total_nr_infl, data = flower_subset, family="poisson")
-
-flowermod2.a <- glm(nr_seeds~treatment+species+total_nr_infl, data = flower_subset, family="poisson")
+flowermod2 <- glm(nr_seeds~treatment+species+total_nr_infl, data = flower, family="poisson")
 
 # generalized linear model with negative binomial distribution
-flowermod3 <- glm.nb(nr_seeds~treatment+species+total_nr_infl, data = flower_subset)
-
-flowermod3.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl, data = flower_subset, family = "nbinom2")
+flowermod3 <- glm.nb(nr_seeds~treatment+species+total_nr_infl, data = flower)
 
 # generalized linear model with Poisson distribution and random effect of site
-flowermod4 <- glmer(nr_seeds~treatment+species+total_nr_infl + (1|aspect), data = flower_subset, family = "poisson")
+flowermod4 <- glmer(nr_seeds~treatment+species+total_nr_infl + (1|shrub_num), data = flower, family = "poisson")
 
-flowermod4.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|aspect), data = flower_subset, family = "poisson")
+flowermod4.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|shrub_num), data = flower, family = "poisson")
 
 # generalized linear model with negative binomial distribution and random effect of site
-flowermod5 <- glmer.nb(nr_seeds~treatment+species+total_nr_infl + (1|aspect), data = flower_subset)
+flowermod5 <- glmer.nb(nr_seeds~treatment+species+total_nr_infl + (1|shrub_num), data = flower)
 
-flowermod5.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|aspect), data = flower_subset, family = "nbinom2")
+flowermod5.a <- glmmTMB(nr_seeds~treatment+species+total_nr_infl + (1|shrub_num), data = flower, family = "nbinom2")
 ```
 
 ```{r model-residuals}
@@ -127,6 +127,7 @@ confint(flowermod3)
 
 # adjusted R2
 r.squaredGLMM(flowermod3)
+
 ```
 
 ```{r}
@@ -138,13 +139,40 @@ tidy(flowermod3)%>%
 flextable()
 ```
 
+```{r null-model}
+
+null_flower <- glm.nb(nr_seeds~1, data = flower)
+
+simulateResiduals(null_flower, plot= TRUE)
+
+```
+
+```{r AICc-values-for-null-and-mod3}
+model.sel(flowermod3, null_flower)
+```
+
+```{r create-simple-models}
+flowermod_treatment <- glm.nb(nr_seeds~treatment, data = flower)
+flowermod_species <- glm.nb(nr_seeds~species, data = flower)
+flowermod_infl <- glm.nb(nr_seeds~total_nr_infl, data = flower)
+
+simulateResiduals(flowermod_treatment, plot= TRUE)
+simulateResiduals(flowermod_species, plot= TRUE)
+simulateResiduals(flowermod_infl, plot= TRUE)
+
+```
+
+```{r AICc-model_mod3_and_simple}
+
+model.sel(flowermod3, flowermod_infl, flowermod_species, flowermod_treatment)
+```
+
 ```{r visualization}
 #| fig.width: 12
 #| fig.height: 10
 #| out.width: 90%
 #| fig.align: center
 
-plot(ggpredict(flowermod3, terms=c("treatment", "total_nr_infl")), add.data = TRUE)
 
 plot(ggpredict(flowermod3, terms = c("treatment", "total_nr_infl", "species")), add.data=TRUE)
 ```
@@ -154,15 +182,45 @@ predictions <- ggpredict(flowermod3, terms = c("treatment", "total_nr_infl", "sp
   rename(treatment = group,
          species = facet)
 
-ggplot(flower_subset, aes(x = total_nr_infl, y = nr_seeds, fill = treatment)) +
-  geom_point(aes(color = treatment), alpha = 0.5) +
-  facet_wrap(~species, scales = "free_y") +
+predictions
+
+plot(predictions)
+
+ggplot(flower, aes(x = treatment, y = nr_seeds, fill = treatment)) +
+  geom_point(aes(x=treatment, y=total_nr_infl, color = total_nr_infl), alpha = 0.5) +
+  facet_wrap(~species) +
   geom_line(data = predictions, aes(x = x, y = predicted, color = treatment)) +
   geom_ribbon(data = predictions, aes(x = x, y = predicted, ymin = conf.low, ymax = conf.high, fill = treatment), alpha = 0.2) +
-  scale_fill_manual(values = c("yes" = "blue", "no" = "orange")) +
-  scale_color_manual(values = c("yes" = "blue", "no" = "orange")) +
+  scale_fill_manual(values = c("control" = "blue", "shrub" = "orange")) +
+  scale_color_manual(values = c("control" = "blue", "shrub" = "orange")) +
   theme_bw() +
   facet_wrap(~species, scales = "free_y") +
-  labs(fill = "Mined", color = "Mined")
+  labs(fill = "treatment", color = "treatment")
+```
 
+```{r}
+predicted_counts <- predict(flowermod3, type ="response")
+# Plot predicted vs actual
+plot(predicted_counts, flower$nr_seeds, xlab = "Predicted Counts", ylab = "Actual Counts", main = "Predicted vs Actual")
+abline(0, 1, col = "red")  # Add diagonal line for reference
+```
+
+```{r}
+ggplot(data=flower, aes(x=treatment, y=total_nr_infl, fill= nr_seeds))+
+  geom_point(aes(color=nr_seeds), alpha= 0.5)+
+  facet_wrap(~species, scales = "free_y")+
+  geom_line(data=predictions, aes(x=x, y=predicted))
+```
+
+```{r}
+predictions2 <- ggpredict(flowermod3, terms = c("total_nr_infl", "species", "treatment"))
+
+predictions2
+
+plot_predictions <- ggplot(data = flower, 
+                           aes(x= treatment, y= nr_seeds))+
+geom_point()+
+
+geom_line(data = predictions2, aes(x=x, y=predicted), color="blue")
+plot_predictions
 ```
