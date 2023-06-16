@@ -56,3 +56,40 @@ cleaning/wrangling:
 missing data: 
 
 Before cleaning the data, there was missing data for the columns "dist_fr_shr", "wt_seeds_mg", "nr_seeds", and "nr_infil_coll". However, after the data was fully cleaned and wrangled, there was no longer missing data because we dropped the "na" values and removed the observations that weren't neccessary to our statistical analysis. It is important to note that there was missing data from "nr_seeds" and "nr_infil_coll" because these observations are included in our statistical analysis, meaning that these missing values have the potential to skew our results. 
+
+statistical tests: 
+
+We ran multiple regression analysis test to determine the best way to estimate the relationship between the predictor variables, treatment (open or shrub), species, and total number of inflorescence, and the response variable, total number of seeds. We ran linear model, a generalized linear model with a Poisson distribution, generalized linear model with a negative binomial distribution, a generalized linear model with a Poisson distribution and random effect of site, and a generalized linear model with a negative binomial distribution and random effect of site.
+
+
+Then we compared the generalized linear model with a negative binomial distribution to a null model to determine if species, and total number of inflorescence impacts the total seed count. The null model is representative of the null hypothesis--the predictor variables, treatment (open or shrub), species, and total number of inflorescence, do not impact the total seed count as it creates a regression model that assumes no relationship between predictor and response variables. On the other hand, the full model creates the negative binomial regression model that assumes a relationship between the predictor variables and the response variable. 
+
+
+After picking model3 as the best model, we tested the generalized linear model with a negative binomial with each individual predictor model to test for simpler models. 
+
+null hypothesis: 
+
+The predictor variables, treatment, species, and total number of inflorescence, do not impact the total seed count, do not impact the total number of seeds. 
+
+assumption checks: 
+
+To check the assumptions of our models, we ran simulateResidual() function in order to compare simulated residuals to observed residuals. We found that flowermodel3 simulated residuals to be the most normal out of all the models. This indicated that indicating that flowermodel3 was likely thre best model to continue moving forward with. We also checked for multicollinearity, and found no signs of multicollinearity because none of the values were greater than 5. 
+
+
+in-text citations: 
+I need mary's help with this 
+
+-data source " name and title of article" 
+
+# Results: 
+
+Main results: 
+
+
+We found that the flowermod3 including species, treatment, and total number of inflorescence predictors best predicted the total number of seeds because the flowermod3 yields the lowest AIC value indicating that this model has the best predicitive capacity while remaining as simple as possible. With all else held constant, the shrub treatment associated with a 34.7% decrease in the expected total seed count compared to the control treatment (treatmentshrub: IRR= -0.347(95% CI: -0.626,-0.0669) p=0.0161). The Tridas and the Carrup species were found to signifcantly predict the total seed count (p= 0.0423, p<0.001, respectively). On the other hand, the some of the predictors such as, the Gueros, Kobmyo, and Minobt species did not significantly predict total seed count (p= 0.4794, p= 0.3751, p= 0.1272). 
+ 
+
+relevant test statistics: 
+
+
+visualization: 
