@@ -33,22 +33,12 @@ library(skimr)
 ```{r Read_Data}
 #read in using here pertinent csv file
 flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))
-#for gg_miss_var
-flower_viz <-flower
 flower<-flower%>%
   #drop rows with missing data
-  drop_na(nr_seeds)%>%
-  clean_names()
-flower_subset <- flower %>% 
-#create a new dataset of flower, which drops the missing data from nr_seeds because its pertinent to our study
-  drop_na(nr_seeds)%>%
-  #removed a few columns that were not relevant to ggpairs
-  clean_names()%>%
-  mutate(date_collected = NULL, shrub_num = NULL, aspect= NULL, tag_num= NULL, plant_nr = NULL, dist_fr_shr = NULL, nr_infl_coll = NULL, wt_seeds_mg = NULL, notes = NULL)
-
+  drop_na(nr_seeds)
 ```
 
-In order to organize the data after reading in the necessary packages, it is important to see what data was measured. To do so, the seed count csv file was read in using the read_csv and the here function. We then made two different data sets, flower_viz to see missing data, flower, which cleaned the names and dropped the missing data for nr_seeds which was pertinent to our model and visualization and flower_subset, which dropped columns that we didn't need specifically for our ggpairs plot.
+In order to organize the data after reading in the necessary packages, it is important to see what data was measured. To do so, the full data set was read in using the read_csv and the here function, then to make the names of the objects within the data set more clear and too only include the objects of interest the clean_names and select functions were applied. The data set now appears readable with the data set only reporting values observed for totmass, species, feedlevel, sla, chlorophyll, amass, num_lvs, num_phylls
 
 ```{r exploring_data}
 ggplot(data= flower, aes(x=nr_seeds))+
@@ -58,24 +48,42 @@ ggplot(data= flower, aes(x=nr_seeds))+
 ```
 
 ```{r missing_data_viz}
-gg_miss_var(flower_viz)
+gg_miss_var(flower)
 
 ```
+
+need to show that nr_seeds has missing data, without messing up the residuals chart
+
+```{r}
+flower_subset <- flower %>% 
+#create a new dataset of flower, which drops the missing data from nr_seeds because its pertinent to our study
+  drop_na(nr_seeds)%>%
+  #removed a few columns that were not relevant to the experiment for our purposes, mainly just ids
+  clean_names()%>%
+  mutate(date_collected = NULL, shrub_num = NULL, aspect= NULL, tag_num= NULL, plant_nr = NULL, dist_fr_shr = NULL, nr_infl_coll = NULL, wt_seeds_mg = NULL, notes = NULL)
+
+```
+
+Might not need\^
+
+We read in the data
 
 ```{r skim-dataset}
 skim(flower_subset)
 ```
+
+Discussion: The ggpair function shows the relationships between different variables depending on what type of data the variable is. Bar charts and box plots were used to represent the relationships between species and treatment (both categorical) along with their relationship with the number of seeds and the total number of inflorescence (both discrete). For the relationship between the number of seeds and the total number of inflorescence, we see line charts, a scatterplot, and a correlation coefficient, which is worth noting had a value of .92, illustrating a strong, positive, linear relationship between the two variables (number of seeds and the total number of inflorescence).
 
 ```{r pairs-plot}
 #| fig.width: 12
 #| fig.height: 12
 #| out.width: 90%
 #| fig.align: center
-#flower_subset %>%
-  #take out site
 # select(!species)%>%
 ggpairs(flower_subset)
 ```
+
+**Figure 1. GGpairs.** The ggpairs function was implemented to visualize the relationship between the different variables and types of variables. ggpairs builds a matrix of plots that displays box plots, bar charts, line charts, a scatter plot and a correlation coefficient. Variable names are labeled at the top of the chart and right end of the chart, with the axis's scale/measurements at the bottom of the chart and left end of the chart.
 
 ```{r models}
 # linear model, we know this is wrong
@@ -182,17 +190,28 @@ exp_coef2
 tidy(flowermod3, conf.int = TRUE, conf.level = .95) 
 ```
 
+Analysis: The chart illustrates that while total number of inflorescence is definitely correlated to seed count (as also illustrated by the .916 correlation coefficiant), while other variables are more ambiguous. For starters, different species all have different amounts of data points, which gives a decent representation of data for some species (such as AREFEN and KOBMYO) while giving tiny sample size for others. Additionally, there is not an equal distribution of treatment among species, with some species lacking a treatment ('shrub' or 'control'), which are also the same species without much data (CARRUP and TRIDAS).
+
 ```{r}
-ggplot(data=flowermod3, aes(x=treatment, y=nr_seeds, fill=predicted))+
-  geom_boxplot(position = position_dodge(width=.8), color ="black")+
-  labs(x="Species", y =" Seed Count", title = "distribution fo seed count by species and treatment")+
-  theme_minimal()+
-  facet_wrap(~species)
+ggplot(data = flower, aes(x = total_nr_infl, y = nr_seeds, fill = treatment, color = treatment)) +
+  #jitter plot of points
+  geom_jitter() +
+  #each species has its own chart
+  facet_wrap(~species) +
+  labs(x = "Species", y = "Seed Count", title = "Distribution of Seed Count by Total Number of Inflorescence, Treatment, and Species") +
+  theme_minimal() +
+  #colors are blue and red to match the following graph
+  scale_fill_manual(values = c("red", "blue")) +
+  scale_color_manual(values = c("red", "blue"))
+
 ```
+
+**Figure 2. Seedcount scatterplot.** A scatterplot showing the relationship between seed count and the total number of inflorescences. Each point represents an observation regarding the total number of inflorescence, color-coded by treatment, with red being 'control' and blue being 'shrub'. Furthermore, the data is group by species, with total number of inflorescence on the x axis and seed count on the y axis.
 
 ```{r}
 flower$residuals <- resid(flowermod3)
-
+# Fit the linear model
+flower$predicted <- predict(flowermod3)
 # Create a scatter plot of residuals
 ggplot(flower, aes(x = predicted, y = residuals)) +
   geom_point(color = "blue", alpha = 0.5, size =2.5) +
@@ -213,9 +232,9 @@ ggplot(flower, aes(x = predicted, y = residuals)) +
 
 ```
 
-Caption: In the graph above, the blue points represent the residual values, the dashed red line represents a reference for if the residual values were equal to '0', and the dashed black line shows a fitted reggression line for the plotted residuals.
+**Figure 3. Residual Analysis plot.** A residual analysis plot where the blue points represent the residual values, the dashed red line represents a reference for if the residual values were equal to '0', and the dashed black line shows a fitted regression line for the plotted residuals. The x-axis represents the predicted values of seed count (nr_seeds), while the y-axis illustrating the corresponding residual value.
 
-Analysis: The negative mean residual value (-.3) illustrates a systematic bias in flowermod3's predictions, which are on average higher than the observed values, indicating that the model is underestimating seed counts by about '.3' seeds. This is also confirmed visually, with a negatively trending regression line below the reference line. Additionally, residuals are not evenly distributed around the reference line, and in conjunction with the BP test illustrates that the assumption of homoscedasticity has been violated.
+Analysis: The negative mean residual value (-.3) illustrates a systematic bias in flowermod3's predictions, which are on average lower than the observed values, indicating that the model is underestimating seed counts by about '.3' seeds. This is also confirmed visually, with a negatively trending regression line below the reference line. Additionally, residuals are not evenly distributed around the reference line, and in conjunction with the BP test illustrates that the assumption of homoscedasticity has been violated.
 
 ```{r}
 residuals <- resid(flowermod3)
