@@ -79,21 +79,15 @@ To check the assumptions of our models, we ran simulateResidual() function in or
 in-text citations: 
 I need mary's help with this 
 
+-data source " name and title of article" 
+
 # Results: 
 
 Main results: 
 
 
-We found that the flowermod3 including species, treatment, and total number of inflorescence predictors best predicted the total number of seeds because the flowermod3 yields the lowest AIC value indicating that this model has the best predicitive capacity while remaining as simple as possible. 
-
-we aint sure: 
-
-With all else held constant, the shrub treatment associated with a 34.7% decrease in the expected total seed count compared to the control treatment (treatmentshrub: IRR= -0.347(95% CI: -0.626,-0.0669) p=0.0161). The Tridas and the Carrup species were found to signifcantly predict the total seed count (p= 0.0423, p<0.001, respectively). On the other hand, the some of the predictors such as, the Gueros, Kobmyo, and Minobt species did not significantly predict total seed count (p= 0.4794, p= 0.3751, p= 0.1272). 
-
-
-This is wrong loweky but idk: 
-With all else held constant, the shrub treatment associated with a 0.347 decrease in the log of the total seed count. This corresponds to a 0.706 increase in total seed count for the shrub treatment for every 1 unit of increase in total seed count for the control treatment. Compared to the Carrup species, the Tridas species produces a total seed count that is approximately 27 times higher (95% confidence level, [0.208, 5.70]). However it was found that some of the predictors such as, the Gueros, Kobmyo, and Minobt species did not significantly predict total seed count (p= 0.4794, p= 0.3751, p= 0.1272). 
-
+We found that the flowermod3 including species, treatment, and total number of inflorescence predictors best predicted the total number of seeds because the flowermod3 yields the lowest AIC value indicating that this model has the best predicitive capacity while remaining as simple as possible. With all else held constant, the shrub treatment associated with a 34.7% decrease in the expected total seed count compared to the control treatment (treatmentshrub: IRR= -0.347(95% CI: -0.626,-0.0669) p=0.0161). The Tridas and the Carrup species were found to signifcantly predict the total seed count (p= 0.0423, p<0.001, respectively). On the other hand, the some of the predictors such as, the Gueros, Kobmyo, and Minobt species did not significantly predict total seed count (p= 0.4794, p= 0.3751, p= 0.1272). 
+ 
 
 relevant test statistics: 
 
