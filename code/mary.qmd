@@ -359,7 +359,6 @@ flowermod5 <- glmer.nb(nr_seeds~treatment+species+total_nr_infl + (1|shrub_num),
 # check diagnostics
 simulateResiduals(flowermod1, plot=TRUE)
 simulateResiduals(flowermod2, plot=TRUE)
-simulateResiduals(flowermod2.a, plot =TRUE)
 simulateResiduals(flowermod3, plot=TRUE)
 simulateResiduals(flowermod4, plot=TRUE)
 simulateResiduals(flowermod5, plot=TRUE)
