@@ -86,31 +86,16 @@ Main results:
 
 We found that the flowermod3 including species, treatment, and total number of inflorescence predictors best predicted the total number of seeds because the flowermod3 yields the lowest AIC value indicating that this model has the best predicitive capacity while remaining as simple as possible. 
 
+we aint sure: 
+
+With all else held constant, the shrub treatment associated with a 34.7% decrease in the expected total seed count compared to the control treatment (treatmentshrub: IRR= -0.347(95% CI: -0.626,-0.0669) p=0.0161). The Tridas and the Carrup species were found to signifcantly predict the total seed count (p= 0.0423, p<0.001, respectively). On the other hand, the some of the predictors such as, the Gueros, Kobmyo, and Minobt species did not significantly predict total seed count (p= 0.4794, p= 0.3751, p= 0.1272). 
 
 
+This is wrong loweky but idk: 
+With all else held constant, the shrub treatment associated with a 0.347 decrease in the log of the total seed count. This corresponds to a 0.706 increase in total seed count for the shrub treatment for every 1 unit of increase in total seed count for the control treatment. Compared to the Carrup species, the Tridas species produces a total seed count that is approximately 27 times higher (95% confidence level, [0.208, 5.70]). However it was found that some of the predictors such as, the Gueros, Kobmyo, and Minobt species did not significantly predict total seed count (p= 0.4794, p= 0.3751, p= 0.1272). 
 
-Compared to location B (base), location D (surround)  is associated with a 0.938 decrease in the log of the total seed count. This corresponds to a 0.3913 increase in the expected total seed count at the surrounding location of the mound for every 1 unit of increase in total seed count for the base of the mound. Compared to the base, the edge (location E) is associated with a 1.884 decrease in the log of the total seed count. This corresponds to a 0.1519 increase in the expected total seed count at the surrounding location of the mound for every 1 unit of increase in total seed count for the base of the mound. Compared to the base, the interspace (location I) is associated with a 2.872 decrease in the expected total seed count. This corresponds to a 0.0565 increase in the expected total seed count at the interspace location of the mound for every 1 unit of increase in total seed count for the base of the mound. Given that the respective p-values for each comparison were less than 0.05, we can consider the mound location significantly predicts the total seed count (p < 0.001 for all locations comparatively to the base).
-
-
- Overall, the full_log model was
-statistically significant (R\^2= 0.8687, F(15, 87)= 38.38, p\<0.001).
-With all else held constant, the full_log model indicates a significant
-relationship between totmass and num_lvs (p\< 0.001). Comparing to the
-alabamensis species of pitcher plants, the leucophylla species are
-likely to have a biomass that is 1.7 higher (95% confidence level,
-\[1.25, 2.16\]) and the psittacina species are likely to have a biomass
-that is 1.6 lower (95% confidence level, \[-2.05,-1.23\]). However it
-was found that some of the predictors such as, the jonesii and purpurea
-species, amass, and num_phylls, did not significantly predict totmass
-(p= 0.107, p=0.155, p= 0.436, p= 0.446, respectively). In conclusion,
-our model highlights that variables such as number of leaves, feed
-level, specific leaf area, chlorophyll, and specific species type (lata,
-flava, leucophylla, minor, psittacina, rosea, and rubra) are all
-significant variables in predicting the biomass of one individual pitch
-plant. Focusing on the number of leaves, individuals producing more
-pitchers and phyllodes will predictably accumulate more biomass than
-individuals who produce less pitches and phyllodes
 
 relevant test statistics: 
+
 
 visualization: 
