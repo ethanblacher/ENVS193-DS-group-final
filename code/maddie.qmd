@@ -18,7 +18,7 @@ We used the Kruskal-Wallis test because it is a non-parametric alternative to th
 
 Levene: 
 
-To address the question if different rat mound location have even total seed count variances across, we applied a Levene’s test, which assumes independent observations as well as quantitative data. Levene's test showed that the variances for total seed count at different kangaroo rat mound locations were not equal, F(3) = 14.936, p = <0.001.
+To address the question if the four different kangaroo rat mound locations have even total seed count variances across, we applied a Levene’s test, which assumes independent observations as well as quantitative data. Levene's test showed that the variances for total seed count at different kangaroo rat mound locations were not equal, F(3) = 14.936, p = <0.001.
 
 
 

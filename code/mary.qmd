@@ -6,6 +6,8 @@ editor: visual
 
 # Problem 1
 
+How does total seed number differ between kangaroo rat mound locations?
+
 ## Introduction
 
 In order to ensure plant species diversity within a given environment, the persistence of a diverse seed bank is essential as oftentimes seed bank diveristy is a key indicator to population persistence (Bakker et al., 1996). With that said, seed survival, which is largely dictated by a diverse seed bank, is highly correlated with population growth rates for many plant species (Adams and Marsh, 2005). One way that seed survival and, consequently, seed bank diversity is encouraged is through disturbance, as small-scale disturbances to an ecosystem are known to increase heterogeneity and plant diversity within that ecosystem (Koontz and Simpson, 2010). In the Chihuahuan Desert grassland, kangaroo rat mounds are considered small-scale disturbances as these mounds provide micro-habitats that create "safe-spaces" for seed accumulation where plant populations can establish, increasing plant diversity and community structure (Koontz and Simpson, 2010). With that being said, this study aims to uncover how total seed count differs between different kangaroo rat mound locations to gain a better understanding of what specific properties of kangaroo rat mounds aid in diversifying seed plants and adult plant communities.
@@ -35,6 +37,7 @@ library(lmtest)
 ```
 
 ```{r}
+kangaroo <- read_csv(here("data", "prob1_data.csv")) 
 # Read the CSV file into a data frame
 kangaroo_summary <- kangaroo %>% 
   #get rid of dir column
@@ -57,18 +60,25 @@ subtotal <- aggregate(seeds ~ Location, data = kangaroo_summary2, FUN = sum)
   
 ```
 
+**Figure 1: Visualization for missing variables**
+
 ```{r}
 #check for missing data
 gg_miss_var(kangaroo_summary2)
 ```
+
+**Figure 2: Visual checks for normal distribution of data** Points in the Quartile-Quartile Plot (QQ Plot) epresent sample quantiles compared against theoretical quantiles from a normal distribution. The red line represents a 1:1 relationship between sample and theoretical quantiles.
 
 ```{r}
 #create qq plot to get the distribution of data for each location
 ggplot(data= kangaroo_summary2, aes(sample = seeds)) +
   stat_qq()+
   stat_qq_line(aes(sample = seeds), color = "red")+
-  facet_wrap(~Location)
+  facet_wrap(~Location) +
+  labs(title = "Distribution of Data Per Mound Location", y = "Seed Count")
 ```
+
+**Table 1: Levene Test** The following table assesses the equality of variances across the four different mound locations.
 
 ```{r}
 #run a levene test using leveneTest to check variances
@@ -80,10 +90,17 @@ levene_table <- tidy(levene_test) %>%
   mutate(statistic = round(statistic, digits = 3)) %>% 
   mutate(p.value = case_when(p.value < 0.001 ~ "< 0.001")) %>% 
   flextable() %>% 
+  #change header labels
+  set_header_labels(statistic = "F-statistic", 
+                    df.residual = "Residual Degrees of Freedom", 
+                    df = "Degrees of freedom",
+                    p.value = "p-value") %>%
   autofit()
 
 levene_table
 ```
+
+**Table 2: Kruskal-Wallist Test results** to determine the difference in ranks between the four locations.
 
 ```{r}
 #run kruskal.test to determine if there is a signficant difference among the 4 locations
@@ -94,11 +111,18 @@ kruskal_table <- tidy(kruskal_test) %>%
   mutate(statistic = round(statistic, digits = 3)) %>% 
   mutate(p.value = round(p.value, digits = 4)) %>% 
   flextable() %>% 
+  #change header labels
+    set_header_labels(statistic = "H-statistic", 
+                    parameter = "Parameter", 
+                    method = "Method",
+                    p.value = "p-value") %>%
   autofit()
 
 kruskal_table
 summary(kruskal_test)
 ```
+
+**Table 3: Pairwise Wilcox Test results** to further analyze signficant differences between all combinations of locations. A post-hoc test to the Kruskal-Wallis test.
 
 ```{r}
 #run post hoc test using pairwise.wilcox.test to compare between all combinations of locations, add bonferroni corrections
@@ -109,11 +133,17 @@ wilcox_table <- tidy(wilcox_test) %>%
 #clean up table
   mutate(p.value = round(p.value, digits = 4)) %>% 
   flextable() %>% 
+  #change headerl labels
+    set_header_labels(group1 = "Group 1", 
+                      group2 = "Group 2",
+                      p.value = "p-value") %>%
   autofit()
 
 wilcox_table
 summary(wilcox_test)
 ```
+
+**Table 4: Negative Binomial Regression Model** to test the significance of estimated coefficients between the four locations. The base location is set as the Intercept, with the estimate coefficients representing the strength and direction of relationship (how much a one unit increase in predictor variable has on the outcome variables).
 
 ```{r}
 #create negative binomial model using glm.nb 
@@ -127,6 +157,12 @@ negbinomial_table <- tidy(negbinomial_model) %>%
   mutate(std.error = round(std.error, digits = 3)) %>% 
   mutate(statistic = round(statistic, digits = 3)) %>% 
   flextable() %>% 
+  #change header labels
+  set_header_labels(statistic = "T-statistic", 
+                    estimate = "Estimate Coefficient", 
+                    term = "Location", 
+                    std.error = "Standard Error",
+                    p.value = "p-value") %>%
   autofit()
 
 negbinomial_table 
@@ -141,6 +177,8 @@ exp_coef <- exp(coef(negbinomial_model))
 
 exp_coef
 ```
+
+**Figure 3: Differences in total seed count at each mound location seperated by all the individual mounds that were sampled.** Each plot is representative of the different mounds that were sampled and are presented by their associated plot numbers.
 
 ```{r}
 #create column plot to compare across the different mounds 
@@ -170,6 +208,8 @@ ggplot(kangaroo_summary2, aes(x = Location, y = seeds, fill = Location)) +
         text = element_text(family = "Times New Roman"))
   
 ```
+
+**Figure 4: Difference in the sum total seed count at each mound location across all sampled mounds.**
 
 ```{r}
 #create column plot of subtotal data
@@ -203,10 +243,18 @@ Adams, V.M., Marsh, D.M., & Knox, J.S. (2005). Importance of the seed bank for p
 
 Bakker, J.P., et al. (1996). "Seed Banks and Seed Dispersal: Important Topics in Restoration Ecology." *Acta Botanica Neerlandica*, 45(4), 461-490. <https://doi.org/10.1111/j.1438-8677.1996.tb00806.x>
 
+Giladi, I., Segoli, M., & Ungar, E. D. (2013). Shrubs and herbaceous seed flow in a semi-arid landscape: dual functioning of shrubs as trap and barrier. *Journal of Ecology*, *101*(1), 97--106. <http://www.jstor.org/stable/23354670>
+
 Koontz, T.L., Simpson, H.L. (2010). The composition of seed banks on kangaroo rat (Dipodomys spectabilis) mounds in a Chihuahuan Desert grassland, *Journal of Arid Environments*, 74(10), 2010, 1156-1161. <https://doi.org/10.1016/j.jaridenv.2010.03.008>
+
+Seaver, M. (2022). *Exploring the Effects of Shrubification on the Community-Level Flowering Phenology and Reproductive Success of Alpine Plants* (Order No. 29069468). Available from ProQuest Dissertations & Theses A&I. (2681729893). <https://www.proquest.com/dissertations-theses/exploring-effects-shrubification-on-community/docview/2681729893/se-2>
+
+Zehnder, T., Lüscher, A., Ritzmann, C. *et al.* (2020). Dominant shrub species are a strong predictor of plant species diversity along subalpine pasture-shrub transects. *Alp Botany*, 130, 141--156. <https://doi.org/10.1007/s00035-020-00241-8>
 
 # Problem 2
 
 How does seed count vary with plot type (shrub or open), plant species, and total number of inflorescences? Is there a simpler model that explains seed count, and if so, what is it?
 
 ## Introduction
+
+Determining the major contributors to higher seed abundance and diversity levels is crucial for maintaining and expanding the growth of native plant communities. This study took place in Newot Ridge, Colorado where shrubification has been increasing over the past 50 years due to warming and nitrogen desposition, thus changing the microclimates within the alpine ecosytem (Seaver, 2020) by altering species richness and diversity (Zehnder et al., 2020), providing more coverage for local fauna, and covering the ground with litter (Seaver, 2020). Additionally, shrub presence has been found to impact seed dispersal through a variety of mechanisms, such as wind protection gravity rolling, herbivory, and ground cover, that have the potential to etiher increase or decrease seed abundance depending on the observed area (Giladi et al., 2013). Lastly, seed yields have been found to be heavily dependent on the total number of inflorescences in a flowering period (Li et al., 2023), with inflorescences typically varying by plant species as well. This study seeks to determine how plot type (shrub or open), plant species, and total number of inflorescences impacts seed abundance, with the null hypothesis being that seed abundance is independent from all the proposed predictor variables.
