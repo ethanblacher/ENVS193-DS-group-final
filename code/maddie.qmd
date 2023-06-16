@@ -5,17 +5,20 @@ format:
     theme: default
 ---
 
- Problem 1:
+# Problem 1:
  
 # Methods:  
+
+cleaning/wrangling: 
+
  
- We used the Kruskal-Wallis test because it is a non-parametric alternative to the one-way ANOVA that accounts for discrete data. This test tells us if there are significant differences between total seed count across different mound locations; however, it does not reveal what the differences in total seed count are between different mound location. Our data meets the assumptions for the Kruskal-Wallis test, because the predictor variables (mound locations) is categorical, the samples were collected independently, and each mound location has over 5 observations. Since the Kruskal test only tells us whether there is a significant difference in total seed count between different mound locations, we also performed a post hoc test a multiple comparison that highlights which groups, mound locations,  differ from each other. **need more here 
+We used the Kruskal-Wallis test because it is a non-parametric alternative to the one-way ANOVA that accounts for discrete data. This test tells us if there are significant differences between total seed count across different mound locations; however, it does not reveal what the differences in total seed count are between different mound location. Our data meets the assumptions for the Kruskal-Wallis test, because the predictor variables (mound locations) is categorical, the samples were collected independently, and each mound location has over 5 observations. Since the Kruskal test only tells us whether there is a significant difference in total seed count between different mound locations, we also performed a post hoc test a multiple comparison that highlights which groups, mound locations,  differ from each other. **need more here 
 
 # Results: 
 
 Levene: 
 
-To address the question if different rat mound location have even total seed count variances across, we applied a Levene’s test, which assumes independent observations as well as quantitative data. Levene's test showed that the variances for total seed count at different kangaroo rat mound locations were not equal, F(3) = 14.936, p = <0.001.
+To address the question if the four different kangaroo rat mound locations have even total seed count variances across, we applied a Levene’s test, which assumes independent observations as well as quantitative data. Levene's test showed that the variances for total seed count at different kangaroo rat mound locations were not equal, F(3) = 14.936, p = <0.001.
 
 
 
@@ -24,12 +27,12 @@ Kruskal-Wallis:
 An analysis using the Kruskal-Wallis test was conducted to assess whether there was a significant difference in total seed count between different locations on the mound. We tested the null hypothesis that different mound locations did not predict a significant difference in total seed count, while the alternative hypothesis suggested that different mound locations did predict a significant difference in total seed count. The Kruskal-Wallis test proved that there is a significant difference in total seed count between different mound locations (H(3)= 14.438, p<0.001). 
 
 
-Post Hoc: 
+Pairwise Wilcox Test: 
 
-After conducting the Kruskal-Wallis test and finding a significant difference in the total seed count among different mound locations, post hoc analyses were performed to determine the specific differences in total seed count among the different mound locations. The following differences were observed: there was no significant difference in total seed count between mound locations B and D (p = 1), there was no significant difference in total seed count between mound locations E and B (p=0.808), there was no significant difference in total seed count between mound locations E and D (p=1), there was a significant difference in total seed count between mound locations I and B (p= 0.0018), there was a significant difference in total seed count between mound locations I and D (p=0.054), and lastly there was no significant difference between total seed count between mound locations I and E (p= 0.083). 
+After conducting the Kruskal-Wallis test and finding a significant difference in the total seed count among different mound locations, post hoc analysis using a Pairwise Wilcox Test was performed to determine the specific differences in total seed count among the different mound locations. The following differences were observed: there was no significant difference in total seed count between mound locations B and D (p = 1), there was no significant difference in total seed count between mound locations E and B (p=0.808), there was no significant difference in total seed count between mound locations E and D (p=1), there was a significant difference in total seed count between mound locations I and B (p= 0.0018), there was a significant difference in total seed count between mound locations I and D (p=0.054), and lastly there was no significant difference between total seed count between mound locations I and E (p= 0.083). 
 
 
-Negative Binomial: 
+Negative Binomial Regression Model: 
 
 Compared to location B (base), location D (surround)  is associated with a 0.938 decrease in the log of the total seed count. This corresponds to a 0.3913 increase in the expected total seed count at the surrounding location of the mound for every 1 unit of increase in total seed count for the base of the mound. Compared to the base, the edge (location E) is associated with a 1.884 decrease in the log of the total seed count. This corresponds to a 0.1519 increase in the expected total seed count at the surrounding location of the mound for every 1 unit of increase in total seed count for the base of the mound. Compared to the base, the interspace (location I) is associated with a 2.872 decrease in the expected total seed count. This corresponds to a 0.0565 increase in the expected total seed count at the interspace location of the mound for every 1 unit of increase in total seed count for the base of the mound. Given that the respective p-values for each comparison were less than 0.05, we can consider the mound location significantly predicts the total seed count (p < 0.001 for all locations comparatively to the base). 
 
@@ -43,3 +46,13 @@ Caption: Figure 2 displays the difference in the sum total seed count at each mo
 
 
 
+# Problem 2: 
+
+# methods: 
+
+cleaning/wrangling: 
+
+
+missing data: 
+
+Before cleaning the data, there was missing data for the columns "dist_fr_shr", "wt_seeds_mg", "nr_seeds", and "nr_infil_coll". However, after the data was fully cleaned and wrangled, there was no longer missing data because we dropped the "na" values and removed the observations that weren't neccessary to our statistical analysis. It is important to note that there was missing data from "nr_seeds" and "nr_infil_coll" because these observations are included in our statistical analysis, meaning that these missing values have the potential to skew our results. 
