@@ -56,3 +56,61 @@ cleaning/wrangling:
 missing data: 
 
 Before cleaning the data, there was missing data for the columns "dist_fr_shr", "wt_seeds_mg", "nr_seeds", and "nr_infil_coll". However, after the data was fully cleaned and wrangled, there was no longer missing data because we dropped the "na" values and removed the observations that weren't neccessary to our statistical analysis. It is important to note that there was missing data from "nr_seeds" and "nr_infil_coll" because these observations are included in our statistical analysis, meaning that these missing values have the potential to skew our results. 
+
+statistical tests: 
+
+We ran multiple regression analysis test to determine the best way to estimate the relationship between the predictor variables, treatment (open or shrub), species, and total number of inflorescence, and the response variable, total number of seeds. We ran linear model, a generalized linear model with a Poisson distribution, generalized linear model with a negative binomial distribution, a generalized linear model with a Poisson distribution and random effect of site, and a generalized linear model with a negative binomial distribution and random effect of site.
+
+
+Then we compared the generalized linear model with a negative binomial distribution to a null model to determine if species, and total number of inflorescence impacts the total seed count. The null model is representative of the null hypothesis--the predictor variables, treatment (open or shrub), species, and total number of inflorescence, do not impact the total seed count as it creates a regression model that assumes no relationship between predictor and response variables. On the other hand, the full model creates the negative binomial regression model that assumes a relationship between the predictor variables and the response variable. 
+
+
+After picking model3 as the best model, we tested the generalized linear model with a negative binomial with each individual predictor model to test for simpler models. 
+
+null hypothesis: 
+
+The predictor variables, treatment, species, and total number of inflorescence, do not impact the total seed count, do not impact the total number of seeds. 
+
+assumption checks: 
+
+To check the assumptions of our models, we ran simulateResidual() function in order to compare simulated residuals to observed residuals. We found that flowermodel3 simulated residuals to be the most normal out of all the models. This indicated that indicating that flowermodel3 was likely thre best model to continue moving forward with. We also checked for multicollinearity, and found no signs of multicollinearity because none of the values were greater than 5. 
+
+
+in-text citations: 
+I need mary's help with this 
+
+# Results: 
+
+Main results: 
+
+
+We found that the flowermod3 including species, treatment, and total number of inflorescence predictors best predicted the total number of seeds because the flowermod3 yields the lowest AIC value indicating that this model has the best predicitive capacity while remaining as simple as possible. 
+
+
+
+
+Compared to location B (base), location D (surround)  is associated with a 0.938 decrease in the log of the total seed count. This corresponds to a 0.3913 increase in the expected total seed count at the surrounding location of the mound for every 1 unit of increase in total seed count for the base of the mound. Compared to the base, the edge (location E) is associated with a 1.884 decrease in the log of the total seed count. This corresponds to a 0.1519 increase in the expected total seed count at the surrounding location of the mound for every 1 unit of increase in total seed count for the base of the mound. Compared to the base, the interspace (location I) is associated with a 2.872 decrease in the expected total seed count. This corresponds to a 0.0565 increase in the expected total seed count at the interspace location of the mound for every 1 unit of increase in total seed count for the base of the mound. Given that the respective p-values for each comparison were less than 0.05, we can consider the mound location significantly predicts the total seed count (p < 0.001 for all locations comparatively to the base).
+
+
+ Overall, the full_log model was
+statistically significant (R\^2= 0.8687, F(15, 87)= 38.38, p\<0.001).
+With all else held constant, the full_log model indicates a significant
+relationship between totmass and num_lvs (p\< 0.001). Comparing to the
+alabamensis species of pitcher plants, the leucophylla species are
+likely to have a biomass that is 1.7 higher (95% confidence level,
+\[1.25, 2.16\]) and the psittacina species are likely to have a biomass
+that is 1.6 lower (95% confidence level, \[-2.05,-1.23\]). However it
+was found that some of the predictors such as, the jonesii and purpurea
+species, amass, and num_phylls, did not significantly predict totmass
+(p= 0.107, p=0.155, p= 0.436, p= 0.446, respectively). In conclusion,
+our model highlights that variables such as number of leaves, feed
+level, specific leaf area, chlorophyll, and specific species type (lata,
+flava, leucophylla, minor, psittacina, rosea, and rubra) are all
+significant variables in predicting the biomass of one individual pitch
+plant. Focusing on the number of leaves, individuals producing more
+pitchers and phyllodes will predictably accumulate more biomass than
+individuals who produce less pitches and phyllodes
+
+relevant test statistics: 
+
+visualization: 
