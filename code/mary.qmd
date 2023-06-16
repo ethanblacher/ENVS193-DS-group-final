@@ -313,7 +313,11 @@ skim(flower_subset)
 ```
 
 
-write: 
+In order to visualize the relationship between the variables
+the ggpairs function was applied. The ggpairs function builds a
+scatterplot matrix that displays scatterplots of each pair of numeric
+values, while also displaying pearson's r on the right and the variable
+distribution on the diagonal.
 
 ```{r pairs-plot}
 #| fig.width: 12
