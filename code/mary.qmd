@@ -247,6 +247,8 @@ Giladi, I., Segoli, M., & Ungar, E. D. (2013). Shrubs and herbaceous seed flow i
 
 Koontz, T.L., Simpson, H.L. (2010). The composition of seed banks on kangaroo rat (Dipodomys spectabilis) mounds in a Chihuahuan Desert grassland, *Journal of Arid Environments*, 74(10), 2010, 1156-1161. <https://doi.org/10.1016/j.jaridenv.2010.03.008>
 
+Li, J., Li, Y., Qiao, J., Li, L., Wang, X., Yao, J., & Liao, G. (2023). Automatic counting of rapeseed inflorescences using deep learning method and UAV RGB imagery. *Frontiers in Plant Science*, *14*. [https://doi.org/10.3389/fpls.2023.1101143 ](https://doi.org/10.3389/fpls.2023.1101143 )
+
 Seaver, M. (2022). *Exploring the Effects of Shrubification on the Community-Level Flowering Phenology and Reproductive Success of Alpine Plants* (Order No. 29069468). Available from ProQuest Dissertations & Theses A&I. (2681729893). <https://www.proquest.com/dissertations-theses/exploring-effects-shrubification-on-community/docview/2681729893/se-2>
 
 Zehnder, T., Lüscher, A., Ritzmann, C. *et al.* (2020). Dominant shrub species are a strong predictor of plant species diversity along subalpine pasture-shrub transects. *Alp Botany*, 130, 141--156. <https://doi.org/10.1007/s00035-020-00241-8>
