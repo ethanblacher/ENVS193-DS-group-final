@@ -31,10 +31,14 @@ library(skimr)
 ```
 
 ```{r Read_Data}
+#read in using here pertinent csv file
 flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))
-flower <- flower %>% 
+flower<-flower%>%
+  #drop rows with missing data
   drop_na(nr_seeds)
 ```
+
+In order to organize the data after reading in the necessary packages, it is important to see what data was measured. To do so, the full data set was read in using the read_csv and the here function, then to make the names of the objects within the data set more clear and too only include the objects of interest the clean_names and select functions were applied.
 
 ```{r exploring_data}
 ggplot(data= flower, aes(x=nr_seeds))+
@@ -45,17 +49,24 @@ ggplot(data= flower, aes(x=nr_seeds))+
 
 ```{r missing_data_viz}
 gg_miss_var(flower)
+
 ```
+
+need to show that nr_seeds has missing data, without messing up the residuals chart
 
 ```{r}
 flower_subset <- flower %>% 
-  #create a new dataset of flower, which drops the missing data from nr_seeds because its pertinent to our study
+#create a new dataset of flower, which drops the missing data from nr_seeds because its pertinent to our study
   drop_na(nr_seeds)%>%
   #removed a few columns that were not relevant to the experiment for our purposes, mainly just ids
   clean_names()%>%
   mutate(date_collected = NULL, shrub_num = NULL, aspect= NULL, tag_num= NULL, plant_nr = NULL, dist_fr_shr = NULL, nr_infl_coll = NULL, wt_seeds_mg = NULL, notes = NULL)
 
 ```
+
+Might not need\^
+
+We read in the data
 
 ```{r skim-dataset}
 skim(flower_subset)
@@ -130,7 +141,7 @@ r.squaredGLMM(flowermod3)
 
 ```
 
-```{r}
+```{r Multicollinearity-test}
 car::vif(flowermod3)
 ```
 
@@ -168,36 +179,13 @@ simulateResiduals(flowermod_infl, plot= TRUE)
 model.sel(flowermod3, flowermod_infl, flowermod_species, flowermod_treatment)
 ```
 
-```{r visualization}
-#| fig.width: 12
-#| fig.height: 10
-#| out.width: 90%
-#| fig.align: center
+```{r summary statistics}
+summary(flowermod3)
+#getting IRR values using the exp(coef()) function
+exp_coef2 <- exp(coef(flowermod3))
+exp_coef2
 
-
-plot(ggpredict(flowermod3, terms = c("treatment", "total_nr_infl", "species")), add.data=TRUE)
-facet_wrap(~species) 
-```
-
-```{r}
-predictions <- ggpredict(flowermod3, terms = c("treatment", "total_nr_infl", "species")) %>% 
-  rename(treatment = group,
-         species = facet)
-
-predictions
-
-plot(predictions)
-
-ggplot(flower, aes(x = treatment, y = nr_seeds, fill = treatment)) +
-  geom_point(aes(x=treatment, y=total_nr_infl, color = total_nr_infl), alpha = 0.5) +
-  facet_wrap(~species) +
-  geom_line(data = predictions, aes(x = x, y = predicted, color = treatment)) +
-  geom_ribbon(data = predictions, aes(x = x, y = predicted, ymin = conf.low, ymax = conf.high, fill = treatment), alpha = 0.2) +
-  scale_fill_manual(values = c("control" = "blue", "shrub" = "orange")) +
-  scale_color_manual(values = c("control" = "blue", "shrub" = "orange")) +
-  theme_bw() +
-  facet_wrap(~species, scales = "free_y") +
-  labs(fill = "treatment", color = "treatment")
+tidy(flowermod3, conf.int = TRUE, conf.level = .95) 
 ```
 
 ```{r}
@@ -209,63 +197,33 @@ ggplot(data=flowermod3, aes(x=treatment, y=nr_seeds, fill=predicted))+
 ```
 
 ```{r}
-
-library(ggplot2)
-
-# Fit the linear model
-model <- lm(nr_seeds ~ total_nr_infl + species + treatment, data = flower)
-
-# Make predictions using the model
-flower$predicted <- predict(model)
-
-# Create a scatter plot or line plot
-ggplot(flower, aes(x = predicted, y = nr_seeds)) +
-  geom_point(color = "blue", alpha = 0.5) +  # Actual observations
-  geom_abline(color = "red") +  # 45-degree line of perfect predictions
-  labs(x = "Predicted", y = "Actual", title = "Predicted vs. Actual") +
-  theme_minimal()
-```
-
-The blue points in the graph represent the actual observed values of the response variable (nr_seeds), while the red line indicates the line of perfect predictions (where predicted values would exactly match actual values). The closer the blue points align to the red line, the stronger the agreement between the predicted and actual values.
-
-```{r}
-# Calculate performance metrics
-predicted <- flowermod3$fitted.values
-actual <- flower$nr_seeds
-
-MAE <- mean(abs(predicted - actual))
-MSE <- mean((predicted - actual)^2)
-RMSE <- sqrt(MSE)
-R_squared <- summary(flowermod3)$r.squared
-print(MAE)
-print(MSE)
-print(RMSE)
-print(R_squared)
-```
-
-```{r}
-# One-sample t-test
-t.test(predicted - actual)
-
-# Wilcoxon signed-rank test
-wilcox.test(predicted, actual, paired = TRUE)
-
-```
-
-```{r}
 flower$residuals <- resid(flowermod3)
 
 # Create a scatter plot of residuals
 ggplot(flower, aes(x = predicted, y = residuals)) +
-  geom_point(color = "blue", alpha = 0.5) +
+  geom_point(color = "blue", alpha = 0.5, size =2.5) +
+  #dashed horizontal line at y=0
   geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
-  labs(x = "Predicted", y = "Residuals", title = "Residual Plot") +
-  theme_minimal()
+  #adds a linear regression line (without confidence interval) to points, thin to match hline
+    geom_smooth(method = "lm", se = FALSE, color = "black", linetype = "dashed", size = .6) +
+  #adds a title to graph and to the x and y axis
+  labs(x = "Predicted Values", y = "Residuals Values", title = "Residual Analysis") +
+  theme_minimal()+
+  #Chart title is in bold and size 16
+  theme(plot.title = element_text(size = 16, face = "bold"),
+          #Axis titles are size 15
+        axis.title = element_text(size = 14),
+          #Axis text is size 12
+        axis.text = element_text(size = 12)
+        )
 
 ```
 
-```{r}
+Caption: In the graph above, the blue points represent the residual values, the dashed red line represents a reference for if the residual values were equal to '0', and the dashed black line shows a fitted reggression line for the plotted residuals.
 
+Analysis: The negative mean residual value (-.3) illustrates a systematic bias in flowermod3's predictions, which are on average higher than the observed values, indicating that the model is underestimating seed counts by about '.3' seeds. This is also confirmed visually, with a negatively trending regression line below the reference line. Additionally, residuals are not evenly distributed around the reference line, and in conjunction with the BP test illustrates that the assumption of homoscedasticity has been violated.
+
+```{r}
 residuals <- resid(flowermod3)
 mean_residual <- mean(residuals)
 sd_residual <- sd(residuals)
@@ -277,13 +235,6 @@ shapiro.test(residuals)
 # Breusch-Pagan test for heteroscedasticity
 bptest(flowermod3)
 
-
 ```
 
-ANOVA Table
-
-```{r}
-summary(flowermod3)
-tidy(flowermod3, conf.int = TRUE, conf.level = .95) 
-
-```
+The p-value (0.002064) illustrates the likelihood of getting the observed test statistic (or a more extreme value) under the assumption of normality. Since the p-value is less than the significance level (0.05), it illustrates that the assumption of normality is violated. Additionally, the tiny p-value for the Breusch-Pagan test (0.00000002694) indicates that the assumption of homoscedasticity is also violated.
