@@ -33,12 +33,22 @@ library(skimr)
 ```{r Read_Data}
 #read in using here pertinent csv file
 flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))
+#for gg_miss_var
+flower_viz <-flower
 flower<-flower%>%
   #drop rows with missing data
-  drop_na(nr_seeds)
+  drop_na(nr_seeds)%>%
+  clean_names()
+flower_subset <- flower %>% 
+#create a new dataset of flower, which drops the missing data from nr_seeds because its pertinent to our study
+  drop_na(nr_seeds)%>%
+  #removed a few columns that were not relevant to ggpairs
+  clean_names()%>%
+  mutate(date_collected = NULL, shrub_num = NULL, aspect= NULL, tag_num= NULL, plant_nr = NULL, dist_fr_shr = NULL, nr_infl_coll = NULL, wt_seeds_mg = NULL, notes = NULL)
+
 ```
 
-In order to organize the data after reading in the necessary packages, it is important to see what data was measured. To do so, the full data set was read in using the read_csv and the here function, then to make the names of the objects within the data set more clear and too only include the objects of interest the clean_names and select functions were applied.
+In order to organize the data after reading in the necessary packages, it is important to see what data was measured. To do so, the seed count csv file was read in using the read_csv and the here function. We then made two different data sets, flower_viz to see missing data, flower, which cleaned the names and dropped the missing data for nr_seeds which was pertinent to our model and visualization and flower_subset, which dropped columns that we didn't need specifically for our ggpairs plot.
 
 ```{r exploring_data}
 ggplot(data= flower, aes(x=nr_seeds))+
@@ -48,25 +58,9 @@ ggplot(data= flower, aes(x=nr_seeds))+
 ```
 
 ```{r missing_data_viz}
-gg_miss_var(flower)
+gg_miss_var(flower_viz)
 
 ```
-
-need to show that nr_seeds has missing data, without messing up the residuals chart
-
-```{r}
-flower_subset <- flower %>% 
-#create a new dataset of flower, which drops the missing data from nr_seeds because its pertinent to our study
-  drop_na(nr_seeds)%>%
-  #removed a few columns that were not relevant to the experiment for our purposes, mainly just ids
-  clean_names()%>%
-  mutate(date_collected = NULL, shrub_num = NULL, aspect= NULL, tag_num= NULL, plant_nr = NULL, dist_fr_shr = NULL, nr_infl_coll = NULL, wt_seeds_mg = NULL, notes = NULL)
-
-```
-
-Might not need\^
-
-We read in the data
 
 ```{r skim-dataset}
 skim(flower_subset)
