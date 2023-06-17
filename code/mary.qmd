@@ -520,7 +520,7 @@ ggplot(flower, aes(x = predicted, y = residuals)) +
 
 **Figure 12: Residual Analysis plot.** A residual analysis plot where the blue points represent the residual values, the dashed red line represents a reference for if the residual values were equal to '0', and the dashed black line shows a fitted regression line for the plotted residuals. The x-axis represents the predicted values of seed count (nr_seeds), while the y-axis illustrating the corresponding residual value.
 
-Analysis: The negative mean residual value (-.3) illustrates a systematic bias in flowermod3's predictions, which are on average higher than the observed values, indicating that the model is underestimating seed counts by about '.3' seeds. This is also confirmed visually, with a negatively trending regression line below the reference line. Additionally, residuals are not evenly distributed around the reference line, and in conjunction with the BP test illustrates that the assumption of homoscedasticity has been violated.
+Analysis: The negative mean residual value (-.3) illustrates a systematic bias in flowermod3's predictions, which are on average lower than the observed values, indicating that the model is underestimating seed counts by about '.3' seeds. This is also confirmed visually, with a negatively trending regression line below the reference line. Additionally, residuals are not evenly distributed around the reference line, and in conjunction with the BP test illustrates that the assumption of homoscedasticity has been violated.
 
 **Table 13: Statistics for Figure 12** 
 ```{r}
