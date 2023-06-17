@@ -1,6 +1,7 @@
 ---
 title: "FINAL"
 author: Ethan Blacher, Maddie Manzagol, Mary Cadogan
+date: June 16, 2023
 format: 
   html:
     toc: true
@@ -319,7 +320,16 @@ gg_miss_var(flower_viz)
 skim(flower_subset)
 ```
 
+<<<<<<< HEAD
 The ggpair function shows the relationships between different variables depending on what type of data the variable is. Bar charts and box plots were used to represent the relationships between species and treatment (both categorical) along with their relationship with the number of seeds and the total number of inflorescence (both discrete). For the relationship between the number of seeds and the total number of inflorescence, we see line charts, a scatterplot, and a correlation coefficient, which is worth noting had a value of .92, illustrating a strong, positive, linear relationship between the two variables (number of seeds and the total number of inflorescence).
+=======
+
+In order to visualize the relationship between the variables
+the ggpairs function was applied. The ggpairs function builds a
+scatterplot matrix that displays scatterplots of each pair of numeric
+values, while also displaying pearson's r on the right and the variable
+distribution on the diagonal.
+>>>>>>> a4a1a9029d5825d4c966c7ff34974cba2d6745df
 
 ```{r pairs-plot}
 #ggpairs shows relationship between variables
@@ -349,6 +359,7 @@ flowermod5 <- glmer.nb(nr_seeds~treatment+species+total_nr_infl + (1|shrub_num),
 ```
 
 
+<<<<<<< HEAD
 ```{r model-residuals-assumptions}
 # check diagnostics by generating plots (via plots = TRUE) by checking the residuals
 #uses the models we just generated
@@ -371,6 +382,14 @@ plot(plot5)
 # Reset the layout
 par(mfrow = c(1, 1))
 
+=======
+# check diagnostics
+simulateResiduals(flowermod1, plot=TRUE)
+simulateResiduals(flowermod2, plot=TRUE)
+simulateResiduals(flowermod3, plot=TRUE)
+simulateResiduals(flowermod4, plot=TRUE)
+simulateResiduals(flowermod5, plot=TRUE)
+>>>>>>> a4a1a9029d5825d4c966c7ff34974cba2d6745df
 ```
 
 **Figure 8: Visualization for Model Residuals**
