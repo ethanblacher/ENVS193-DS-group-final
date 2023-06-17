@@ -359,7 +359,6 @@ flowermod5 <- glmer.nb(nr_seeds~treatment+species+total_nr_infl + (1|shrub_num),
 ```
 
 
-<<<<<<< HEAD
 ```{r model-residuals-assumptions}
 # check diagnostics by generating plots (via plots = TRUE) by checking the residuals
 #uses the models we just generated
@@ -370,7 +369,7 @@ plot4 <- simulateResiduals(flowermod4, plot = FALSE)
 plot5 <- simulateResiduals(flowermod5, plot = FALSE)
 
 # Set up the layout for the plots
-par(mfrow = c(2, 3))
+par(mfrow = c(1, 1))
 
 # Plot the diagnostic plots
 plot(plot1)
@@ -381,15 +380,6 @@ plot(plot5)
 
 # Reset the layout
 par(mfrow = c(1, 1))
-
-=======
-# check diagnostics
-simulateResiduals(flowermod1, plot=TRUE)
-simulateResiduals(flowermod2, plot=TRUE)
-simulateResiduals(flowermod3, plot=TRUE)
-simulateResiduals(flowermod4, plot=TRUE)
-simulateResiduals(flowermod5, plot=TRUE)
->>>>>>> a4a1a9029d5825d4c966c7ff34974cba2d6745df
 ```
 
 **Figure 8: Visualization for Model Residuals**
@@ -406,7 +396,10 @@ Then we compared the generalized linear model with a negative binomial distribut
 #fits a negative binomial regression model to flower dataset, which assumes no relationship between nr_seeds and the predictor variables.
 null_flower <- glm.nb(nr_seeds~1, data = flower)
 # check diagnostics for null by generating plots (via plots = TRUE) by checking the residuals
-simulateResiduals(null_flower, plot= TRUE)
+plot_n <- simulateResiduals(null_flower, plot= FALSE)
+# Set up the layout for the plots
+par(mfrow = c(1,1))
+plot(plot_n)
 
 ```
 **Figure 9: Visualization for Null Model Residuals**
@@ -451,9 +444,15 @@ flowermod_treatment <- glm.nb(nr_seeds~treatment, data = flower)
 flowermod_species <- glm.nb(nr_seeds~species, data = flower)
 flowermod_infl <- glm.nb(nr_seeds~total_nr_infl, data = flower)
 #check diagnostics for models by generating plots (via plots = TRUE) by checking the residuals
-simulateResiduals(flowermod_treatment, plot= TRUE)
-simulateResiduals(flowermod_species, plot= TRUE)
-simulateResiduals(flowermod_infl, plot= TRUE)
+plot_t <- simulateResiduals(flowermod_treatment, plot= FALSE)
+plot_s <- simulateResiduals(flowermod_species, plot= FALSE)
+plot_i <- simulateResiduals(flowermod_infl, plot= FALSE)
+
+# Set up the layout for the plots
+par(mfrow = c(1,1))
+plot(plot_t)
+plot(plot_s)
+plot(plot_i)
 ```
 
 **Figure 10: Visualization for Simple Model Residuals**
