@@ -12,6 +12,12 @@ execute:
   warning: false
 ---
 
+# Final Project
+
+6/16/2023
+
+Ethan Blacher, Maddie Manzagol, Mary Cadogan
+
 # Problem 1
 
 How does total seed number differ between kangaroo rat mound locations?
@@ -22,10 +28,9 @@ In order to ensure plant species diversity within a given environment, the persi
 
 ## Methods
 
+Step for cleaning/wrangling:
 
-Step for cleaning/wrangling: 
-
-In order to organize the data after reading in the necessary packages, it is important to see what data was measured. To do so, the respective csv file was read in using the read_csv and the here function and saved as an object titled kangaroo. We then further cleaned the data set by mutating it to get rid of direction, nameing this data set  "kangaroo_summary". Then we cleaned again creating a thrid data set titled "kangaroo_summary_2", which removed the percent count data in the species column (this included "soil", "dist", "gravel", "litter", "plant") and renamed column names and objects within the columns to be more clear for readability as well as for graph formating. Lastly we created a final data set titled "subtotal" which aggregated the total seed count per location so that this could be visually displayed in a graph further down in the analysis. 
+In order to organize the data after reading in the necessary packages, it is important to see what data was measured. To do so, the respective csv file was read in using the read_csv and the here function and saved as an object titled kangaroo. We then further cleaned the data set by mutating it to get rid of direction, naming this data set "kangaroo_summary". Then we cleaned again creating a third data set titled "kangaroo_summary_2", which removed the percent count data in the species column (this included "soil", "dist", "gravel", "litter", "plant") and renamed column names and objects within the columns to be more clear for readability as well as for graph formatting. Lastly we created a final data set titled "subtotal" which aggregated the total seed count per location so that this could be visually displayed in a graph further down in the analysis.
 
 ```{r}
 # load in packages
@@ -74,15 +79,14 @@ subtotal <- aggregate(seeds ~ Location, data = kangaroo_summary2, FUN = sum)
   
 ```
 
-**Figure 1: Visualization for missing variables**
+We ran the gg_miss_var() function in order to check for missing data; however, after running the function we saw no missing data.
 
-We ran the gg_miss_var() function in order to check for missing data; however, after running the function we saw no missing data. 
 ```{r}
 #check for missing data
 gg_miss_var(kangaroo_summary2)
 ```
 
-**Figure 2: Visual checks for normal distribution of data** Points in the Quartile-Quartile Plot (QQ Plot) represent sample quantiles compared against theoretical quantiles from a normal distribution. The red line represents a 1:1 relationship between sample and theoretical quantiles.
+**Figure 1: Visualization for missing variables**
 
 ```{r}
 #create qq plot to get the distribution of data for each location
@@ -92,6 +96,8 @@ ggplot(data= kangaroo_summary2, aes(sample = seeds)) +
   facet_wrap(~Location) +
   labs(title = "Distribution of Data Per Mound Location", y = "Seed Count")
 ```
+
+**Figure 2: Visual checks for normal distribution of data** Points in the Quartile-Quartile Plot (QQ Plot) represent sample quantiles compared against theoretical quantiles from a normal distribution. The red line represents a 1:1 relationship between sample and theoretical quantiles.
 
 **Table 1: Levene Test** The following table assesses the equality of variances across the four different mound locations.
 
@@ -115,11 +121,9 @@ levene_table <- tidy(levene_test) %>%
 levene_table
 ```
 
-To address the question if the four different kangaroo rat mound locations have even total seed count variances across, we applied a Levene’s test, which assumes independent observations as well as quantitative data. Levene's test showed that the variances for total seed count at different kangaroo rat mound locations were not equal, F(3) = 14.936, p = <0.001.
+To address the question if the four different kangaroo rat mound locations have even total seed count variances across, we applied a Levene's test, which assumes independent observations as well as quantitative data. Levene's test showed that the variances for total seed count at different kangaroo rat mound locations were not equal, F(3) = 14.936, p = \<0.001.
 
-
-
-We used the Kruskal-Wallis test because it is a non-parametric alternative to the one-way ANOVA that accounts for discrete data. This test tells us if there are significant differences between total seed count across different mound locations; however, it does not reveal what the differences in total seed count are between different mound location. Our data meets the assumptions for the Kruskal-Wallis test, because the predictor variables (mound locations) is categorical, the samples were collected independently, and each mound location has over 5 observations. Since the Kruskal test only tells us whether there is a significant difference in total seed count between different mound locations, we also performed a post hoc test a multiple comparison that highlights which groups, mound locations,  differ from each other.
+We used the Kruskal-Wallis test because it is a non-parametric alternative to the one-way ANOVA that accounts for discrete data. This test tells us if there are significant differences between total seed count across different mound locations; however, it does not reveal what the differences in total seed count are between different mound location. Our data meets the assumptions for the Kruskal-Wallis test, because the predictor variables (mound locations) is categorical, the samples were collected independently, and each mound location has over 5 observations. Since the Kruskal test only tells us whether there is a significant difference in total seed count between different mound locations, we also performed a post hoc test a multiple comparison that highlights which groups, mound locations, differ from each other.
 
 **Table 2: Kruskal-Wallist Test results** to determine the difference in ranks between the four locations.
 
@@ -201,9 +205,7 @@ exp_coef
 
 ## Results
 
-An analysis using the Kruskal-Wallis test was conducted to assess whether there was a significant difference in total seed count between different locations on the mound. We tested the null hypothesis that different mound locations did not predict a significant difference in total seed count, while the alternative hypothesis suggested that different mound locations did predict a significant difference in total seed count. The Kruskal-Wallis test proved that there is a significant difference in total seed count between different mound locations (H(3)= 14.438, p<0.001). After conducting the Kruskal-Wallis test and finding a significant difference in the total seed count among different mound locations, post hoc analysis using a Pairwise Wilcox Test was performed to determine the specific differences in total seed count among the different mound locations. The following differences were observed: there was no significant difference in total seed count between mound locations B and D (p = 1), there was no significant difference in total seed count between mound locations E and B (p=0.808), there was no significant difference in total seed count between mound locations E and D (p=1), there was a significant difference in total seed count between mound locations I and B (p= 0.0018), there was a significant difference in total seed count between mound locations I and D (p=0.054), and lastly there was no significant difference between total seed count between mound locations I and E (p= 0.083). Compared to location B (base), location D (surround)  is associated with a 0.938 decrease in the log of the total seed count. This corresponds to a 0.3913 increase in the expected total seed count at the surrounding location of the mound for every 1 unit of increase in total seed count for the base of the mound. Compared to the base, the edge (location E) is associated with a 1.884 decrease in the log of the total seed count. This corresponds to a 0.1519 increase in the expected total seed count at the surrounding location of the mound for every 1 unit of increase in total seed count for the base of the mound. Compared to the base, the interspace (location I) is associated with a 2.872 decrease in the expected total seed count. This corresponds to a 0.0565 increase in the expected total seed count at the interspace location of the mound for every 1 unit of increase in total seed count for the base of the mound. Given that the respective p-values for each comparison were less than 0.05, we can consider the mound location significantly predicts the total seed count (p < 0.001 for all locations comparatively to the base). All in all, the statistical test we ran highlighted that the location on the mound can impact the total seed count, indicating that small-scale disturbances do impact the volume of a seed bank and its diveristy. 
-
-**Figure 3: Differences in total seed count at each mound location seperated by all the individual mounds that were sampled.** Each plot is representative of the different mounds that were sampled and are presented by their associated plot numbers.
+An analysis using the Kruskal-Wallis test was conducted to assess whether there was a significant difference in total seed count between different locations on the mound. We tested the null hypothesis that different mound locations did not predict a significant difference in total seed count, while the alternative hypothesis suggested that different mound locations did predict a significant difference in total seed count. The Kruskal-Wallis test proved that there is a significant difference in total seed count between different mound locations (H(3)= 14.438, p\<0.001). After conducting the Kruskal-Wallis test and finding a significant difference in the total seed count among different mound locations, post hoc analysis using a Pairwise Wilcox Test was performed to determine the specific differences in total seed count among the different mound locations. The following differences were observed: there was no significant difference in total seed count between mound locations B and D (p = 1), there was no significant difference in total seed count between mound locations E and B (p=0.808), there was no significant difference in total seed count between mound locations E and D (p=1), there was a significant difference in total seed count between mound locations I and B (p= 0.0018), there was a significant difference in total seed count between mound locations I and D (p=0.054), and lastly there was no significant difference between total seed count between mound locations I and E (p= 0.083). Compared to location B (base), location D (surround) is associated with a 0.938 decrease in the log of the total seed count. This corresponds to a 0.3913 increase in the expected total seed count at the surrounding location of the mound for every 1 unit of increase in total seed count for the base of the mound. Compared to the base, the edge (location E) is associated with a 1.884 decrease in the log of the total seed count. This corresponds to a 0.1519 increase in the expected total seed count at the surrounding location of the mound for every 1 unit of increase in total seed count for the base of the mound. Compared to the base, the interspace (location I) is associated with a 2.872 decrease in the expected total seed count. This corresponds to a 0.0565 increase in the expected total seed count at the interspace location of the mound for every 1 unit of increase in total seed count for the base of the mound. Given that the respective p-values for each comparison were less than 0.05, we can consider the mound location significantly predicts the total seed count (p \< 0.001 for all locations comparatively to the base). All in all, the statistical test we ran highlighted that the location on the mound can impact the total seed count, indicating that small-scale disturbances do impact the volume of a seed bank and its diveristy.
 
 ```{r}
 #create column plot to compare across the different mounds 
@@ -234,7 +236,7 @@ ggplot(kangaroo_summary2, aes(x = Location, y = seeds, fill = Location)) +
   
 ```
 
-**Figure 4: Difference in the sum total seed count at each mound location across all sampled mounds.**
+**Figure 3: Differences in total seed count at each mound location seperated by all the individual mounds that were sampled.** Each plot is representative of the different mounds that were sampled and are presented by their associated plot numbers.
 
 ```{r}
 #create column plot of subtotal data
@@ -260,7 +262,7 @@ ggplot(subtotal, aes(x = Location, y = seeds, fill = Location)) +
         text = element_text(family = "Times New Roman"))
 ```
 
-
+**Figure 4: Difference in the sum total seed count at each mound location across all sampled mounds.**
 
 ## Problem 2
 
@@ -268,64 +270,63 @@ How does seed count vary with plot type (shrub or open), plant species, and tota
 
 ## Introduction
 
-Determining the major contributors to higher seed abundance and diversity levels is crucial for maintaining and expanding the growth of native plant communities. This study took place in Newot Ridge, Colorado where shrubification has been increasing over the past 50 years due to warming and nitrogen desposition, thus changing the microclimates within the alpine ecosytem (Seaver, 2020) by altering species richness and diversity (Zehnder et al., 2020), providing more coverage for local fauna, and covering the ground with litter (Seaver, 2020). Additionally, shrub presence has been found to impact seed dispersal through a variety of mechanisms, such as wind protection gravity rolling, herbivory, and ground cover, that have the potential to etiher increase or decrease seed abundance depending on the observed area (Giladi et al., 2013). Lastly, seed yields have been found to be heavily dependent on the total number of inflorescences in a flowering period (Li et al., 2023), with inflorescences typically varying by plant species as well. This study seeks to determine how plot type (shrub or open), plant species, and total number of inflorescences impacts seed abundance, with the null hypothesis being that seed abundance is independent from all the proposed predictor variables.
+Determining the major contributors to higher seed abundance and diversity levels is crucial for maintaining and expanding the growth of native plant communities. This study took place in Newot Ridge, Colorado where shrubification has been increasing over the past 50 years due to warming and nitrogen depositions, thus changing the microclimates within the alpine ecosystem (Seaver, 2020) by altering species richness and diversity (Zehnder et al., 2020), providing more coverage for local fauna, and covering the ground with litter (Seaver, 2020). Additionally, shrub presence has been found to impact seed dispersal through a variety of mechanisms, such as wind protection gravity rolling, herbivory, and ground cover, that have the potential to either increase or decrease seed abundance depending on the observed area (Giladi et al., 2013). Lastly, seed yields have been found to be heavily dependent on the total number of inflorescence in a flowering period (Li et al., 2023), with inflorescence typically varying by plant species as well. This study seeks to determine how plot type (shrub or open), plant species, and total number of inflorescence impacts seed abundance, with the null hypothesis being that seed abundance is independent from all the proposed predictor variables.
 
 ## Methods
 
-In order to organize the data after reading in the necessary packages, it is important to see what data was measured. To do so, the seed count csv file was read in using the read_csv and the here function. We then made two different data sets, flower_viz to see missing data, flower, which cleaned the names and dropped the missing data for nr_seeds which was pertinent to our model and visualization and flower_subset, which dropped columns that we didn't need specifically for our ggpairs plot.
+In order to organize the data after reading in the necessary packages, it is important to see what data was measured. To do so, the seed count csv file was read in using the read_csv and the here function. We then made two different data sets, flower_viz to see missing data, flower, which cleaned the names and dropped the missing data for nr_seeds which was pertinent to our model and visualization, and flower_subset, which dropped columns that we didn't need specifically for our ggpairs plot and data skim.
 
 ```{r Read_Data}
 #read in using here pertinent csv file
 flower <- read_csv(here("data", "prob2", "shrubstudy_seed_ctwt.ms.data.csv"))
-#for gg_miss_var
+#keep all columns in flower_viz for gg_miss_var
 flower_viz <-flower
 flower<-flower%>%
-  #drop rows with missing data
+  #drop nr_seeds because missing data impacted calculations, but keep some row with missing data that don't impact our study (like notes)
   drop_na(nr_seeds)%>%
   clean_names()
 flower_subset <- flower %>% 
 #create a new dataset of flower, which drops the missing data from nr_seeds because its pertinent to our study
   drop_na(nr_seeds)%>%
-  #removed a few columns that were not relevant to ggpairs
+  #cleaned names and dropped few columns that were not relevant to ggpairs or a skim
   clean_names()%>%
   mutate(date_collected = NULL, shrub_num = NULL, aspect= NULL, tag_num= NULL, plant_nr = NULL, dist_fr_shr = NULL, nr_infl_coll = NULL, wt_seeds_mg = NULL, notes = NULL)
 
 ```
 
 ```{r exploring_data}
+#variable we are primarily interested in is seed count (x-axis) with count on the y-axis - shows frequency distribution
 ggplot(data= flower, aes(x=nr_seeds))+
   geom_histogram(bins=13)
 #not normal
 ```
 
+**Figure 5: Visualization for frequency distribution**
 
-
-Before cleaning the data, there was missing data for the columns "dist_fr_shr", "wt_seeds_mg", "nr_seeds", and "nr_infil_coll". However, after the data was fully cleaned and wrangled, there was no longer missing data because we dropped the "na" values and removed the observations that weren't neccessary to our statistical analysis. It is important to note that there was missing data from "nr_seeds" and "nr_infil_coll" because these observations are included in our statistical analysis, meaning that these missing values have the potential to skew our results. 
+Before cleaning the data, there was missing data for the columns "dist_fr_shr", "wt_seeds_mg", "nr_seeds", and "nr_infil_coll". However, after the data was fully cleaned and wrangled, there was no longer missing data because we dropped the "na" values and removed the observations that weren't necessary to our statistical analysis. It is important to note that there was missing data from "nr_seeds" and "nr_infil_coll" because these observations are included in our statistical analysis, meaning that these missing values have the potential to skew our results.
 
 ```{r missing_data_viz}
+#see which columns have missing data, and the amount per column
 gg_miss_var(flower_viz)
-
 ```
 
+**Figure 6: Visualization for missing variables**
+
+**Table 5: Skim Dataset Overview**
 
 ```{r skim-dataset}
+#broad overview
 skim(flower_subset)
 ```
 
-
-write: 
+The ggpair function shows the relationships between different variables depending on what type of data the variable is. Bar charts and box plots were used to represent the relationships between species and treatment (both categorical) along with their relationship with the number of seeds and the total number of inflorescence (both discrete). For the relationship between the number of seeds and the total number of inflorescence, we see line charts, a scatterplot, and a correlation coefficient, which is worth noting had a value of .92, illustrating a strong, positive, linear relationship between the two variables (number of seeds and the total number of inflorescence).
 
 ```{r pairs-plot}
-#| fig.width: 12
-#| fig.height: 12
-#| out.width: 90%
-#| fig.align: center
-#flower_subset %>%
-  #take out site
-# select(!species)%>%
+#ggpairs shows relationship between variables
 ggpairs(flower_subset)
 ```
 
+**Figure 7: Visualization for GGpairs** The ggpairs function was implemented to visualize the relationship between the different variables and types of variables. ggpairs builds a matrix of plots that displays box plots, bar charts, line charts, a scatter plot and a correlation coefficient. Variable names are labeled at the top of the chart and right end of the chart, with the axis's scale/measurements at the bottom of the chart and left end of the chart.
 
 We ran multiple regression analysis test to determine the best way to estimate the relationship between the predictor variables, treatment (open or shrub), species, and total number of inflorescence, and the response variable, total number of seeds. We ran linear model, a generalized linear model with a Poisson distribution, generalized linear model with a negative binomial distribution, a generalized linear model with a Poisson distribution and random effect of site, and a generalized linear model with a negative binomial distribution and random effect of site. To check the assumptions of our models, we ran simulateResidual() function in order to compare simulated residuals to observed residuals. We found that flowermodel3 simulated residuals to be the most normal out of all the models. This indicated that indicating that flowermodel3 was likely thre best model to continue moving forward with.
 
@@ -347,88 +348,105 @@ flowermod5 <- glmer.nb(nr_seeds~treatment+species+total_nr_infl + (1|shrub_num),
 
 ```
 
-```{r model-residuals-assumptions}
-#| fig.height: 6
-#| fig.width: 8
-#| fig.align: center
 
-# check diagnostics
-simulateResiduals(flowermod1, plot=TRUE)
-simulateResiduals(flowermod2, plot=TRUE)
-simulateResiduals(flowermod2.a, plot =TRUE)
-simulateResiduals(flowermod3, plot=TRUE)
-simulateResiduals(flowermod4, plot=TRUE)
-simulateResiduals(flowermod5, plot=TRUE)
+```{r model-residuals-assumptions}
+# check diagnostics by generating plots (via plots = TRUE) by checking the residuals
+#uses the models we just generated
+plot1 <- simulateResiduals(flowermod1, plot = FALSE)
+plot2 <- simulateResiduals(flowermod2, plot = FALSE)
+plot3 <- simulateResiduals(flowermod3, plot = FALSE)
+plot4 <- simulateResiduals(flowermod4, plot = FALSE)
+plot5 <- simulateResiduals(flowermod5, plot = FALSE)
+
+# Set up the layout for the plots
+par(mfrow = c(2, 3))
+
+# Plot the diagnostic plots
+plot(plot1)
+plot(plot2)
+plot(plot3)
+plot(plot4)
+plot(plot5)
+
+# Reset the layout
+par(mfrow = c(1, 1))
+
 ```
 
+**Figure 8: Visualization for Model Residuals**
 
+**Table 6: Choosing the Best Model (Ranked by AICc)** 
 ```{r choosing-model}
+#using models generated prior, we rank the models in terms of AICc
 model.sel(flowermod1,flowermod2, flowermod3, flowermod4, flowermod5)
 ```
 
-Then we compared the generalized linear model with a negative binomial distribution to a null model to determine if species, and total number of inflorescence impacts the total seed count. The null model is representative of the null hypothesis--the predictor variables, treatment (open or shrub), species, and total number of inflorescence, do not impact the total seed count as it creates a regression model that assumes no relationship between predictor and response variables. On the other hand, the full model creates the negative binomial regression model that assumes a relationship between the predictor variables and the response variable. To check the assumptions of our flowermod3 and null model, we ran simulateResidual() function in order to compare simulated residuals to observed residuals. We found that flowermodel3 still simulated residuals to be the most normal out of all the models. 
+Then we compared the generalized linear model with a negative binomial distribution to a null model to determine if species, and total number of inflorescence impacts the total seed count. The null model is representative of the null hypothesis--the predictor variables, treatment (open or shrub), species, and total number of inflorescence, do not impact the total seed count as it creates a regression model that assumes no relationship between predictor and response variables. On the other hand, the full model creates the negative binomial regression model that assumes a relationship between the predictor variables and the response variable. To check the assumptions of our flowermod3 and null model, we ran simulateResidual() function in order to compare simulated residuals to observed residuals. We found that flowermodel3 still simulated residuals to be the most normal out of all the models.
 
 ```{r null-model-and-assumptions}
-
+#fits a negative binomial regression model to flower dataset, which assumes no relationship between nr_seeds and the predictor variables.
 null_flower <- glm.nb(nr_seeds~1, data = flower)
-
+# check diagnostics for null by generating plots (via plots = TRUE) by checking the residuals
 simulateResiduals(null_flower, plot= TRUE)
 
 ```
+**Figure 9: Visualization for Null Model Residuals**
 
+**Table 7: Choosing the Best Model Between Null and Linear Model with Negative Binomial Distribution (Ranked by AICc)** 
 ```{r AICc-values-for-null-and-mod3}
+#ranking which model is better by AICc
 model.sel(flowermod3, null_flower)
 ```
 
-Next we ran a few more assumption check for flowermod3 including a test for multicollinearity. We evaluated the multicollinearity by calculating the generalized the variance inflation factor and determined that this model didn't display any multicollnearity because no values we're larger than five. 
+Next we ran a few more assumption check for flowermod3 including a test for multicollinearity. We evaluated the multicollinearity by calculating the generalized the variance inflation factor and determined that this model didn't display any multicollnearity because no values we're larger than five.
 
+**Table 8: Multicollinearity Test** 
 ```{r Multicollinearity-test}
+#check for multicollinearity
 car::vif(flowermod3)
-```  
+```
 
-
+**Table 9: Summary of Best Model (Negative Binomial Distribution)** 
 ```{r summaries}
 # model object
 flowermod3
-
 # summary 
 summary(flowermod3)
-
 # confidence intervals
 confint(flowermod3)
-
 # adjusted R2
 r.squaredGLMM(flowermod3)
-
 ```
-
-
-```{r summary results}
-# model object in table
+**Table 10: Flextable of Best Model (Negative Binomial Distribution)** 
+```{r}
+#model object in table
 flowermod3%>%
   as_flextable()
 ```
 
-After picking model3 as the best model, we tested the generalized linear model with a negative binomial with each individual predictor model to test for simpler models. To check the assumptions of our flowermod3 and simpler models, we ran simulateResidual() function in order to compare simulated residuals to observed residuals. We found that flowermodel3 still simulated residuals to be the most normal out of all the models. 
+After picking model3 as the best model, we tested the generalized linear model with a negative binomial with each individual predictor model to test for simpler models. To check the assumptions of our flowermod3 and simpler models, we ran simulateResidual() function in order to compare simulated residuals to observed residuals. We found that flowermodel3 still simulated residuals to be the most normal out of all the models.
 
 ```{r create-simple-models}
+#fits a negative binomial regression model to flower dataset, where each model has only one predictor variable
 flowermod_treatment <- glm.nb(nr_seeds~treatment, data = flower)
 flowermod_species <- glm.nb(nr_seeds~species, data = flower)
 flowermod_infl <- glm.nb(nr_seeds~total_nr_infl, data = flower)
-
+#check diagnostics for models by generating plots (via plots = TRUE) by checking the residuals
 simulateResiduals(flowermod_treatment, plot= TRUE)
 simulateResiduals(flowermod_species, plot= TRUE)
 simulateResiduals(flowermod_infl, plot= TRUE)
-
 ```
 
-```{r AICc-model_mod3_and_simple}
+**Figure 10: Visualization for Simple Model Residuals**
 
+**Table 11: Choosing the Best Model Between Simple Models (Ranked by AICc) ** 
+```{r AICc-model_mod3_and_simple}
+#comparing models using Akaike's Information Criterion
 model.sel(flowermod3, flowermod_infl, flowermod_species, flowermod_treatment)
 ```
 
 
-
+**Table 12: IRR Values ** 
 ```{r IRR-values}
 #getting IRR values using the exp(coef()) function
 exp_coef2 <- exp(coef(flowermod3))
@@ -437,22 +455,32 @@ exp_coef2
 tidy(flowermod3, conf.int = TRUE, conf.level = .95) 
 ```
 
-## Results 
+## Results
 
-We found that the flowermod3 including species, treatment, and total number of inflorescence predictors best predicted the total number of seeds because the flowermod3 yields the lowest AIC value indicating that this model has the best predicitive capacity while remaining as simple as possible. With all else held constant, the shrub treatment associated with a 34.7% decrease in the expected total seed count compared to the control treatment (treatmentshrub: IRR= -0.347(95% CI: -0.626,-0.0669) p=0.0161). The Tridas and the Carrup species were found to signifcantly predict the total seed count (p= 0.0423, p<0.001, respectively). On the other hand, the some of the predictors such as, the Gueros, Kobmyo, and Minobt species did not significantly predict total seed count (p= 0.4794, p= 0.3751, p= 0.1272). 
+We found that the flowermod3 including species, treatment, and total number of inflorescence predictors best predicted the total number of seeds because the flowermod3 yields the lowest AIC value indicating that this model has the best predictive capacity while remaining as simple as possible. With all else held constant, the shrub treatment associated with a 34.7% decrease in the expected total seed count compared to the control treatment (treatmentshrub: IRR= -0.347(95% CI: -0.626,-0.0669) p=0.0161). The Tridas and the Carrup species were found to significantly predict the total seed count (p= 0.0423, p\<0.001, respectively). On the other hand, the some of the predictors such as, the Gueros, Kobmyo, and Minobt species did not significantly predict total seed count (p= 0.4794, p= 0.3751, p= 0.1272).
 
-```{r first-vis-maybe}
-ggplot(data=flowermod3, aes(x=treatment, y=nr_seeds, fill=predicted))+
-  geom_boxplot(position = position_dodge(width=.8), color ="black")+
-  labs(x="Species", y =" Seed Count", title = "Distribution of seed count by species and treatment")+
-  theme_minimal()+
-  facet_wrap(~species)
+```{r sc}
+ggplot(data = flower, aes(x = total_nr_infl, y = nr_seeds, fill = treatment, color = treatment)) +
+  #jitter plot of points
+  geom_jitter() +
+  #each species has its own chart
+  facet_wrap(~species) +
+  labs(x = "Species", y = "Seed Count", title = "Distribution of Seed Count by Total Number of Inflorescence, Treatment, and Species") +
+  theme_minimal() +
+  #colors are blue and red to match the following graph
+  scale_fill_manual(values = c("red", "blue")) +
+  scale_color_manual(values = c("red", "blue"))
+
 ```
 
+**Figure 11: Seedcount scatterplot**. A scatter plot showing the relationship between seed count and the total number of inflorescence. Each point represents an observation regarding the total number of inflorescence, color-coded by treatment, with red being 'control' and blue being 'shrub'. Furthermore, the data is group by species, with total number of inflorescence on the x axis and seed count on the y axis.
+
+Analysis: The chart illustrates that while total number of inflorescence is definitely correlated to seed count (as also illustrated by the .916 correlation coefficient), while other variables are more ambiguous. For starters, different species all have different amounts of data points, which gives a decent representation of data for some species (such as AREFEN and KOBMYO) while giving tiny sample size for others. Additionally, there is not an equal distribution of treatment among species, with some species lacking a treatment ('shrub' or 'control'), which are also the same species without much data (CARRUP and TRIDAS).
 
 ```{r}
 flower$residuals <- resid(flowermod3)
-
+# Fit the linear model
+flower$predicted <- predict(flowermod3)
 # Create a scatter plot of residuals
 ggplot(flower, aes(x = predicted, y = residuals)) +
   geom_point(color = "blue", alpha = 0.5, size =2.5) +
@@ -470,29 +498,25 @@ ggplot(flower, aes(x = predicted, y = residuals)) +
           #Axis text is size 12
         axis.text = element_text(size = 12)
         )
-
 ```
 
-Caption: In the graph above, the blue points represent the residual values, the dashed red line represents a reference for if the residual values were equal to '0', and the dashed black line shows a fitted reggression line for the plotted residuals.
+**Figure 12: Residual Analysis plot.** A residual analysis plot where the blue points represent the residual values, the dashed red line represents a reference for if the residual values were equal to '0', and the dashed black line shows a fitted regression line for the plotted residuals. The x-axis represents the predicted values of seed count (nr_seeds), while the y-axis illustrating the corresponding residual value.
 
 Analysis: The negative mean residual value (-.3) illustrates a systematic bias in flowermod3's predictions, which are on average higher than the observed values, indicating that the model is underestimating seed counts by about '.3' seeds. This is also confirmed visually, with a negatively trending regression line below the reference line. Additionally, residuals are not evenly distributed around the reference line, and in conjunction with the BP test illustrates that the assumption of homoscedasticity has been violated.
 
+**Table 13: Statistics for Figure 12** 
 ```{r}
 residuals <- resid(flowermod3)
 mean_residual <- mean(residuals)
-sd_residual <- sd(residuals)
-
+#print results of finding mean for residuals
 print(mean_residual)
-print(sd_residual)
-
+#test for normality
 shapiro.test(residuals)
 # Breusch-Pagan test for heteroscedasticity
 bptest(flowermod3)
-
 ```
 
-The p-value (0.002064) illustrates the likelihood of getting the observed test statistic (or a more extreme value) under the assumption of normality. Since the p-value is less than the significance level (0.05), it illustrates that the assumption of normality is violated. Additionally, the tiny p-value for the Breusch-Pagan test (0.00000002694) indicates that the assumption of homoscedasticity is also violated. This highlights that the model underestimates the total seed count with the predictor variables---treatment, total inflourescence, and species---by 0.3 (mean-residual). However, given all of the other tests we ran, we can still consider the generalized linear model with a negative binomial regression was still the most statisically correct is predicting a relationship between the predictor variables and total seed count. More analysis should be done to conclude more statistically significant results. 
-
+The p-value (0.002064) illustrates the likelihood of getting the observed test statistic (or a more extreme value) under the assumption of normality. Since the p-value is less than the significance level (0.05), it illustrates that the assumption of normality is violated. Additionally, the tiny p-value for the Breusch-Pagan test (0.00000002694) indicates that the assumption of homoscedasticity is also violated. This highlights that the model underestimates the total seed count with the predictor variables---treatment, total inflorescence, and species---by 0.3 (mean-residual). However, given all of the other tests we ran, we can still consider the generalized linear model with a negative binomial regression was still the most statistically correct is predicting a relationship between the predictor variables and total seed count. More analysis should be done to conclude more statistically significant results.
 
 ## Bibliography
 
